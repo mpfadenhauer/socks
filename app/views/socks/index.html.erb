@@ -1,2 +1,16 @@
-<h1>Socks#index</h1>
-<p>Find me in app/views/socks/index.html.erb</p>
+<h1>Insert navbar here</h1>
+<h1>Socks(home page)</h1>
+<%= simple_form_for @socks do |s|%>
+<%= s.input :color %>
+<%= s.input :title %>
+<%= s.input :pattern %>
+<%= s.input :min_size %>
+<%= s.input :max_size %>
+<%= s.input :sock_type %>
+<%= s.input :brand %>
+<%= s.input :age %>
+<%= s.input :season %>
+<%= s.input :price %>
+<% end %>
+
+<%= @socks %>
