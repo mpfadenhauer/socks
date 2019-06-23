@@ -1,3 +1,10 @@
+
+puts "creating 3 seeds"
+user = User.create!(email:"mayaa@email.com", password:'123456')
+
+
+puts "first"
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -5,7 +12,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
- user = User.create!(email:"maya_a@email.com", password:'123456')
+
+
 
 
 
@@ -25,6 +33,8 @@ Sock.create!(
           user: user
         )
 
+puts "second"
+
 Sock.create!(
           title: "White Nike socks",
           description: "Simple white sock with the Nike logo cause we all lose those ",
@@ -39,6 +49,9 @@ Sock.create!(
           price: "0.5",
           user: user
         )
+
+puts "third"
+
 Sock.create!(
           title: "My lucky sock",
           description: "It has helped me a lot but now it's time to move on. still can't wash it though",
@@ -53,4 +66,6 @@ Sock.create!(
           price: "10",
           user: user
         )
+
+puts "all done!"
 
