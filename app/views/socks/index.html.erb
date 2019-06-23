@@ -1,6 +1,8 @@
-<h1>Insert navbar here</h1>
-<h1>Search bar(see material from Tuesday</h1>
-<%= @socks.each do |sock| %>
-<%= sock.title %>
-<% end %>
-<h3>footer</h3>
+<div class="container">
+  <h1>Insert navbar here</h1>
+  <h1>Search bar(see material from Tuesday</h1>
+  <% @socks.each do |sock| %>
+    <p><%= sock.title %></p>
+  <% end %>
+  <h3 class=" text-center">footer</h3>
+</div>
