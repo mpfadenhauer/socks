@@ -1,0 +1,12 @@
+<%= simple_form_for @sock do |s| %>
+  <%= s.input :title %>
+  <%= s.input :color %>
+  <%= s.input :price %>
+  <%= s.input :pattern, collection: ["Solid", "Striped", "Polko dots", "Other"] %>
+  <%= s.input :min_size %>
+  <%= s.input :max_size %>
+  <%= s.input :description %>
+  <%= s.input :sock_type, collection: ["Over the knee", "Knee high", "Over the calf/Executive", "Mid-calf/Crew", "Quarter/Anklets", "Ped/Low cut", "Liner, Extra low cut", "Invisible/No-show", "Toe cover/Mute"] %>
+  <%= s.input :brand %>
+  <%= s.input :season, collection: ["spring", "winter", "summer", "autumn"] %>
+<% end %>
