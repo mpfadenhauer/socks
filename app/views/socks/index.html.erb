@@ -1,16 +1,6 @@
 <h1>Insert navbar here</h1>
-<h1>Socks(home page)</h1>
-<%= simple_form_for @socks do |s|%>
-<%= s.input :color %>
-<%= s.input :title %>
-<%= s.input :pattern %>
-<%= s.input :min_size %>
-<%= s.input :max_size %>
-<%= s.input :sock_type %>
-<%= s.input :brand %>
-<%= s.input :age %>
-<%= s.input :season %>
-<%= s.input :price %>
+<h1>Search bar(see material from Tuesday</h1>
+<%= @socks.each do |sock| %>
+<%= sock.title %>
 <% end %>
-
-<%= @socks %>
+<h3>footer</h3>

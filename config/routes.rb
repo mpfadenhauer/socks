@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 resources :socks do
-  resources :transactions, only: :show
+  resources :transactions, only: [:show, :new, :create]
   devise_for :users
 end
   root to: 'pages#home'
