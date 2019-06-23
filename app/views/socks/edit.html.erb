@@ -1,2 +1,5 @@
-<h1>Socks#edit</h1>
-<p>Find me in app/views/socks/edit.html.erb</p>
+<h1>Edit your sock information</h1>
+<%= render 'form' %>
+
+<%= link_to 'go back to sock', sock_path(@sock), class: "btn btn-primary my-5" %>
+<%= link_to 'go back to socks', socks_path, class: "btn btn-info my-5" %>
