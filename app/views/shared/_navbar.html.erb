@@ -1,0 +1,41 @@
+<div class="navbar-sock sticky">
+  <div id="search_navbar">
+    <div id="search-bar">
+      <%= form_tag(root_path, :method => "get", id: "search-form", remote:true) do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Find your missing sock" %>
+      <%= submit_tag "Search", :name => nil, class: "search_btn" %>
+      <% end %>
+    </div>
+  </div>
+
+
+  <!-- Logo -->
+  <div class="navbar-sock-brand">
+    <a href="/">
+      <%= image_tag "logo-placeholder.jpg", {alt: "logo"}  %>
+    </a>
+    <h1>SockCiety</h1>
+  </div>
+
+
+  <!-- Right Navigation -->
+  <div class="navbar-sock-right"> <!-- hidden-xs hidden-sm -->
+
+    <%= link_to "Add a sock", socks_path, class:"navbar-sock-item navbar-sock-link" %>
+    <%= link_to "My Profile", socks_path, class:"navbar-sock-item navbar-sock-link" %>
+    <div class="navbar-sock-item">
+      <div class="dropdown">
+        <%= image_tag "avatar-placeholder.jpg", class:"avatar dropdown-toggle", id:"navbar-sock-menu", data: {toggle: 'dropdown'}%>
+        <ul class="dropdown-menu dropdown-menu-right navbar-sock-dropdown-menu">
+          <li><%= link_to "My Profile", socks_path, class:"navbar-sock-item   navbar-sock-link" %></li>
+          <li><%= link_to "Edit Profile", socks_path, class:"navbar-sock-item navbar-sock-link" %></li>
+          <li><%= link_to "Log out", socks_path, method: :delete, class:"navbar-sock-item navbar-sock-link" %></li>
+        </ul>
+      </div>
+    </div>
+
+    <%= link_to "Log in", socks_path, class:"navbar-sock-item navbar-sock-link" %>
+    <%= link_to 'Sign up', socks_path, class:"navbar-sock-item navbar-sock-link" %>
+  </div>
+</div>
+
