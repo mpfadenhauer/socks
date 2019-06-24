@@ -1,21 +1,31 @@
-<h1>HEADER</h1>
-<h1>Socks#show</h1>
-<%= @sock.title %>
-<%= @sock.description %>
-<p>Picture of the sock </p>
-<%= @sock.user.email %>
-<%#= # link_to "Buy!", sock_transactions_path, method: :post  %>
-<%# @sock.user.reviews.each do |review| %>
-  <%#= review.description %>
-  <%# review.rating.times do  %>
-    <p>stars</p>
+<h1><%= @sock.title %></h1>
+<div class="container"><%= @sock.title %>
+  <%= @sock.description %>
+  <p>Picture of the sock </p>
+  <%= @sock.user.email %>
+  <%#= # link_to "Buy!", sock_transactions_path, method: :post  %>
+  <%# @sock.user.reviews.each do |review| %>
+    <%#= review.description %>
+    <%# review.rating.times do  %>
+      <p>stars</p>
+    <%# end %>
   <%# end %>
+
 <%# end %>
+<% if policy(@sock).edit? %>
+  <%= link_to "Update my Sock", edit_sock_path %>
+<% end %>
+<% if policy(@sock).destroy? %>
+  <%= link_to "Delete my sock", sock_path(@sock), method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end %>
 
 
 
-<!-- <p>note to self to give a range of 1..5 for the rating </p> -->
 
-<%= link_to 'go back to socks', socks_path, class: "btn btn-primary my-5" %>
+  <!-- <p>note to self to give a range of 1..5 for the rating </p> -->
+
+  <%= link_to 'go back to socks', socks_path, class: "btn btn-primary my-5" %>
+</div>
 
 
