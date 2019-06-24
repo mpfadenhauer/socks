@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_24_121236) do
+
+ActiveRecord::Schema.define(version: 2019_06_24_132319) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,10 +20,12 @@ ActiveRecord::Schema.define(version: 2019_06_24_121236) do
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.string "description"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_reviews_on_user_id"
+    t.bigint "user_reviewed_id"
+    t.bigint "review_giver_id"
+    t.index ["review_giver_id"], name: "index_reviews_on_review_giver_id"
+    t.index ["user_reviewed_id"], name: "index_reviews_on_user_reviewed_id"
   end
 
   create_table "socks", force: :cascade do |t|
@@ -68,7 +72,6 @@ ActiveRecord::Schema.define(version: 2019_06_24_121236) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "reviews", "users"
   add_foreign_key "socks", "users"
   add_foreign_key "transactions", "socks"
   add_foreign_key "transactions", "users"
