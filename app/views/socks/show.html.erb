@@ -24,7 +24,26 @@
 <%= link_to "Buy this sock", new_sock_transaction_path(@sock) %>
 <% end %>
 
+<h2>About the sock owner</h2>
 
+<h2>User rating:
+  <%if  @user.rating != 'no reviews yet' %>
+    <% @user.rating.times do%>
+    <%= '⭐️' %>
+  <% end %>
+  <% else %>
+  <%= @user.rating %>
+  <% end %>
+</h2>
+<h2>User reviews</h2>
+<% @user.reviews.each_with_index do |review,index| %>
+    <%reviewer = User.find(@ids[index]) %>
+    <strong><%= reviewer.username %></strong>
+    <%review.rating.times do %>
+      <%= '⭐️' %>
+    <% end %>
+    <p><%= review.description %></p>
+ <% end %>
 
   <!-- <p>note to self to give a range of 1..5 for the rating </p> -->
 
