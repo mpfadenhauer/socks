@@ -1,4 +1,4 @@
-class SockPolicy < ApplicationPolicy
+class TransactionPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -24,5 +24,4 @@ class SockPolicy < ApplicationPolicy
   def destroy?
     record.user == user #|| user.admin
   end
-
 end
