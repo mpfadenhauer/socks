@@ -31,11 +31,7 @@ ActiveRecord::Schema.define(version: 2019_06_23_143133) do
     t.string "pattern"
     t.integer "min_size"
     t.integer "max_size"
-<<<<<<< HEAD
-    t.string "type"
-=======
     t.string "sock_type"
->>>>>>> 9506b0596a13145d1d231e21b71f9beff271bcf1
     t.string "brand"
     t.string "season"
     t.integer "age"
@@ -47,11 +43,7 @@ ActiveRecord::Schema.define(version: 2019_06_23_143133) do
   end
 
   create_table "transactions", force: :cascade do |t|
-<<<<<<< HEAD
-    t.string "type"
-=======
     t.string "transaction_type"
->>>>>>> 9506b0596a13145d1d231e21b71f9beff271bcf1
     t.bigint "user_id"
     t.bigint "sock_id"
     t.datetime "created_at", null: false
