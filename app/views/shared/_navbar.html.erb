@@ -8,7 +8,7 @@
     <h2>SockCiety</h2>
   </div>
 
-  <div id="search_navbar">
+  <div id="search_navbar" hidden-xs hidden-sm>
     <div id="search-bar">
       <%= form_tag(root_path, :method => "get", id: "search-form", remote:true) do %>
       <%= text_field_tag :search, params[:search], placeholder: "Find your missing sock", class: "form-control" %>
@@ -18,7 +18,7 @@
   </div>
 
   <!-- Right Navigation -->
-  <div class="navbar-sock-right"> <!-- hidden-xs hidden-sm -->
+  <div class="navbar-sock-right" hidden-md hidden-lg >
 
     <%  if current_user %>
         <%= link_to "Add a sock", new_sock_path, class:"navbar-sock-item navbar-sock-link" %>
