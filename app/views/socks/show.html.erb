@@ -3,7 +3,7 @@
 <%= @sock.title %>
 <%= @sock.description %>
 <p>Picture of the sock </p>
-<%= @sock.user.name %>
+<%= @sock.user %>
 <%= link_to "Buy!", sock_transactions_path, method: :post  %>
 <%= @sock.user.reviews.each do |review| %>
 <%= review.description %>
