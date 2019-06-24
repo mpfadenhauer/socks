@@ -1,5 +1,8 @@
 class SocksController < ApplicationController
   before_action :set_sock, only: [:show, :edit, :update, :delete]
+  skip_before_action :authenticate_user!, only: [:index]
+
+
   def index
     @socks = Sock.all
   end
@@ -12,8 +15,14 @@ class SocksController < ApplicationController
   end
 
   def create
-    @sock = Sock.create(sock_params)
-    redirect_to sock_path(@sock)
+    @sock = Sock.new(sock_params)
+    @sock.user = current_user
+    if @sock.save
+      redirect_to sock_path(@sock)
+    else
+      render :new
+    end
+
   end
 
   def edit
@@ -36,6 +45,6 @@ class SocksController < ApplicationController
   end
 
   def sock_params
-    params.require(:sock).permit(:title, :description, :color, :pattern, :min_size, :max_size, :type, :brand, :season, :age, :price)
+    params.require(:sock).permit(:title, :description, :color, :pattern, :min_size, :max_size, :sock_type, :brand, :season, :age, :price)
   end
 end
