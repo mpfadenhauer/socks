@@ -1,0 +1,68 @@
+.white-wrapper {
+  background-color: #FFFFFF;
+}
+
+// .sock-box {
+//   display: flex;
+//   justify-items: space-between;
+//   align-items: center;
+
+// }
+// .sock-image img {
+//   width: 500px;
+//   position: center;
+// }
+
+// .sock-information {
+//   margin: 100px 75px;
+//   border: 1px solid #E4E4E4;
+//   padding: 0px 13px;
+//   h2 {
+//     text-align: left;
+//     margin-top: 0px;
+//     color: #006DAA;
+//     opacity: 0.7;
+//   }
+// }
+
+
+.card-product {
+  overflow: hidden;
+  height: 400px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 430px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.detailed-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
