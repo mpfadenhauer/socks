@@ -12,3 +12,4 @@ class Sock < ApplicationRecord
   # validates :sock_type, inclusion: { in: ["Over the knee", "Knee high", "Over the calf/Executive", "Mid-calf/Crew", "Quarter/Anklets", "Ped/Low cut", "Liner/Extra low cut", "Invisible/No-show", "Toe cover/Mute"] }, allow_blank: true
   validates :season, inclusion: { in: ["spring", "winter", "summer", "autumn"] }, allow_blank: true
 end
+

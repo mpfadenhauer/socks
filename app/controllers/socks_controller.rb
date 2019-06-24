@@ -1,10 +1,13 @@
 class SocksController < ApplicationController
+  include Pundit
   before_action :set_sock, only: [:show, :edit, :update, :delete]
+  # Pundit: white-list approach.
+  after_action :verify_authorized, except: :index, unless: :skip_pundit?
+  after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
   skip_before_action :authenticate_user!, only: [:index]
 
-
   def index
-    @socks = Sock.all
+    @socks = policy_scope(Sock)
   end
 
   def show
@@ -40,8 +43,13 @@ class SocksController < ApplicationController
 
   private
 
+  def skip_pundit?
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
   def set_sock
     @sock = Sock.find(params[:id])
+    authorize @sock
   end
 
   def sock_params
