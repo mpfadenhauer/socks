@@ -1,5 +1,6 @@
-/* Main navbar */
 
+
+/* Main navbar */
 .navbar-sock {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background: white;
@@ -17,17 +18,19 @@
   display: flex;
   vertical-align: middle;
   align-items: center;
-    h1 {
+    h2 {
       margin-bottom: 0px;
       font-size: 34px;
-      padding-left: 15px;
+      padding-left: 10px;
+      margin-left: 10px;
+      color: #006DAA;
+      opacity: 0.7;
     }
     img {
       height: 50px;
       border-radius: 50%
     }
 }
-
 
 /* User Avatar */
 .navbar-sock .avatar {
@@ -51,11 +54,11 @@
 
 /* Navbar link */
 .navbar-sock-link {
-  color: #616668;
+  color: #006DAA;
   font-size: 14px;
 }
 .navbar-sock-link:hover {
-  color: #1FAD47;
+  color: #495057;
   text-decoration: none;
 }
 
@@ -102,7 +105,7 @@
 }
 
 #search{
-  width: 200px;
+  width: 350px;
   font-size: 14px;
   border-radius: 5px;
   padding: 0.5rem;
@@ -112,13 +115,13 @@
 .search_btn{
   font-size: 18px;
   background-color: white;
-  border: 1px solid #cccccc;
   border-radius: 5px;
   color: #696969;
   text-transform: lowercase;
   text-align: center;
   height: 35px;
   margin-left: 5px;
+  border-style: none;
 
 }
 
