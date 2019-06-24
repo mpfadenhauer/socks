@@ -4,7 +4,7 @@ Sock.destroy_all
 
 
 puts "Database empty, creating 3 seeds"
-user = User.create!(email:"user2@email.com", password:'123456')
+user = User.create!(email:"supermario@email.com", password:'123456', username:"mario", location:"tel-aviv")
 
 
 puts "first"
