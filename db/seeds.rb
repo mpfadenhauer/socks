@@ -1,6 +1,10 @@
+puts "destroying database"
 
-puts "creating 3 seeds"
-user = User.create!(email:"mayaa@email.com", password:'123456')
+Sock.destroy_all
+
+
+puts "Database empty, creating 3 seeds"
+user = User.create!(email:"user2@email.com", password:'123456')
 
 
 puts "first"
@@ -22,10 +26,10 @@ Sock.create!(
           title: "Red and white polka sock",
           description: "it's white with red polka dots, i have had this pair for the past two years and lost the other",
           color: "white",
-          pattern: "ploka dots",
+          pattern: "Polka dots",
           min_size: 39,
           max_size: 46,
-          sock_type: "knee-high",
+          sock_type: "Knee high",
           brand: "Puka",
           season: "summer",
           age: 2,
@@ -39,10 +43,10 @@ Sock.create!(
           title: "White Nike socks",
           description: "Simple white sock with the Nike logo cause we all lose those ",
           color: "white",
-          pattern: "none",
+          pattern: "None",
           min_size: 39,
           max_size: 46,
-          sock_type: "liner",
+          sock_type: "Liner/Extra low cut",
           brand: "Nike",
           season: "summer",
           age: 1,
@@ -56,10 +60,10 @@ Sock.create!(
           title: "My lucky sock",
           description: "It has helped me a lot but now it's time to move on. still can't wash it though",
           color: "black",
-          pattern: "none",
+          pattern: "None",
           min_size: 36,
           max_size: 38,
-          sock_type: "mid calf",
+          sock_type: "Mid-calf/Crew",
           brand: "adidas",
           season: "winter",
           age: 8,
