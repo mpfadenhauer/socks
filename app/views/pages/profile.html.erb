@@ -21,6 +21,26 @@
     <% end %>
 </div>
 <br>
-<h2>User rating:</h2>
-<h1>User reviews here</h1>
+
+
+
+<h2>User rating:
+  <%if  @average != 'no reviews yet' %>
+    <% @average.times do%>
+    <%= '⭐️' %>
+  <% end %>
+  <% else %>
+  <%= @average %>
+  <% end %>
+</h2>
+<h2>User reviews</h2>
+<% @user.reviews.each_with_index do |review,index| %>
+    <%reviewer = User.find(@ids[index]) %>
+    <strong><%= reviewer.username %></strong>
+    <%review.rating.times do %>
+      <%= '⭐️' %>
+    <% end %>
+    <p><%= review.description %></p>
+ <% end %>
+
 
