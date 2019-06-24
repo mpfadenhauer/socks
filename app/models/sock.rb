@@ -1,4 +1,10 @@
 class Sock < ApplicationRecord
+  SOCK_TYPE = ["Over the knee", "Knee high", "Over the calf/Executive", "Mid-calf/Crew", "Quarter/Anklets", "Ped/Low cut", "Liner, Extra low cut", "Invisible/No-show", "Toe cover/Mute"].freeze
+  SOCK_PATTERN = ["Solid", "Striped", "Polka dots", "Other"]
+  SEASON = ["spring", "winter", "summer", "autumn"]
+  MIN_SIZE = (25..50).to_a
+  MAX_SIZE = (25..50).to_a
+
   belongs_to :user
 
 
@@ -11,5 +17,17 @@ class Sock < ApplicationRecord
   validates :description, presence: true, allow_blank: true
   # validates :sock_type, inclusion: { in: ["Over the knee", "Knee high", "Over the calf/Executive", "Mid-calf/Crew", "Quarter/Anklets", "Ped/Low cut", "Liner/Extra low cut", "Invisible/No-show", "Toe cover/Mute"] }, allow_blank: true
   validates :season, inclusion: { in: ["spring", "winter", "summer", "autumn"] }, allow_blank: true
+
+  # scope for filtering on index page
+  include Filterable
+  scope :color, -> (color) { where color: color }
+  scope :min_size, -> (min_size) { where min_size: min_size }
+  scope :max_size, -> (max_size) { where max_size: max_size }
+  scope :sock_type, -> (sock_type) { where sock_type: sock_type }
+  scope :brand, -> (brand) { where brand: brand }
+  scope :season, -> (season) { where season: season }
+  scope :age, -> (age) { where age: age }
+  scope :price, -> (price) { where price: price }
+
 end
 

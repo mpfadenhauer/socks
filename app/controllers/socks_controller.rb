@@ -8,6 +8,8 @@ class SocksController < ApplicationController
 
   def index
     @socks = policy_scope(Sock)
+    @socks = Sock.filter(params.slice(:color, :min_size, :max_size, :sock_type,
+     :brand, :season, :age, :price))
   end
 
   def show
@@ -56,5 +58,9 @@ class SocksController < ApplicationController
 
   def sock_params
     params.require(:sock).permit(:title, :description, :color, :pattern, :min_size, :max_size, :sock_type, :brand, :season, :age, :price)
+  end
+
+  def filtering_params(params)
+    params.slice(:color, :min_size, :max_size, :sock_type, :brand, :season, :age, :price)
   end
 end
