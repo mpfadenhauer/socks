@@ -10,6 +10,12 @@ class TransactionsController < ApplicationController
     @transaction.user = current_user
     @transaction.sock = @sock
     authorize @transaction
+    if @transaction.save
+      @sock.bought = true
+      @sock.save
+    else
+      render :new
+    end
   end
 
   private
