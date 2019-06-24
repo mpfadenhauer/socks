@@ -11,9 +11,3 @@ class Sock < ApplicationRecord
   # validates :brand, allow_blank: true
   validates :season, inclusion: { in: ["spring", "winter", "summer", "autumn"] }, allow_blank: true
 end
-
-
-
-
-
-
