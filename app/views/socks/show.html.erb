@@ -3,20 +3,19 @@
 <%= @sock.title %>
 <%= @sock.description %>
 <p>Picture of the sock </p>
-<%= @sock.user.name %>
-<%= link_to "Buy!", sock_transactions_path, method: :post  %>
-<%= @sock.user.reviews.each do |review| %>
-<%= review.description %>
-<%= review.rating.times do  %>
-<p>stars</p>
-<% end %>
-<% end %>
+<%= @sock.user.email %>
+<%#= # link_to "Buy!", sock_transactions_path, method: :post  %>
+<%# @sock.user.reviews.each do |review| %>
+  <%#= review.description %>
+  <%# review.rating.times do  %>
+    <p>stars</p>
+  <%# end %>
+<%# end %>
 
 
 
-<p>note to self to give a range of 1..5 for the rating </p>
+<!-- <p>note to self to give a range of 1..5 for the rating </p> -->
 
 <%= link_to 'go back to socks', socks_path, class: "btn btn-primary my-5" %>
 
-<h1>FOOTER</h1>
 
