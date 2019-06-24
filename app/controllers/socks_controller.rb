@@ -1,6 +1,6 @@
 class SocksController < ApplicationController
   include Pundit
-  before_action :set_sock, only: [:show, :edit, :update, :delete]
+  before_action :set_sock, only: [:show, :edit, :update, :destroy]
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
@@ -38,7 +38,7 @@ class SocksController < ApplicationController
     redirect_to sock_path(@sock)
   end
 
-  def delete
+  def destroy
     @sock.destroy
     redirect_to socks_path
   end
