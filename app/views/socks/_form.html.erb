@@ -1,16 +1,18 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-12 col-md-4"><%= simple_form_for @sock do |s| %>
-        <%= s.input :title %>
+    <div class="col-12 col-md-6 col-lg-4"><%= simple_form_for @sock do |s| %>
+        <%= s.input :title, label: "Name your sock" %>
+        <%= s.input :description, label: "Describe your sock" %>
         <%= s.input :color %>
-        <%= s.input :price %>
+
         <%= s.input :pattern,  collection: ["Solid", "Striped", "Polka dots", "Other"] %>
         <%= s.input :min_size %>
         <%= s.input :max_size %>
-        <%= s.input :description %>
+
         <%= s.input :sock_type, collection: ["Over the knee", "Knee high", "Over the calf/Executive", "Mid-calf/Crew", "Quarter/Anklets", "Ped/Low cut", "Liner, Extra low cut", "Invisible/No-show", "Toe cover/Mute"] %>
         <%= s.input :brand %>
         <%= s.input :season, collection: ["spring", "winter", "summer", "autumn"] %>
+        <%= s.input :price , label: "how much for it?"%>
       <% end %>
     </div>
   </div>
