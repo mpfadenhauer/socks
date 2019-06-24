@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_06_24_132319) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_06_24_132319) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "bought", default: false
     t.index ["user_id"], name: "index_socks_on_user_id"
   end
 

@@ -2,17 +2,19 @@
   <h1>Search bar (see material from Tuesday)</h1>
   <div class="cards">
     <% @socks.each do |sock| %>
-      <div class="card-sock">
-        <%= image_tag "avatar-placeholder.jpg" %>
-        <div class="card-sock-infos">
-          <div>
-            <h2><%= sock.title %></h2>
-            <p> <%= sock.description %></p>
+    <% if sock.bought == false %>
+        <div class="card-sock">
+          <%= image_tag "avatar-placeholder.jpg" %>
+          <div class="card-sock-infos">
+            <div>
+              <h2><%= sock.title %></h2>
+              <p> <%= sock.description %></p>
+            </div>
+          <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
+          <%= image_tag "logo.jpg", class:'card-sock-user avatar-bordered' %>
           </div>
-        <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
-        <%= image_tag "logo.jpg", class:'card-sock-user avatar-bordered' %>
         </div>
-      </div>
+      <% end %>
     <% end %>
 
   </div>

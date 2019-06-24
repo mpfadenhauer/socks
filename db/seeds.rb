@@ -1,10 +1,10 @@
 puts "destroying database"
-
+Transaction.destroy_all
 Sock.destroy_all
 
 
 puts "Database empty, creating 3 seeds"
-user = User.create!(email:"supermario@email.com", password:'123456', username:"mario", location:"tel-aviv")
+user = User.create!(email:"12345@email.com", password:'123456', username:"mario", location:"tel-aviv")
 
 
 puts "first"
@@ -34,7 +34,8 @@ Sock.create!(
           season: "summer",
           age: 2,
           price: "10",
-          user: user
+          user: user,
+          bought: true
         )
 
 puts "second"
