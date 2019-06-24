@@ -21,7 +21,9 @@
   <div class="navbar-sock-right"> <!-- hidden-xs hidden-sm -->
 
     <%  if current_user %>
-      <%= link_to "Add a sock", new_sock_path, class:"navbar-sock-item navbar-sock-link" %>
+      <% if policy(Sock).create? %>
+        <%= link_to "Add a sock", new_sock_path, class:"navbar-sock-item navbar-sock-link" %>
+      <% end %>
       <%= link_to "My Profile", socks_path, class:"navbar-sock-item navbar-sock-link" %>
       <div class="navbar-sock-item">
         <div class="dropdown">

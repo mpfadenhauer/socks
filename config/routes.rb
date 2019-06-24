@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  get 'profile/:id', to: 'pages#profile'
   resources :socks do
     resources :transactions, only: [:show, :new, :create]
   end
