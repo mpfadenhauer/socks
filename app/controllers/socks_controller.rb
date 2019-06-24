@@ -1,5 +1,8 @@
 class SocksController < ApplicationController
   before_action :set_sock, only: [:show, :edit, :update, :delete]
+  skip_before_action :authenticate_user!, only: [:index]
+
+
   def index
     @socks = Sock.all
   end
