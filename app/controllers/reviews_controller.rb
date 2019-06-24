@@ -2,7 +2,11 @@ class ReviewsController < ApplicationController
   def new
     @user = User.find(params[:id])
     @review = Review.new
-    authorize @review
+    if current_user == @user
+      return "You can't review yourself!"
+    else
+      authorize @review
+    end
   end
 
   def create

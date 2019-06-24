@@ -11,6 +11,7 @@ class SocksController < ApplicationController
   end
 
   def show
+    @user = @sock.user
   end
 
   def new
