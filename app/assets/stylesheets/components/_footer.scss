@@ -1,6 +1,62 @@
-.fixed-bootom {
-  // background-color: $light-gray;
-  color: black;
-  text-align: right;
-  background-color: rgba(255,255,255,.25);
+// .fixed-bootom {
+//   // background-color: $light-gray;
+//   color: black;
+//   text-align: right;
+//   background-color: rgba(255,255,255,.25);
+// }
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300');
+@import url('http://weloveiconfonts.com/api/?family=entypo');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  padding: 20px 0;
+  text-align: center;
+  margin: -3px;
+  width: 100%;
+}
+
+.content {
+  padding: 8px;
+  font: bold 20px Lato, sans-serif;
+  text-align: center;
+  color: #999999;
+}
+
+.social-box {
+  height: 23px;
+  padding-bottom: 39px;
+}
+
+.social {
+  display: inline-block;
+  width: 31px;
+  height: 30px;
+  margin: -4px 5px;
+
+  line-height: 31px;
+  font-family: Entypo;
+  font-size: 20px;
+  text-align: center;
+  color: #bbbbbb;
+
+  border-radius: 50%;
+  background: white;
+  box-shadow: rgb(210, 210, 210) 1px 1px,
+  rgb(210, 210, 210) 2px 2px;
+  text-shadow: rgb(226, 226, 226) 1px 1px,
+  rgb(227, 227, 227) 2px 2px;
+  overflow: hidden;
+  transition: color .3s;
+  margin-top: 10px;
+}
+
+.social:hover {
+  color: #006DAA;
+  opacity: 0.6;
+  cursor: pointer;
 }
