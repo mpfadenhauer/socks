@@ -4,7 +4,7 @@
 <%= @sock.description %>
 <p>Picture of the sock </p>
 <%= @sock.user %>
-<%= link_to "Buy!", sock_transactions_path, method: :post  %>
+<%= # link_to "Buy!", sock_transactions_path, method: :post  %>
 <%= @sock.user.reviews.each do |review| %>
 <%= review.description %>
 <%= review.rating.times do  %>
