@@ -1,4 +1,12 @@
 class Sock < ApplicationRecord
+
+  include PgSearch
+  pg_search_scope :search_by_color_and_title,
+    against: [:title, :color, :pattern, :season],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
   belongs_to :user
 
 
