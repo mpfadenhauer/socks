@@ -1,10 +1,10 @@
 class SocksController < ApplicationController
   include Pundit
   before_action :set_sock, only: [:show, :edit, :update, :delete]
-  before_action :authenticate_user!
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
+  skip_before_action :authenticate_user!, only: [:index]
 
   def index
     @socks = policy_scope(Sock)
@@ -18,8 +18,14 @@ class SocksController < ApplicationController
   end
 
   def create
-    @sock = Sock.create(sock_params)
-    redirect_to sock_path(@sock)
+    @sock = Sock.new(sock_params)
+    @sock.user = current_user
+    if @sock.save
+      redirect_to sock_path(@sock)
+    else
+      render :new
+    end
+
   end
 
   def edit
@@ -47,6 +53,6 @@ class SocksController < ApplicationController
   end
 
   def sock_params
-    params.require(:sock).permit(:title, :description, :color, :pattern, :min_size, :max_size, :type, :brand, :season, :age, :price)
+    params.require(:sock).permit(:title, :description, :color, :pattern, :min_size, :max_size, :sock_type, :brand, :season, :age, :price)
   end
 end
