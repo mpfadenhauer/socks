@@ -12,14 +12,17 @@
   <%# end %>
 
 <%# end %>
-<% if policy(@sock).edit? %>
-  <%= link_to "Update my Sock", edit_sock_path %>
+<% if @sock.user == current_user %>
+  <% if policy(@sock).edit? %>
+    <%= link_to "Update my Sock", edit_sock_path %>
+  <% end %>
+  <% if policy(@sock).destroy? %>
+    <%= link_to "Delete my sock", socks_path(@socks), method: :delete,
+        data: { confirm: "Are you sure?" } %>
+  <% end %>
+<% else %>
+<%= link_to "Buy this sock", new_sock_transaction_path(@sock) %>
 <% end %>
-<% if policy(@sock).destroy? %>
-  <%= link_to "Delete my sock", sock_path(@sock), method: :delete,
-      data: { confirm: "Are you sure?" } %>
-<% end %>
-
 
 
 
