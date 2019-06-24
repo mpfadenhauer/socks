@@ -22,6 +22,6 @@ class SockPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user || user.admin
+    record.user == user #|| user.admin
   end
 end

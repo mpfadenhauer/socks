@@ -1,3 +1,29 @@
+<div class='banner'>
+<!--   <%# if @sock.photo? %>
+    <%# cl_image_tag @sock.photo, class:"sock-image"%>
+  <%# else %> -->
+    <%= image_tag "sock-placeholder.jpg", class:"sock-image"%>
+  <!--   </div> -->
+ <!--  <%# end %> -->
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <div class="sock-description">
+        <h1><%= @sock.title %></h1>
+        <p>Color: <%= @sock.color %></p>
+        <p>Pattern: <%= @sock.pattern %></p>
+        <p>Season: <%= @sock.season %></p>
+        <p>Price: <%= @sock.price %>$</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <h1>HEADER</h1>
 <h1>Socks#show</h1>
 <%= @sock.title %>
