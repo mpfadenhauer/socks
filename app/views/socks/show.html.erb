@@ -70,11 +70,11 @@
 
 
 
-<h1><%= @sock.title %></h1>
+<!-- <h1><%# @sock.title %></h1>
 <div class="container"><%= @sock.title %>
   <%= @sock.description %>
   <p>Picture of the sock </p>
-  <%= @sock.user.email %>
+  <%= @sock.user.email %> -->
   <%#= # link_to "Buy!", sock_transactions_path, method: :post  %>
   <%# @sock.user.reviews.each do |review| %>
     <%#= review.description %>
@@ -100,7 +100,7 @@
 <h2>About the sock owner</h2>
 
 <h2>User rating:
-  <%if  @user.rating != 'no reviews yet' %>
+  <%if  @user.rating != 'no reviews yet' && !@user.rating.nil? %>
     <% @user.rating.times do%>
     <%= '⭐️' %>
   <% end %>
