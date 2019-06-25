@@ -1,3 +1,9 @@
-<%= simple_form_for [@sock, @transaction] do |t| %>
-<%= t.submit  %>
-<% end %>
+<div class="container" style="color: #006DAA">
+  <div class="row justify-content-center" >
+    <div class="col-12 col-md-6 col-lg-4"><%= simple_form_for [@sock, @transaction] do |t| %>
+      <%= t.button :submit, value: "Buy Sock Now", class: "buy-sock"  %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
