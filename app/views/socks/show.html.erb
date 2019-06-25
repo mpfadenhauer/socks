@@ -2,7 +2,11 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="sock-card">
+        <% if @sock.photo? %>
         <%= cl_image_tag @sock.photo, height: 300, width: 400, crop: :fill, class: "col-xs-12 col-sm-6", alt: "no image" %>
+        <% else %>
+        <%= image_tag "logo.jpg", height: 300, width: 400, crop: :fill, class: "col-xs-12, col-sm-6", alt: "no image" %>
+        <% end %>
 
         <div class="card-product-infos col-xs-12 col-sm-6">
           <div class="sock-info">
@@ -47,7 +51,7 @@
               </div>
               <% end %>
               <% else %>
-              <div id="buy-button"></div>
+
               <%= link_to "Buy this sock", new_sock_transaction_path(@sock), id:"buy-button" %>
               <% end %>
             </div>
