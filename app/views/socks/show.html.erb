@@ -1,10 +1,9 @@
-
-
 <div class="white-wrapper">
   <div class="container">
     <div class="row">
       <div class="sock-card">
-        <%= image_tag "sock-placeholder.jpg" %>
+        <%= cl_image_tag @sock.photo, height: 300, width: 400, crop: :fill %>
+
         <div class="card-product-infos">
           <div class="sock-info">
             <h2><%= @sock.title %></h2>
