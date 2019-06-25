@@ -138,10 +138,10 @@
 <%# end %>
 <% if @sock.user == current_user %>
   <% if policy(@sock).edit? %>
-    <%= link_to "Update my Sock", edit_sock_path %>
+    <%= link_to "Update my Sock", edit_sock_path(@sock) %>
   <% end %>
   <% if policy(@sock).destroy? %>
-    <%= link_to "Delete my sock", socks_path(@socks), method: :delete,
+    <%= link_to "Delete my sock", sock_path(@sock), method: :delete,
         data: { confirm: "Are you sure?" } %>
   <% end %>
 <% else %>
