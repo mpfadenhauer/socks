@@ -8,55 +8,29 @@
     <div class="dropdown">
       <h2>Filter</h2>
       <br>
-
-        <form>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Min sock size</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-            <% Sock::MIN_SIZE.each do |x| %>
-              <option><%= x %></option>
-            <% end %>q
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Max sock size</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-            <% Sock::MAX_SIZE.each do |x| %>
-              <option><%= x %></option>
-            <% end %>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Sock type</label>
-            <select class="form-control" id="sock_type">
-            <% Sock::SOCK_TYPE.each do |x| %>
-              <option><%= x %></option>
-            <% end %>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Sock pattern</label>
-            <select class="form-control" id="sock_pattern">
-            <% Sock::SOCK_PATTERN.each do |x| %>
-              <option><%= x %></option>
-            <% end %>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Season</label>
-            <select class="form-control" id="season" value="">
-            <% Sock::SEASON.each do |x| %>
-              <option><%= x %></option>
-            <% end %>
-            </select>
-          </div>
-        <button type="submit" class="btn btn-primary mb-2">Filter</button>
-        </form>
-
+        <%= form_tag socks_path, method: :get do %>
+        <label>Color</label>
+          <%= select_tag "filter[color]", options_for_select(Sock::COLOR), prompt:"Please select"%>
+        <br>
+        <br>
+        <label>Min size</label>
+          <%= select_tag "filter[min_size]", options_for_select(Sock::MIN_SIZE), prompt:"Please select"%>
+        <br>
+        <br>
+        <label>Max size</label>
+          <%= select_tag "filter[max_size]", options_for_select(Sock::MAX_SIZE), prompt:"Please select"%>
+        <br>
+        <br>
+        <label>Sock type</label>
+          <%= select_tag "filter[sock_type]", options_for_select(Sock::SOCK_TYPE), prompt:"Please select"%>
+        <br>
+        <br>
+        <label>Sock pattern</label>
+          <%= select_tag "filter[sock_pattern]", options_for_select(Sock::SOCK_PATTERN), prompt:"Please select"%>
+        <br>
+        <br>
+        <%= submit_tag "Filter", name: nil, class: 'btn btn-primary mb-2', id: 'filter_choice' %>
+        <% end %>
     </div>
 
     <div class="cards">

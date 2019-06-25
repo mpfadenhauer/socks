@@ -3,6 +3,7 @@ class Sock < ApplicationRecord
   SOCK_TYPE = ["Over the knee", "Knee high", "Over the calf/Executive", "Mid-calf/Crew", "Quarter/Anklets", "Ped/Low cut", "Liner, Extra low cut", "Invisible/No-show", "Toe cover/Mute"].freeze
   SOCK_PATTERN = ["Solid", "Striped", "Polka dots", "Other"]
   SEASON = ["spring", "winter", "summer", "autumn"]
+  COLOR = ["Maroon", "Brown", "Olive", "Teal", "Navy", "Black", "Red", " Orange", "Yellow", "lime", "Green", "Cyan", "Blue", "Purple", "Magenta", "Grey", "Pink", "Apricot", "Beige", "Mint", "Lavender", "White"]
   MIN_SIZE = (25..50).to_a
   MAX_SIZE = (25..50).to_a
 
@@ -17,7 +18,7 @@ class Sock < ApplicationRecord
 
 
   validates :title, presence: true
-  validates :color, presence: true
+  validates :color, inclusion: { in: ["Maroon", "Brown", "Olive", "Teal", "Navy", "Black", "Red", " Orange", "Yellow", "lime", "Green", "Cyan", "Blue", "Purple", "Magenta", "Grey", "Pink", "Apricot", "Beige", "Mint", "Lavender", "White"] }, allow_blank: true
   validates :price, presence: true, numericality: true
   validates :pattern, inclusion: { in: ["Solid", "Striped", "Polka dots", "Other", "None"] }, allow_blank: true
   # validates :min_size, greater_than_or_equal_to: 0, allow_blank: true

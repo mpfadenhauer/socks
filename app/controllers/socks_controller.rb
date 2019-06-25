@@ -3,14 +3,18 @@ class SocksController < ApplicationController
   # skip_after_action :verify_policy_scoped
 
   def index
+    # raise
     if params[:search].present?
       @socks = policy_scope(Sock).search_by_color_and_title(params[:search])
+    # elsif params[:query].present?
+      # @socks = Sock.where(title: params[:query])
+    elsif [:color].present?
+      @socks = policy_scope(Sock).filter(params.slice(:color, :sock_size, :sock_type,
+                                              :brand, :season, :age, :price))
     else
       @socks = policy_scope(Sock)
     end
 
-    @socks = Sock.filter(params.slice(:color, :min_size, :max_size, :sock_type,
-                                      :brand, :season, :age, :price))
   end
 
   def show
@@ -62,6 +66,6 @@ class SocksController < ApplicationController
   end
 
   def filtering_params(params)
-    params.slice(:color, :min_size, :max_size, :sock_type, :brand, :season, :age, :price)
+    params.slice(:color, :min_size, :max_size, :sock_type, :sock_pattern, :brand, :season, :age, :price)
   end
 end
