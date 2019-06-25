@@ -24,7 +24,7 @@
         <%= link_to "Add a sock", new_sock_path, class:"navbar-sock-item navbar-sock-link" %>
       <%= link_to "My Profile", profile_path(current_user), class:"navbar-sock-item navbar-sock-link" %>
       <div class="navbar-sock-item">
-        <div class="dropdown">
+        <div id="dropdown">
           <%= image_tag "avatar-placeholder.jpg", class:"avatar dropdown-toggle", id:"navbar-sock-menu", data: {toggle: 'dropdown'}%>
           <ul class="dropdown-menu dropdown-menu-right navbar-sock-dropdown-menu">
             <li><%= link_to "Edit Account", edit_user_registration_path, class:"navbar-sock-item navbar-sock-link" %></li>
