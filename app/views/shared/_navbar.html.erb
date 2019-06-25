@@ -2,17 +2,17 @@
 
   <!-- Logo -->
   <div class="navbar-sock-brand">
-    <a href="/">
+    <a class = "d-flex align-items-center"href="/">
       <%= image_tag "logo.jpg", {alt: "logo"}  %>
+      <h2>SockCiety</h2>
     </a>
-    <h2>SockCiety</h2>
   </div>
 
-  <div id="search_navbar" hidden-xs hidden-sm>
+  <div id="search_navbar"  hidden-xs hidden-sm>
     <div id="search-bar">
-      <%= form_tag(root_path, :method => "get", id: "search-form") do %>
+      <%= form_tag(root_path, :method => "get", id: "search-form",) do %>
       <%= text_field_tag :search, params[:search], placeholder: "Find your missing sock", class: "form-control" %>
-      <%= submit_tag "🔍" %>
+      <%= submit_tag "🔍" , class: "search-icon"%>
       <% end %>
     </div>
   </div>
@@ -22,12 +22,12 @@
 
     <%  if current_user %>
         <%= link_to "Add a sock", new_sock_path, class:"navbar-sock-item navbar-sock-link" %>
-      <%= link_to "My Profile", socks_path, class:"navbar-sock-item navbar-sock-link" %>
+      <%= link_to "My Profile", profile_path(current_user), class:"navbar-sock-item navbar-sock-link" %>
       <div class="navbar-sock-item">
         <div class="dropdown">
           <%= image_tag "avatar-placeholder.jpg", class:"avatar dropdown-toggle", id:"navbar-sock-menu", data: {toggle: 'dropdown'}%>
           <ul class="dropdown-menu dropdown-menu-right navbar-sock-dropdown-menu">
-            <li><%= link_to "Edit Profile", edit_user_registration_path, class:"navbar-sock-item navbar-sock-link" %></li>
+            <li><%= link_to "Edit Account", edit_user_registration_path, class:"navbar-sock-item navbar-sock-link" %></li>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class:"navbar-sock-item navbar-sock-link" %></li>
           </ul>
         </div>
