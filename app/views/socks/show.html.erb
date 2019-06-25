@@ -99,14 +99,12 @@
 <h2>About the sock owner</h2>
 
 <h2>User rating:
-
   <%if  @user.rating != 'no reviews yet' && !@user.rating.nil?  %>
-
     <% @user.rating.times do%>
-    <%= '⭐️' %>
-  <% end %>
+      <%= '⭐️' %>
+    <% end %>
   <% else %>
-  <%= @user.rating %>
+    <%= 'no reviews yet' %>
   <% end %>
 </h2>
 <h2>User reviews</h2>
