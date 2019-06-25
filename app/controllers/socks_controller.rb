@@ -1,7 +1,7 @@
 class SocksController < ApplicationController
   before_action :set_sock, only: [:show, :edit, :update, :destroy]
   # skip_after_action :verify_policy_scoped
-
+  skip_before_action :authenticate_user!, only: [:show]
   def index
     if params[:search].present?
       @socks = policy_scope(Sock).search_by_color_and_title(params[:search])
