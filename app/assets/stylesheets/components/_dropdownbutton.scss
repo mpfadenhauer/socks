@@ -19,17 +19,42 @@
 
 
 .sign-upbtn{
-
+  background-color: #006DAA;
   width: 34em;  height: 2em;
   color: white;
   text-align: center;
-  padding-bottom: 2em;
   margin-top: 1em;
+  padding-bottom: 2em;
+  font-size: 16px;
 }
 
 #formlinks{
   margin-top: 1em;
   color: #006DAA;
   justify-content: center;
+
+}
+
+.create-sock {
+  background-color: #006DAA;
+  width: 34em;  height: 2em;
+  color: white;
+  text-align: center;
+  margin-top: 1em;
+  font-size: 16px;
+  width: 22em;
+
+}
+
+.buy-sock {
+  background-color: #006DAA;
+  width: 34em;  height: 2em;
+  color: white;
+  text-align: center;
+  margin-top: 1em;
+  font-size: 16px;
+  width: 22em;
+  padding-bottom: 2em;
+
 
 }

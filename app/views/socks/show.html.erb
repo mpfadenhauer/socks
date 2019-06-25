@@ -35,6 +35,7 @@
             </div>
             <div class="user-actions">
               <% if @sock.user == current_user %>
+
               <% if policy(@sock).edit? %>
               <div class="logged-in-user d-flex">
                 <div id="update-button">
@@ -98,6 +99,4 @@
 
   </div>
 </div>
-
-
 
