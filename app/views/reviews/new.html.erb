@@ -1,7 +1,11 @@
-<h1>Add a review for <%= @user.username %></h1>
-<%= simple_form_for [@user, @review] do |s| %>
-<%= s.input :rating, label: "Rate this user" %>
-<%= s.input :description, label: "Describe their service" %>
-<%= s.submit "Submit review" %>
-<% end %>
-
+<div class="container" style="color: #006DAA">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4">
+      <h1>Write a review for <%= @user.username %></h1>
+      <%= simple_form_for [@user, @review] do |s| %>
+      <%= s.input :rating, label: "Rate this user" %>
+      <%= s.input :description, label: "Describe their service" %>
+      <%= s.submit "Submit review", class: "create-sock" %>
+      <% end %>
+  </div>
+</div>
