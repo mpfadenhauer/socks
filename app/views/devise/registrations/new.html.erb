@@ -19,6 +19,8 @@
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
             <%= f.input :username, label: "choose a username" %>
+            <%= f.input :photo, label: "upload a picture with your favorite sock!"%>
+            <%= f.input :photo_cache, as: :hidden %>
             <%= f.input :location, label: "share your location" %>
 
           </div>

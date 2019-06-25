@@ -1,21 +1,21 @@
 <div class="container">
-  <h1>Search bar (see material from Tuesday)</h1>
+  <h1>Join the sockCiety</h1>
 
-<div class="container">
+  <div class="container">
 
-  <div class="containerindex">
+    <div class="containerindex">
 
-    <div class="dropdown">
-      <h2>Filter</h2>
-      <br>
+      <div class="dropdown">
+        <h2>Filter</h2>
+        <br>
 
         <form>
           <div class="form-group">
             <label for="exampleFormControlSelect1">sock size</label>
             <select class="form-control" id="exampleFormControlSelect1">
-            <% Sock::SIZES.each do |x| %>
+              <% Sock::SIZES.each do |x| %>
               <option><%= x %></option>
-            <% end %>q
+              <% end %>q
             </select>
           </div>
 
@@ -23,55 +23,63 @@
           <div class="form-group">
             <label for="exampleFormControlSelect1">Sock type</label>
             <select class="form-control" id="sock_type">
-            <% Sock::SOCK_TYPE.each do |x| %>
+              <% Sock::SOCK_TYPE.each do |x| %>
               <option><%= x %></option>
-            <% end %>
+              <% end %>
             </select>
           </div>
 
           <div class="form-group">
             <label for="exampleFormControlSelect1">Sock pattern</label>
             <select class="form-control" id="sock_pattern">
-            <% Sock::SOCK_PATTERN.each do |x| %>
+              <% Sock::SOCK_PATTERN.each do |x| %>
               <option><%= x %></option>
-            <% end %>
+              <% end %>
             </select>
           </div>
 
           <div class="form-group">
             <label for="exampleFormControlSelect1">Season</label>
             <select class="form-control" id="season" value="">
-            <% Sock::SEASON.each do |x| %>
+              <% Sock::SEASON.each do |x| %>
               <option><%= x %></option>
-            <% end %>
+              <% end %>
             </select>
           </div>
-        <button type="submit" class="btn btn-primary mb-2">Filter</button>
+          <button type="submit" class="btn btn-primary mb-2">Filter</button>
         </form>
 
-    </div>
+      </div>
 
-    <div class="cards">
-      <% @socks.each do |sock| %>
-      <% if sock.bought == false %>
-        <div class="card-sock">
-          <%= image_tag "avatar-placeholder.jpg" %>
-          <div class="card-sock-infos">
-            <div>
-              <h2><%= sock.title %></h2>
-              <p> <%= sock.description %></p>
+      <div class="cards">
+        <% @socks.each do |sock| %>
+          <% if sock.bought == false %>
+            <div class="card-sock">
+              <% if sock.photo.file.nil? %>
+                <%= image_tag 'logo.jpg', crop: :fill %>
+              <% else %>
+                <%= cl_image_tag sock.photo, crop: :fill %>
+              <% end %>
+              <div class="card-sock-infos">
+                <div>
+                  <h2><%= sock.title %></h2>
+                  <p> <%= sock.description %></p>
+                </div>
+                <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
+                <%= link_to profile_path(sock.user) do  %>
+                  <% if sock.user.photo.file.nil? %>
+                    <%= image_tag 'sock.png', height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered' %>
+                  <% else %>
+                    <%= cl_image_tag sock.user.photo, height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered'  %>
+                  <% end %>
+                <% end %>
+              </div>
             </div>
-          <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
-        <%= link_to profile_path(sock.user) do  %>
-        <%= image_tag "logo.jpg", class:'card-sock-user avatar-bordered' %>
+          <% end %>
         <% end %>
-          </div>
-        </div>
-      <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
-</div>
 </div>
 
   <!-- scope :color, -> (color) { where color: color }
