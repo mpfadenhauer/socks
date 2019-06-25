@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="color: #006DAA">
   <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-6">
         <h1>Sign up</h1>
@@ -18,18 +18,23 @@
             <%= f.input :password_confirmation,
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
+
             <%= f.input :username, label: "choose a username" %>
             <%= f.input :photo, label: "upload a picture with your favorite sock!"%>
             <%= f.input :photo_cache, as: :hidden %>
             <%= f.input :location, label: "share your location" %>
 
+
           </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Sign up" %>
+
+          <div class="form-actions row justify-content-center" >
+            <%= f.button :submit, "Sign up", class:"sign-upbtn"%>
+          </div>
+          <div id="formlinks">
+          <%= render "devise/shared/links" %>
           </div>
         <% end %>
       </div>
-  <%= render "devise/shared/links" %>
   </div>
 </div>

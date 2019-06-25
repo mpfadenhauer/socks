@@ -5,12 +5,11 @@ class SocksController < ApplicationController
   def index
     if params[:search].present?
       @socks = policy_scope(Sock).search_by_color_and_title(params[:search])
+    elsif params[:filter].present?
+      @socks = Sock.filter(params.slice(:color, :min_size, :max_size, :sock_type, :brand, :season, :age, :price))
     else
       @socks = policy_scope(Sock)
     end
-
-    @socks = Sock.filter(params.slice(:color, :min_size, :max_size, :sock_type,
-                                      :brand, :season, :age, :price))
   end
 
   def show
