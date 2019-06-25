@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="color: #006DAA">
   <div class="row justify-content-center">
     <div class="col-12 col-md-8 col-lg-6">
       <h1>Log in</h1>
@@ -15,11 +15,13 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Log in" %>
+          <%= f.button :submit, "Log in", class:"sign-upbtn" %>
         </div>
       <% end %>
 
-      <%= render "devise/shared/links" %>
+      <div id="formlinks">
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
 </div>
