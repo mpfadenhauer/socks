@@ -4,20 +4,19 @@ class PagesController < ApplicationController
 
   def profile
     @user = User.find(params[:id])
-    @user.rating = get_average
+    @user.rating = get_average(@user)
     @user.save
     @ids = get_reviewer
   end
 
   private
 
-  def get_average
-    @user = User.find(params[:id])
-    length = @user.reviews.length
+  def get_average(user)
+    length = user.reviews.length
     sum = 0
 
-    unless @user.reviews[0].nil?
-      @user.reviews.each do |review|
+    unless user.reviews[0].nil?
+      user.reviews.each do |review|
         sum += review.rating
       end
       return sum / length

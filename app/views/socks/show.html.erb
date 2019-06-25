@@ -135,5 +135,45 @@
   <%# end %>
   <%# end %>
 
-  <%# end %>
+<%# end %>
+<% if @sock.user == current_user %>
+  <% if policy(@sock).edit? %>
+    <%= link_to "Update my Sock", edit_sock_path %>
+  <% end %>
+  <% if policy(@sock).destroy? %>
+    <%= link_to "Delete my sock", socks_path(@socks), method: :delete,
+        data: { confirm: "Are you sure?" } %>
+  <% end %>
+<% else %>
+<%= link_to "Buy this sock", new_sock_transaction_path(@sock) %>
+<% end %>
+
+<h2>About the sock owner</h2>
+
+<h2>User rating:
+  <%if  @user.rating != 'no reviews yet' && !@user.rating.nil?  %>
+    <% @user.rating.times do%>
+      <%= '⭐️' %>
+    <% end %>
+  <% else %>
+    <%= 'no reviews yet' %>
+  <% end %>
+</h2>
+<h2>User reviews</h2>
+<% @user.reviews.each_with_index do |review,index| %>
+    <%reviewer = User.find(@ids[index]) %>
+    <div class="review bg-white border-bottom">
+      <strong><%= reviewer.username %></strong>
+      <%review.rating.times do %>
+        <%= '⭐️' %>
+      <% end %>
+      <p><%= review.description %></p>
+    </div>
+ <% end %>
+
+  <!-- <p>note to self to give a range of 1..5 for the rating </p> -->
+
+  <%= link_to 'go back to socks', socks_path, class: "btn btn-primary my-5" %>
+</div>
+
 
