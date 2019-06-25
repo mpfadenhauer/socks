@@ -28,8 +28,18 @@
             <div class="sock-price">
               <p>$ <%= @sock.price %></p>
             </div>
-            <div class="buy-sock">
-              <%= link_to "Buy Sock", socks_path, method: :post, id:"buy-button"  %> <!-- sock_transactions_path, method: :post -->
+            <div class="user-actions">
+              <% if @sock.user == current_user %>
+                <% if policy(@sock).edit? %>
+                  <%= link_to "Update my Sock", edit_sock_path %>
+                <% end %>
+                <% if policy(@sock).destroy? %>
+                  <%= link_to "Delete my sock", socks_path(@socks), method: :delete,
+                      data: { confirm: "Are you sure?" } %>
+                <% end %>
+              <% else %>
+                <%= link_to "Buy this sock", new_sock_transaction_path(@sock), id:"buy-button" %>
+              <% end %>
             </div>
           </div>
         </div>
@@ -69,7 +79,6 @@
 
 
 <!-- <h1><%# @sock.title %></h1>
->>>>>>> cf039dc7d17816e943ec30c0a816897ff132c99a
 <div class="container"><%= @sock.title %>
   <%= @sock.description %>
   <p>Picture of the sock </p>
@@ -83,17 +92,6 @@
   <%# end %>
 
 <%# end %>
-<% if @sock.user == current_user %>
-  <% if policy(@sock).edit? %>
-    <%= link_to "Update my Sock", edit_sock_path %>
-  <% end %>
-  <% if policy(@sock).destroy? %>
-    <%= link_to "Delete my sock", socks_path(@socks), method: :delete,
-        data: { confirm: "Are you sure?" } %>
-  <% end %>
-<% else %>
-<%= link_to "Buy this sock", new_sock_transaction_path(@sock) %>
-<% end %>
 
 <h2>About the sock owner</h2>
 
