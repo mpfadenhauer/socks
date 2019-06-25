@@ -15,6 +15,7 @@ class SocksController < ApplicationController
 
   def show
     @user = @sock.user
+    @ids = get_reviewer
   end
 
   def new
@@ -58,10 +59,18 @@ class SocksController < ApplicationController
   end
 
   def sock_params
-    params.require(:sock).permit(:title, :description, :color, :pattern, :min_size, :max_size, :sock_type, :brand, :season, :age, :price)
+    params.require(:sock).permit(:title, :description, :color, :pattern, :min_size, :max_size, :sock_type, :brand, :season, :age, :price, :photo)
   end
 
   def filtering_params(params)
     params.slice(:color, :min_size, :max_size, :sock_type, :brand, :season, :age, :price)
+  end
+
+  def get_reviewer
+    ids = []
+    @user.reviews.each do |review|
+      ids << review.review_giver_id
+    end
+    return ids
   end
 end

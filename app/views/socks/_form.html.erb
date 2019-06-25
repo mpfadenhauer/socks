@@ -5,13 +5,15 @@
         <%= s.input :description, label: "Describe your sock" %>
         <%= s.input :color %>
 
-        <%= s.input :pattern,  collection: Socks::SOCK_PATTERN %>
+        <%= s.input :pattern,  collection: Sock::SOCK_PATTERN %>
         <%= s.input :min_size %>
         <%= s.input :max_size %>
 
-        <%= s.input :sock_type, collection: Socks::SOCK_TYPE %>
+        <%= s.input :sock_type, collection: Sock::SOCK_TYPE %>
         <%= s.input :brand %>
-        <%= s.input :season, collection: Socks::SEASON %>
+        <%= s.input :season, collection: Sock::SEASON %>
+        <%= s.input :photo %>
+        <%= s.input :photo_cache, as: :hidden %>
         <%= s.input :price , label: "how much for it?"%>
         <%= s.submit %>
       <% end %>
