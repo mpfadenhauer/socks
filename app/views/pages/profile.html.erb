@@ -6,35 +6,32 @@
       <h2><strong>for user only -> add socks now!</strong></h2>
     <% else %>
       <% @user.socks.each do |sock| %>
-          <div class="card-sock">
-            <%= image_tag "avatar-placeholder.jpg" %>
-            <div class="card-sock-infos">
-              <div>
-                <h2><%= sock.title %></h2>
-                <p> <%= sock.description %></p>
-              </div>
+        <div class="card-sock">
+          <%= image_tag "avatar-placeholder.jpg" %>
+          <div class="card-sock-infos">
+            <div>
+              <h2><%= sock.title %></h2>
+              <p> <%= sock.description %></p>
+            </div>
             <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
             <%= image_tag "logo.jpg", class:'card-sock-user avatar-bordered' %>
-            </div>
           </div>
+        </div>
       <% end %>
     <% end %>
-</div>
-<br>
-
-
-
-<h2>User rating:
-  <%if  @user.rating != 'no reviews yet' && !@user.rating.nil? %>
-    <% @user.rating.times do%>
-      <%= '⭐️' %>
+  </div>
+  <br>
+  <h2>User rating:
+    <%if  @user.rating != 'no reviews yet' && !@user.rating.nil? %>
+      <% @user.rating.times do%>
+        <%= '⭐️' %>
+      <% end %>
+    <% else %>
+      <%='no reviews yet' %>
     <% end %>
-  <% else %>
-    <%='no reviews yet' %>
-  <% end %>
-</h2>
-<h2>User reviews</h2>
-<% @user.reviews.each_with_index do |review,index| %>
+  </h2>
+  <h2>User reviews</h2>
+  <% @user.reviews.each_with_index do |review,index| %>
     <%reviewer = User.find(@ids[index]) %>
     <strong><%= reviewer.username %></strong>
     <%review.rating.times do %>
@@ -42,5 +39,4 @@
     <% end %>
     <p><%= review.description %></p>
  <% end %>
-
-
+</div>
