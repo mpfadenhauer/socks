@@ -6,41 +6,55 @@
       <h2><strong>for user only -> add socks now!</strong></h2>
     <% else %>
       <% @user.socks.each do |sock| %>
-          <div class="card-sock">
-            <%= image_tag "avatar-placeholder.jpg" %>
-            <div class="card-sock-infos">
-              <div>
-                <h2><%= sock.title %></h2>
-                <p> <%= sock.description %></p>
+            <div class="card-sock">
+              <% if sock.photo.file.nil? %>
+                <%= image_tag 'logo.jpg', crop: :fill %>
+              <% else %>
+                <%= cl_image_tag sock.photo, crop: :fill %>
+              <% end %>
+              <div class="card-sock-infos">
+                <div>
+                  <h2><%= sock.title %></h2>
+                  <p> <%= sock.description %></p>
+                </div>
+                <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
+                <%= link_to profile_path(sock.user) do  %>
+                  <% if sock.user.photo.file.nil? %>
+                    <%= image_tag 'sock.png', height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered' %>
+                  <% else %>
+                    <%= cl_image_tag sock.user.photo, height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered'  %>
+                  <% end %>
+                <% end %>
               </div>
-            <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
-            <%= image_tag "logo.jpg", class:'card-sock-user avatar-bordered' %>
             </div>
-          </div>
       <% end %>
     <% end %>
-</div>
-<br>
-
-
-
-<h2>User rating:
-  <%if  @user.rating != 'no reviews yet' && !@user.rating.nil? %>
-    <% @user.rating.times do%>
-    <%= '⭐️' %>
-  <% end %>
-  <% else %>
-  <%= @user.rating %>
-  <% end %>
-</h2>
-<h2>User reviews</h2>
-<% @user.reviews.each_with_index do |review,index| %>
-    <%reviewer = User.find(@ids[index]) %>
-    <strong><%= reviewer.username %></strong>
-    <%review.rating.times do %>
-      <%= '⭐️' %>
+  </div>
+  <br>
+  <h2>User rating:
+    <%if  @user.rating != 'no reviews yet' && !@user.rating.nil? %>
+      <% @user.rating.times do%>
+        <%= '⭐️' %>
+      <% end %>
+    <% else %>
+      <%='no reviews yet' %>
     <% end %>
-    <p><%= review.description %></p>
+  </h2>
+  <h2>User reviews</h2>
+  <% @user.reviews.each_with_index do |review,index| %>
+    <%reviewer = User.find(@ids[index]) %>
+    <div class="review bg-white border-bottom py-2 pl-2">
+      <%= link_to profile_path(reviewer) do %>
+      <strong class = "big-name"><%= reviewer.username %></strong>
+      <% end %>
+      <%review.rating.times do %>
+        <%= '⭐️' %>
+      <% end %>
+      <p><%= review.description %></p>
+    </div>
  <% end %>
+</div>
 
-
+<%= link_to new_review_path(@user), class: "btn btn-primary m-5" do %>
+  <span><i class="far fa-comment"></i>Review user</span>
+<% end %>
