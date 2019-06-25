@@ -57,13 +57,15 @@
           <% if sock.bought == false %>
             <div class="card-sock">
               <% if sock.photo.file.nil? %>
-                <%= image_tag 'logo.jpg', crop: :fill %>
+              <%= link_to sock_path(sock) do  %>
+                <%= image_tag 'logo.jpg', crop: :fill, height: 220, width: 300; %>
+                <% end %>
               <% else %>
-                <%= cl_image_tag sock.photo, crop: :fill %>
+                <%= cl_image_tag sock.photo, crop: :fill, height: 220, width: 300; %>
               <% end %>
               <div class="card-sock-infos">
                 <div>
-                  <h2><%= sock.title %></h2>
+                  <h2><%= link_to sock.title, sock_path(sock)  %></h2>
                   <p> <%= sock.description %></p>
                 </div>
                 <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
