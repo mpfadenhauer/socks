@@ -25,12 +25,12 @@
 
 
 <h2>User rating:
-  <%if  @average != 'no reviews yet' %>
-    <% @average.times do%>
+  <%if  @user.rating != 'no reviews yet' && !@user.rating.nil? %>
+    <% @user.rating.times do%>
     <%= '⭐️' %>
   <% end %>
   <% else %>
-  <%= @average %>
+  <%= @user.rating %>
   <% end %>
 </h2>
 <h2>User reviews</h2>

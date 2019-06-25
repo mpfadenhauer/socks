@@ -102,10 +102,13 @@
 #search-form {
   display: flex;
   position: left;
+
 }
 
-#search{
-  width: 400px;
+
+#search {
+  width: 350px;
+
   font-size: 14px;
   border-radius: 5px;
   padding: 0.5rem;
@@ -126,3 +129,17 @@
 }
 
 index #search {display:none}
+
+.search-icon {
+  border: white;
+  font-size: 24px;
+  padding: 1px 4px 1px 6px;
+  margin-left: 5px;
+  transition:  0.2s ease
+}
+
+.search-icon:hover {
+  border-radius: 50%;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+

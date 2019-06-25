@@ -5,13 +5,13 @@
         <%= s.input :description, label: "Describe your sock" %>
         <%= s.input :color %>
 
-        <%= s.input :pattern,  collection: ["Solid", "Striped", "Polka dots", "Other"] %>
+        <%= s.input :pattern,  collection: Socks::SOCK_PATTERN %>
         <%= s.input :min_size %>
         <%= s.input :max_size %>
 
-        <%= s.input :sock_type, collection: ["Over the knee", "Knee high", "Over the calf/Executive", "Mid-calf/Crew", "Quarter/Anklets", "Ped/Low cut", "Liner, Extra low cut", "Invisible/No-show", "Toe cover/Mute"] %>
+        <%= s.input :sock_type, collection: Socks::SOCK_TYPE %>
         <%= s.input :brand %>
-        <%= s.input :season, collection: ["spring", "winter", "summer", "autumn"] %>
+        <%= s.input :season, collection: Socks::SEASON %>
         <%= s.input :price , label: "how much for it?"%>
         <%= s.submit %>
       <% end %>
