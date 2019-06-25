@@ -1,8 +1,79 @@
-<h1><%= @sock.title %></h1>
+<div class="white-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="sock-card">
+        <%= image_tag "sock-placeholder.jpg" %>
+        <div class="card-product-infos">
+          <div class="sock-info">
+            <h2><%= @sock.title %></h2>
+            <div class="detailed-info">
+              <div class="detail">
+                <i class="fas fa-palette"></i>
+                <p><%= @sock.color %></p>
+              </div>
+              <div class="detail">
+                <i class="fas fa-hashtag"></i>
+                <p><%= @sock.pattern %></p>
+              </div>
+              <div class="detail">
+                <i class="fas fa-cloud-sun"></i>
+                <p><%= @sock.season %></p>
+              </div>
+            </div>
+          </div>
+          <div class="sock-description">
+            <p><%= @sock.description %></p>
+          </div>
+          <div class="actions">
+            <div class="sock-price">
+              <p>$ <%= @sock.price %></p>
+            </div>
+            <div class="buy-sock">
+              <%= link_to "Buy Sock", socks_path, method: :post, id:"buy-button"  %> <!-- sock_transactions_path, method: :post -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="all-reviews">
+        <div class="sock-reviews">
+        <h2>Reviews</h2>
+          <div class="sock-review">
+            <p>here could be your review written</p>
+            <%  if @reviews %>
+            <%= @reviews.each do |review| %>
+              <div class="message">
+                <%= image_tag "sock-placeholder.jpg", class: "message-avatar" %>
+                <div class="message-name">
+                  <p style="width: 70px; padding-left: 10px;"> <%= review.user.username %></p>
+                </div>
+                <div class="message-body">
+                  <h3><%= review.content %></h3>
+                </div>
+                <div class="message-rating">
+                  <p><%= raw '<i class="fa fa-star" aria-hidden="true"></i>' * review.stars %></p>
+                </div>
+              </div>
+              <% end %>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <h1><%# @sock.title %></h1>
+>>>>>>> cf039dc7d17816e943ec30c0a816897ff132c99a
 <div class="container"><%= @sock.title %>
   <%= @sock.description %>
   <p>Picture of the sock </p>
-  <%= @sock.user.email %>
+  <%= @sock.user.email %> -->
   <%#= # link_to "Buy!", sock_transactions_path, method: :post  %>
   <%# @sock.user.reviews.each do |review| %>
     <%#= review.description %>
@@ -27,7 +98,9 @@
 <h2>About the sock owner</h2>
 
 <h2>User rating:
+
   <%if  @user.rating != 'no reviews yet' && !@user.rating.nil?  %>
+
     <% @user.rating.times do%>
     <%= '⭐️' %>
   <% end %>

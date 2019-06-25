@@ -61,6 +61,7 @@
 
     <div class="cards">
       <% @socks.each do |sock| %>
+      <% if sock.bought == false %>
         <div class="card-sock">
           <%= image_tag "avatar-placeholder.jpg" %>
           <div class="card-sock-infos">
@@ -70,8 +71,10 @@
             </div>
           <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
           <%= image_tag "logo.jpg", class:'card-sock-user avatar-bordered' %>
+
           </div>
         </div>
+      <% end %>
       <% end %>
     </div>
   </div>
