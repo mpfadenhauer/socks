@@ -11,7 +11,9 @@
             <p> <%= sock.description %></p>
           </div>
         <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
+        <%= link_to profile_path(sock.user) do  %>
         <%= image_tag "logo.jpg", class:'card-sock-user avatar-bordered' %>
+        <% end %>
         </div>
       </div>
     <% end %>

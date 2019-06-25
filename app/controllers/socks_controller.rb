@@ -1,6 +1,6 @@
 class SocksController < ApplicationController
   before_action :set_sock, only: [:show, :edit, :update, :destroy]
-  #skip_after_action :verify_policy_scoped
+  # skip_after_action :verify_policy_scoped
 
   def index
     if params[:search].present?
