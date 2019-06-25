@@ -1,16 +1,17 @@
 class SocksController < ApplicationController
-  include Pundit
   before_action :set_sock, only: [:show, :edit, :update, :destroy]
-  # Pundit: white-list approach.
-  after_action :verify_authorized, except: :index, unless: :skip_pundit?
-  after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
-  skip_before_action :authenticate_user!, only: [:index]
+  #skip_after_action :verify_policy_scoped
 
   def index
-    @socks = policy_scope(Sock)
+    if params[:search].present?
+      @socks = policy_scope(Sock).search_by_color_and_title(params[:search])
+    else
+      @socks = policy_scope(Sock)
+    end
   end
 
   def show
+    @user = @sock.user
   end
 
   def new
@@ -27,7 +28,6 @@ class SocksController < ApplicationController
     else
       render :new
     end
-
   end
 
   def edit

@@ -10,18 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_23_143133) do
+ActiveRecord::Schema.define(version: 2019_06_24_133613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.string "description"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_reviews_on_user_id"
+    t.bigint "user_reviewed_id"
+    t.bigint "review_giver_id"
+    t.index ["review_giver_id"], name: "index_reviews_on_review_giver_id"
+    t.index ["user_reviewed_id"], name: "index_reviews_on_user_reviewed_id"
   end
 
   create_table "socks", force: :cascade do |t|
@@ -39,6 +50,7 @@ ActiveRecord::Schema.define(version: 2019_06_23_143133) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "bought", default: false
     t.index ["user_id"], name: "index_socks_on_user_id"
   end
 
@@ -60,11 +72,13 @@ ActiveRecord::Schema.define(version: 2019_06_23_143133) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.integer "rating"
+    t.string "location"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "reviews", "users"
   add_foreign_key "socks", "users"
   add_foreign_key "transactions", "socks"
   add_foreign_key "transactions", "users"
