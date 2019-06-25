@@ -11,22 +11,14 @@
 
         <form>
           <div class="form-group">
-            <label for="exampleFormControlSelect1">Min sock size</label>
+            <label for="exampleFormControlSelect1">sock size</label>
             <select class="form-control" id="exampleFormControlSelect1">
-            <% Sock::MIN_SIZE.each do |x| %>
+            <% Sock::SIZES.each do |x| %>
               <option><%= x %></option>
             <% end %>q
             </select>
           </div>
 
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Max sock size</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-            <% Sock::MAX_SIZE.each do |x| %>
-              <option><%= x %></option>
-            <% end %>
-            </select>
-          </div>
 
           <div class="form-group">
             <label for="exampleFormControlSelect1">Sock type</label>
