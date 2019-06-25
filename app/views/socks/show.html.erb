@@ -46,7 +46,7 @@
                 <% if policy(@sock).destroy? %>
                 <div id="delete-button">
                   <i class="far fa-trash-alt"></i>
-                  <%= link_to "Delete", socks_path(@socks),id:"delete-button", method: :delete,
+                  <%= link_to "Delete", sock_path(@sock),id:"delete-button", method: :delete,
                   data: { confirm: "Are you sure?" } %>
                 </div>
               </div>
