@@ -110,11 +110,13 @@
 <h2>User reviews</h2>
 <% @user.reviews.each_with_index do |review,index| %>
     <%reviewer = User.find(@ids[index]) %>
-    <strong><%= reviewer.username %></strong>
-    <%review.rating.times do %>
-      <%= '⭐️' %>
-    <% end %>
-    <p><%= review.description %></p>
+    <div class="review bg-white border-bottom">
+      <strong><%= reviewer.username %></strong>
+      <%review.rating.times do %>
+        <%= '⭐️' %>
+      <% end %>
+      <p><%= review.description %></p>
+    </div>
  <% end %>
 
   <!-- <p>note to self to give a range of 1..5 for the rating </p> -->
