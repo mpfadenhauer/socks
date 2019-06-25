@@ -1,12 +1,13 @@
 <div class="banner">
   <div class="container">
     <div class="row justify-content-between align-items-center mt-5">
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-lg-6">
         <%= image_tag 'washer.gif', crop: :fill, id: "washer" %>
       </div>
-      <div class="col-12 col-md-6 ">
+      <div class="col-12 col-lg-6 ">
         <div class="d-flex flex-column justify-content-center">
-          <h1>Don't let the wahser win, Join sockCiety! </h1>
+          <h1>Don't let the wahser win </h1>
+          <h1 class="join">Join sockCiety! </h1>
           <p class= "text-center">Find the match to your lost sock.</p>
           <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary"  %>
         </div>

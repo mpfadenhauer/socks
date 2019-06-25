@@ -32,10 +32,16 @@
   width: 100px;
 }
 
+.join {
+  font-size: 80px;
+}
 
-@media (min-width: 100px) and (max-width: 760px) {
+
+@media (min-width: 100px) and (max-width: 1000px) {
   #washer {
    margin-left: 0;
-   padding: 50px;
+  }
+  .banner {
+    padding: 50px;
   }
 }
