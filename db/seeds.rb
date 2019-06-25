@@ -4,8 +4,6 @@ Sock.destroy_all
 
 
 puts "Database empty, creating 3 seeds"
-user = User.create!(email:"5362356235@email.com", password:'123456', username:"mario", location:"tel-aviv")
-
 
 puts "first"
 
@@ -27,14 +25,14 @@ Sock.create!(
           description: "it's white with red polka dots, i have had this pair for the past two years and lost the other",
           color: "white",
           pattern: "Polka dots",
-          min_size: 39,
-          max_size: 46,
+          size: '36-41',
           sock_type: "Knee high",
           brand: "Puka",
           season: "summer",
           age: 2,
           price: "10",
-          user: user,
+          user: User.last,
+          remote_photo_url: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjj-ZzByYTjAhUL3xoKHTIyB1sQjRx6BAgBEAU&url=https%3A%2F%2Fwww.zumiez.com%2Fhuf-green-buddy-black-crew-socks.html&psig=AOvVaw1oZWEqKeszWnda6634f66S&ust=1561550028730340"
         )
 
 puts "second"
@@ -44,14 +42,14 @@ Sock.create!(
           description: "Simple white sock with the Nike logo cause we all lose those ",
           color: "white",
           pattern: "None",
-          min_size: 39,
-          max_size: 46,
+          min_size: '42-46',
           sock_type: "Liner/Extra low cut",
           brand: "Nike",
           season: "summer",
           age: 1,
           price: "0.5",
-          user: user
+          user: User.last,
+          remote_photo_url: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjj-ZzByYTjAhUL3xoKHTIyB1sQjRx6BAgBEAU&url=https%3A%2F%2Fwww.zumiez.com%2Fhuf-green-buddy-black-crew-socks.html&psig=AOvVaw1oZWEqKeszWnda6634f66S&ust=1561550028730340"
         )
 
 puts "third"
@@ -61,14 +59,14 @@ Sock.create!(
           description: "It has helped me a lot but now it's time to move on. still can't wash it though",
           color: "black",
           pattern: "None",
-          min_size: 36,
-          max_size: 38,
+          size: '36-41'
           sock_type: "Mid-calf/Crew",
           brand: "adidas",
           season: "winter",
           age: 8,
           price: "10",
-          user: user
+          user: User.last,
+          remote_photo_url: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjj-ZzByYTjAhUL3xoKHTIyB1sQjRx6BAgBEAU&url=https%3A%2F%2Fwww.zumiez.com%2Fhuf-green-buddy-black-crew-socks.html&psig=AOvVaw1oZWEqKeszWnda6634f66S&ust=1561550028730340"
         )
 
 puts "all done!"
