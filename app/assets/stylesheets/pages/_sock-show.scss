@@ -24,8 +24,9 @@
   }
   img {
   height: 100%;
-  width: 430px;
+
   object-fit: cover;
+  border-right: 1px solid rgba(210,210,210,0.8);
   }
 }
 
@@ -67,9 +68,9 @@
   margin-top: 10px;
 }
 
-// .card-product-infos {
-//   width: 390px;
-// }
+.card-product-infos {
+  position: relative;
+}
 
 .card-product .card-product-infos {
   padding: 16px;
@@ -173,3 +174,37 @@
     opacity: 0.6;
   }
 }
+
+.logged-in-user {
+  position: absolute;
+  right: 30px;
+  top: 0px;
+}
+
+#update-button {
+  padding-right: 15px;
+  a {
+    font-size: 12px;
+    color: #006DAA;
+    opacity: 0.6;
+  }
+  i {
+    font-size: 12px;
+    color: #006DAA;
+    opacity: 0.6;
+  }
+}
+
+#delete-button {
+  a {
+    font-size: 12px;
+    color: #006DAA;
+    opacity: 0.6;
+  }
+  i {
+    font-size: 12px;
+    color: #006DAA;
+    opacity: 0.6;
+  }
+}
+
