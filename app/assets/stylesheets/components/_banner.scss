@@ -31,3 +31,11 @@
 .sign-up {
   width: 100px;
 }
+
+
+@media (min-width: 100px) and (max-width: 760px) {
+  #washer {
+   margin-left: 0;
+   padding: 50px;
+  }
+}
