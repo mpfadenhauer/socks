@@ -1,15 +1,28 @@
-<div class="container">
-
-  <h1 style="color: #006DAA; margin-bottom:1em">The Socks</h1>
-
+<div class="banner">
   <div class="container">
+    <div class="row justify-content-between align-items-center mt-5">
+      <div class="col-12 col-md-6">
+        <%= image_tag 'washer.gif', crop: :fill, id: "washer" %>
+      </div>
+      <div class="col-12 col-md-6 ">
+        <div class="d-flex flex-column justify-content-center">
+          <h1>Don't let the wahser win, Join sockCiety! </h1>
+          <p class= "text-center">Find the match to your lost sock.</p>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary"  %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+<div class="container">
+  <h1 style="color: #006DAA; margin-bottom:1em">Our Socks</h1>
+  <div class="container">
     <div class="containerindex">
-
       <div class="dropdown">
         <h2>Filter</h2>
         <br>
-
         <form>
           <div class="form-group">
             <label for="exampleFormControlSelect1">sock size</label>
