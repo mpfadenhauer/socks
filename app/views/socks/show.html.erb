@@ -1,6 +1,6 @@
 <div class="white-wrapper">
   <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="sock-card">
         <%= image_tag "sock-placeholder.jpg" %>
         <div class="card-product-infos">
@@ -30,53 +30,96 @@
             </div>
             <div class="user-actions">
               <% if @sock.user == current_user %>
-                <% if policy(@sock).edit? %>
-                  <%= link_to "Update my Sock", edit_sock_path %>
-                <% end %>
-                <% if policy(@sock).destroy? %>
-                  <%= link_to "Delete my sock", socks_path(@socks), method: :delete,
-                      data: { confirm: "Are you sure?" } %>
-                <% end %>
+              <% if policy(@sock).edit? %>
+              <%= link_to "Update my Sock", edit_sock_path %>
+              <% end %>
+              <% if policy(@sock).destroy? %>
+              <%= link_to "Delete my sock", socks_path(@socks), method: :delete,
+              data: { confirm: "Are you sure?" } %>
+              <% end %>
               <% else %>
-                <%= link_to "Buy this sock", new_sock_transaction_path(@sock), id:"buy-button" %>
+              <%= link_to "Buy this sock", new_sock_transaction_path(@sock), id:"buy-button" %>
               <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="all-reviews">
         <div class="sock-reviews">
-        <h2>Reviews</h2>
+          <h2>About the sock owner </h2>
+          <% if @user.rating != "no reviews yet" && !@user.rating.nil? %>
+          <p>User Rating: </p>
+          <% @user.rating.times do%>
+          <%= '⭐️' %>
+          <% end %>
           <div class="sock-review">
-            <p>here could be your review written</p>
-            <%  if @reviews %>
-            <%= @reviews.each do |review| %>
-              <div class="message">
-                <%= image_tag "sock-placeholder.jpg", class: "message-avatar" %>
-                <div class="message-name">
-                  <p style="width: 70px; padding-left: 10px;"> <%= review.user.username %></p>
-                </div>
-                <div class="message-body">
-                  <h3><%= review.content %></h3>
-                </div>
-                <div class="message-rating">
-                  <p><%= raw '<i class="fa fa-star" aria-hidden="true"></i>' * review.stars %></p>
-                </div>
-              </div>
-              <% end %>
+            <p>User Reviews</p>
+            <% @user.reviews.each_with_index do |review,index| %>
+            <%reviewer = User.find(@ids[index]) %>
+            <strong><%= reviewer.username %></strong>
+            <div class="review-rating">
+              <%review.rating.times do %>
+              <%= '⭐️' %>
+            </div>
+            <% end %>
+            <div class="review-content">
+              <p><%= review.description %></p>
+            </div>
             <% end %>
           </div>
-
+          <% else %>
+          <%= @user.rating %>
+          <p>No Reviews yet</p>
+          <% end %>
         </div>
-      </div>
+        <div id="review-button">
+          <i class="fas fa-edit"></i>
+          <%= link_to "Add a review", new_review_path %>
+        </div>
 
+      </div>
     </div>
+
   </div>
 </div>
 
 
+
+
+<!-- <div class="message">
+  <%# image_tag "sock-placeholder.jpg", class: "message-avatar" %>
+  <div class="message-name"> -->
+
+
+<!--
+    <h2>About the sock owner</h2>
+
+    <h2>User rating:
+
+      <%#if  @user.rating != 'no reviews yet' && !@user.rating.nil?  %>
+
+      <%# @user.rating.times do%>
+      <%# '⭐️' %>
+      <%# end %>
+      <%# else %>
+      <%= @user.rating %>
+      <%# end %>
+    </h2>
+    <h2>User reviews</h2>
+    <%# @user.reviews.each_with_index do |review,index| %>
+    <%#reviewer = User.find(@ids[index]) %>
+    <strong><%# reviewer.username %></strong>
+    <%#review.rating.times do %>
+    <%= '⭐️' %>
+    <%# end %>
+    <p><%# review.description %></p>
+    <%# end %> -->
+
+    <!-- <p>note to self to give a range of 1..5 for the rating </p> -->
+
+    <%= link_to 'go back to socks', socks_path, class: "btn btn-primary my-5" %>
 
 <!-- <h1><%# @sock.title %></h1>
 <div class="container"><%= @sock.title %>
@@ -85,40 +128,11 @@
   <%= @sock.user.email %> -->
   <%#= # link_to "Buy!", sock_transactions_path, method: :post  %>
   <%# @sock.user.reviews.each do |review| %>
-    <%#= review.description %>
-    <%# review.rating.times do  %>
-      <p>stars</p>
-    <%# end %>
+  <%#= review.description %>
+  <%# review.rating.times do  %>
+  <!--       <p>stars</p> -->
+  <%# end %>
   <%# end %>
 
-<%# end %>
-
-<h2>About the sock owner</h2>
-
-<h2>User rating:
-
-  <%if  @user.rating != 'no reviews yet' && !@user.rating.nil?  %>
-
-    <% @user.rating.times do%>
-    <%= '⭐️' %>
-  <% end %>
-  <% else %>
-  <%= @user.rating %>
-  <% end %>
-</h2>
-<h2>User reviews</h2>
-<% @user.reviews.each_with_index do |review,index| %>
-    <%reviewer = User.find(@ids[index]) %>
-    <strong><%= reviewer.username %></strong>
-    <%review.rating.times do %>
-      <%= '⭐️' %>
-    <% end %>
-    <p><%= review.description %></p>
- <% end %>
-
-  <!-- <p>note to self to give a range of 1..5 for the rating </p> -->
-
-  <%= link_to 'go back to socks', socks_path, class: "btn btn-primary my-5" %>
-</div>
-
+  <%# end %>
 
