@@ -45,13 +45,14 @@
     <%reviewer = User.find(@ids[index]) %>
     <div class="review bg-white border-bottom py-2 pl-2">
       <%= link_to profile_path(reviewer) do %>
-      <strong class = "big-name"><%= reviewer.username %></strong>
-      <% end %>
-      <%review.rating.times do %>
-        <%= '⭐️' %>
-      <% end %>
-      <p><%= review.description %></p>
-    </div>
+        <strong class = "big-name"><%= reviewer.username %></strong>
+        <% end %>
+        <%review.rating.times do %>
+          <%= '⭐️' %>
+        <% end %>
+        <p><%= review.description %></p>
+            </div>
+
  <% end %>
 </div>
 
