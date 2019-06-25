@@ -80,7 +80,7 @@
             <p><strong>User Reviews</strong></p>
             <% @user.reviews.each_with_index do |review,index| %>
             <%reviewer = User.find(@ids[index]) %>
-            <strong><%= reviewer.username %></strong>
+           <p><strong><%= reviewer.username %></strong></p>
            <div class="review-rating">
               <%review.rating.times do %>
               <%# raw '<i class="fa fa-star" aria-hidden="true"></i>' %>
