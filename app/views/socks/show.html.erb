@@ -70,6 +70,7 @@
 
 
 <!-- <h1><%# @sock.title %></h1>
+>>>>>>> cf039dc7d17816e943ec30c0a816897ff132c99a
 <div class="container"><%= @sock.title %>
   <%= @sock.description %>
   <p>Picture of the sock </p>
@@ -93,7 +94,6 @@
   <% end %>
 <% else %>
 <%= link_to "Buy this sock", new_sock_transaction_path(@sock) %>
-
 <% end %>
 
 <h2>About the sock owner</h2>
@@ -120,5 +120,8 @@
  <% end %>
 
   <!-- <p>note to self to give a range of 1..5 for the rating </p> -->
+
+  <%= link_to 'go back to socks', socks_path, class: "btn btn-primary my-5" %>
+</div>
 
 
