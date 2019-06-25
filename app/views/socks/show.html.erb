@@ -63,31 +63,40 @@
     <div class="row justify-content-center">
       <div class="all-reviews">
         <div class="sock-reviews">
+          <div class="overall-rating">
+
           <h2>About the sock owner </h2>
           <% if @user.rating != "no reviews yet" && !@user.rating.nil? %>
-          <p>User Rating: </p>
+          <p><strong>User Rating: </strong></p>
+          <div class="stars">
           <% @user.rating.times do%>
+          <%# raw '<i class="fa fa-star" aria-hidden="true"></i>' %>
           <%= '⭐️' %>
           <% end %>
+
+          </div>
+          </div>
           <div class="sock-review">
-            <p>User Reviews</p>
+            <p><strong>User Reviews</strong></p>
             <% @user.reviews.each_with_index do |review,index| %>
             <%reviewer = User.find(@ids[index]) %>
             <strong><%= reviewer.username %></strong>
-            <div class="review-rating">
+           <div class="review-rating">
               <%review.rating.times do %>
+              <%# raw '<i class="fa fa-star" aria-hidden="true"></i>' %>
               <%= '⭐️' %>
-            </div>
             <% end %>
+            </div>
             <div class="review-content">
               <p><%= review.description %></p>
             </div>
             <% end %>
-          </div>
+
           <% else %>
           <%= @user.rating %>
           <p>No Reviews yet</p>
           <% end %>
+          </div>
         </div>
         <div id="review-button">
           <i class="fas fa-edit"></i>
