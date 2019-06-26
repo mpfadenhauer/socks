@@ -24,13 +24,15 @@ class Sock < ApplicationRecord
 
   belongs_to :user
 
+  validates :brand, presence: true
+  validates :sock_type, presence: true
   validates :title, presence: true
-  validates :color, inclusion: { in: ["Maroon", "Brown", "Olive", "Teal", "Navy", "Black", "Red", " Orange", "Yellow", "lime", "Green", "Cyan", "Blue", "Purple", "Magenta", "Grey", "Pink", "Apricot", "Beige", "Mint", "Lavender", "White"] }, allow_blank: true
+  validates :color, inclusion: { in: ["Maroon", "Brown", "Olive", "Teal", "Navy", "Black", "Red", " Orange", "Yellow", "lime", "Green", "Cyan", "Blue", "Purple", "Magenta", "Grey", "Pink", "Apricot", "Beige", "Mint", "Lavender", "White"] }, presence: true
   validates :price, presence: true, numericality: true
-  validates :pattern, inclusion: { in: ["Solid", "Striped", "Polka dots", "Other", "None"] }, allow_blank: true
-  validates :size, inclusion: { in: ["36-41", "42-46", "47-51"] }, allow_blank: true
-  validates :description, presence: true, allow_blank: true
+  validates :pattern, inclusion: { in: ["Solid", "Striped", "Polka dots", "Other", "None"] }, presence: true
+  validates :size, inclusion: { in: ["36-41", "42-46", "47-51"] }, presence: true
+  validates :description, presence: true, presence: true
   # validates :sock_type, inclusion: { in: ["Over the knee", "Knee high", "Over the calf/Executive", "Mid-calf/Crew", "Quarter/Anklets", "Ped/Low cut", "Liner/Extra low cut", "Invisible/No-show", "Toe cover/Mute"] }, allow_blank: true
-  validates :season, inclusion: { in: ["spring", "winter", "summer", "autumn"] }, allow_blank: true
+  validates :season, inclusion: { in: ["spring", "winter", "summer", "autumn"] }, presence: true
 
 end

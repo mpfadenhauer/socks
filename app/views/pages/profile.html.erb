@@ -3,10 +3,10 @@
   <h1 class = "text-center " style="margin-top: 3em; color:#006DAA"><%= @user.username %>!</h1>
     <% if @user.socks.length == 0 %>
       <div class="container">
-        <div class='row justify-content-center'>
+        <div class='row justify-content-center' style="margin-top: 2em;">
           <div class=" d-flex align-items-center col-12 col-md-6 col-lg-4 ">
-            <h3 style="color:#006DAA">You are SockLess!</h3>
-            <%= link_to "ADD A SOCK!", new_sock_path, class: "btn btn-primary m-5" %>
+            <h3 style="color:#006DAA; margin-right: 2em;">You are SockLess!</h3>
+            <%= link_to "ADD A SOCK!", new_sock_path, class: "btn sign-upbtn" %>
           </div>
         </div>
       </div>
