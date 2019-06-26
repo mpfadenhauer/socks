@@ -33,9 +33,8 @@
     <% end %>
   </div>
   <div class="review-overview container">
-
   <div class="overall-rating">
-    <% if @user.rating != "no reviews yet" && !@user.rating.nil? %>
+    <% if @user.rating != "no reviews yet" && !@user.rating == 0 %>
       <p><strong>User Rating: </strong></p>
       <div class="stars">
         <% @user.rating.times do%>
@@ -46,7 +45,7 @@
         <div class="sock-reviews">
           <p class="headline"><strong>User Reviews</strong></p>
           <% @user.reviews.each_with_index do |review,index| %>
-          <%reviewer = User.find(@ids[index]) %>
+          <% reviewer = User.find(@ids[index]) %>
           <div class="sock-review">
          <div class="review-rating">
          <p class ="d-flex"><strong><%= reviewer.username %></strong>
@@ -58,53 +57,20 @@
           <div class="review-content">
             <p><%= review.description %></p>
           </div>
-
           <% end %>
           </div>
         </div>
     <% else %>
-      <%= @user.rating %>
+
       <p>No Reviews yet</p>
     <% end %>
 
   <div id="review-button">
+    <% if current_user != @user %>
     <i class="fas fa-edit"></i>
       <%= link_to "Add a review", new_review_path %>
-
+      <% end %>
   </div>
   </div>
-
-
-
 </div>
 
-
-<!--   <h2>User rating:
-    <%if  @user.rating != 'no reviews yet' && !@user.rating.nil? %>
-      <% @user.rating.times do%>
-        <%= '⭐️' %>
-      <% end %>
-    <% else %>
-      <%='no reviews yet' %>
-    <% end %>
-  </h2>
-  <h2>User reviews</h2>
-  <% @user.reviews.each_with_index do |review,index| %>
-    <%reviewer = User.find(@ids[index]) %>
-    <div class="review bg-white border-bottom py-2 pl-2">
-      <%= link_to profile_path(reviewer) do %>
-        <strong class = "big-name"><%= reviewer.username %></strong>
-        <% end %>
-        <%review.rating.times do %>
-          <%= '⭐️' %>
-        <% end %>
-        <p><%= review.description %></p>
-            </div>
-
- <% end %> -->
-
-<!-- <div class="d-flex justify-content-center">
-  <%= link_to new_review_path(@user), class: "btn btn-primary m-5 review-btn" do %>
-    <span><i class="far fa-comment"></i>Review user</span>
-  <% end %>
-</div> -->
