@@ -37,16 +37,16 @@
         </div>
       </div>
     <% else %>
-      <button type="button" class="login btn btn-btn-outline-primary" data-toggle="modal" data-target="#login">Log In</button>
-      <button type="button" class="signup btn btn-btn-outline-primary" data-toggle="modal" data-target="#signup">Sign Up</button>
+      <button type="button" class="user btn btn-btn-outline-primary" data-toggle="modal" data-target="#login">Log In</button>
+      <button type="button" class="user btn btn-btn-outline-primary" data-toggle="modal" data-target="#signup">Sign Up</button>
     <% end %>
   </div>
 </div>
-<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginmodal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+        <h5 class="modal-title" id="loginmodal">Log In</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -69,7 +69,7 @@
       </div>
       <div class="modal-footer">
         <div class="form-actions">
-          <%= f.button :submit, "Log in", class:"sign-upbtn" %>
+          <%= f.button :submit, "Log in", class:"user-btn" %>
         </div>
       <% end %>
 
@@ -81,14 +81,14 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <% @instance_user = User.new %>
-        <%= simple_form_for(@instance_user, url: session_path(@instance_user)) do |f| %>
+        <%= simple_form_for(@instance_user, url:  registration_path(@instance_user)) do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">
@@ -111,7 +111,7 @@
           </div>
         <div class="modal-footer">
         <div class="form-actions">
-          <%= f.button :submit, "Sign up", class:"sign-upbtn" %>
+          <%= f.button :submit, "Sign up", class:"signup-btn" %>
         </div>
         <% end %>
       </div>
