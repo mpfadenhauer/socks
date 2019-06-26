@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :reviews, :foreign_key => :user_reviewed_id
-  has_many :socks
+  has_many :socks, dependent: :destroy
+
+  validates :location, presence: true
 
   validates :username, presence: true
   geocoded_by :location
