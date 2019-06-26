@@ -1,4 +1,4 @@
-
+$blue: #006DAA;
 
 /* Main navbar */
 .navbar-sock {
@@ -143,6 +143,14 @@ index #search {display:none}
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 
+.btn {
+  color: $blue;
+  font-size: 14px;
+  &:hover {
+  color: #495057;
+  text-decoration: none;
+  }
+}
 
 @media (min-width: 100px) and (max-width: 992px) {
    #search_navbar {

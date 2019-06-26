@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_action :instance_user, only: [:home, :profile]
+
   def home
   end
 
@@ -11,6 +13,10 @@ class PagesController < ApplicationController
   end
 
   private
+
+  def instance_user
+    @instance_user = User.new
+  end
 
   def get_average(user)
     length = user.reviews.length
