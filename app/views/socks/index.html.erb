@@ -19,84 +19,91 @@
 
 
   <h1 style="color: #006DAA; margin-bottom:1em">Our Socks</h1>
-    <div class="containerindex">
-      <div class="dropdown">
-        <div>
-          <h2>Filter</h2>
-          <br>
-        </div>
-          <%= form_tag socks_path, method: :get do %>
-        <div>
-          <label>Color</label>
-        </div>
-        <div>
-            <%= select_tag :filter_color, options_for_select(Sock::COLOR, params[:filter_color]), prompt:"Please select"%>
-        </div>
-        <br>
-        <br>
-        <div>
-          <label>Sock type</label>
-        </div>
-        <div>
-          <%= select_tag :filter_sock_type, options_for_select(Sock::SOCK_TYPE, params[:filter_sock_type]), prompt:"Please select"%>
-        </div>
-          <br>
-          <br>
-        <div>
-          <label>Sock pattern</label>
-        </div>
-        <div>
-          <%= select_tag :filter_sock_pattern, options_for_select(Sock::SOCK_PATTERN, params[:filter_sock_pattern]), prompt:"Please select"%>
-        </div>
-          <br>
-          <br>
-        <div>
-          <label>Season</label>
-        </div>
-        <div>
-          <%= select_tag :filter_season, options_for_select(Sock::SEASON, params[:filter_season]), prompt:"Please select"%>
-        </div>
-          <br>
-          <br>
-          <%= submit_tag :Filter, class: 'btn btn-primary mb-2 filter-submit' %>
-          <% end %>
-      </div>
-
-  <div class="container w-100">
-      <div class="cards">
-        <% @socks.each do |sock| %>
-          <% if sock.bought == false %>
-            <div class="card-sock">
-              <% if sock.photo.file.nil? %>
-              <%= link_to sock_path(sock) do  %>
-                <%= image_tag 'logo.jpg', crop: :fill, height: 220, width: 400; %>
-                <% end %>
-              <% else %>
-              <%= link_to sock_path(sock) do  %>
-                <%= cl_image_tag sock.photo, crop: :fill, height: 220, width: 500; %>
-                <% end %>
-              <% end %>
-              <div class="card-sock-infos">
-                <div>
-                  <h2><%= link_to sock.title, sock_path(sock)  %></h2>
-                  <p> <%= sock.description %></p>
-                </div>
-                <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
-                <%= link_to profile_path(sock.user) do  %>
-                  <% if sock.user.photo.file.nil? %>
-                    <%= image_tag 'sock.png', height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered' %>
-                  <% else %>
-                    <%= cl_image_tag sock.user.photo, height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered'  %>
-                  <% end %>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-
+<div class="d-flex justify-content-center">
+  <button id="filter-button", class= "btn btn-danger">Filter socks</button>
 </div>
+  <br>
+
+<div class="d-flex">
+  <div class="dropdown d-none">
+    <div>
+      <h2>Filter</h2>
+      <br>
+    </div>
+      <%= form_tag socks_path, method: :get do %>
+    <div>
+      <label>Color</label>
+    </div>
+    <div>
+        <%= select_tag :filter_color, options_for_select(Sock::COLOR, params[:filter_color]), prompt:"Please select"%>
+    </div>
+    <br>
+    <br>
+    <div>
+      <label>Sock type</label>
+    </div>
+    <div>
+      <%= select_tag :filter_sock_type, options_for_select(Sock::SOCK_TYPE, params[:filter_sock_type]), prompt:"Please select"%>
+    </div>
+      <br>
+      <br>
+    <div>
+      <label>Sock pattern</label>
+    </div>
+    <div>
+      <%= select_tag :filter_sock_pattern, options_for_select(Sock::SOCK_PATTERN, params[:filter_sock_pattern]), prompt:"Please select"%>
+    </div>
+      <br>
+      <br>
+    <div>
+      <label>Season</label>
+    </div>
+    <div>
+      <%= select_tag :filter_season, options_for_select(Sock::SEASON, params[:filter_season]), prompt:"Please select"%>
+    </div>
+      <br>
+      <br>
+      <%= submit_tag :Filter, class: 'btn btn-primary mb-2' %>
+      <% end %>
+  </div>
+
+
+    <div class="container">
+  <div class="cards">
+    <% @socks.each do |sock| %>
+      <% if sock.bought == false %>
+        <div class="card-sock">
+          <% if sock.photo.file.nil? %>
+          <%= link_to sock_path(sock) do  %>
+            <%= image_tag 'logo.jpg', crop: :fill, height: 220, width: 600; %>
+            <% end %>
+          <% else %>
+          <%= link_to sock_path(sock) do  %>
+            <%= cl_image_tag sock.photo, crop: :fill, height: 220, width: 600; %>
+            <% end %>
+          <% end %>
+          <div class="card-sock-infos">
+            <div>
+              <h2><%= link_to sock.title, sock_path(sock)  %></h2>
+              <p> <%= sock.description %></p>
+            </div>
+            <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
+            <%= link_to profile_path(sock.user) do  %>
+              <% if sock.user.photo.file.nil? %>
+                <%= image_tag 'sock.png', height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered' %>
+              <% else %>
+                <%= cl_image_tag sock.user.photo, height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered'  %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+      </div>
+</div>
+
+
 
   <!-- scope :color, -> (color) { where color: color }
   scope :min_size, -> (min_size) { where min_size: min_size }
