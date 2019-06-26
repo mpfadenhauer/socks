@@ -20,7 +20,8 @@ class SocksController < ApplicationController
     if @user.latitude != nil && @user.longitude != nil
       @markers = [
         lat: @user.latitude,
-        lng: @user.longitude
+        lng: @user.longitude,
+        image_url: helpers.asset_url('sock-marker.png')
       ]
     else
       @markers = []
