@@ -7,6 +7,7 @@ class PagesController < ApplicationController
     @user.rating = get_average(@user)
     @user.save
     @ids = get_reviewer
+    #raise
   end
 
   private
