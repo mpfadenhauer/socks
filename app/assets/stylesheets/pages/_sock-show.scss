@@ -10,6 +10,7 @@ $tan: #a0a2c3;
 $blue: #006DAA;
 $sky: #7ea5ba;
 $dark: #696969;
+$yellow: #F7B844;
 
 html {
   display: grid;
@@ -36,23 +37,23 @@ body {
 
 .sock-container {
   position: relative;
-  margin: auto;
+  margin-left: 10px;
   margin-top: 70px;
   overflow: hidden;
-  width: 520px;
+  width: 550px;
   height: 335px;
   background: $white;
   box-shadow: 5px 5px 15px rgba($sky, .5);
   border-radius: 10px;
 
   p {
-  font-size: 12px;
+  font-size: 16px;
   color: $sky;
-  letter-spacing: 1px
+  margin-bottom: 9px;
   }
 
   h1 {
-  font-size: 24px;
+  font-size: 22px;
   color: $dark;
   margin-top: -5px;
   text-align: left;
@@ -61,14 +62,16 @@ body {
   h2 {
   color: $blue;
   margin-top: -5px;
+  font-size: 20px;
   }
 }
+
 
 .sock {
   position: absolute;
   width: 40%;
   height: 100%;
-  top: 10%;
+  top: 5%;
   left: 55%;
 }
 
@@ -83,24 +86,30 @@ body {
   text-align: justify;
 }
 
-#buy-button {
-  background: darken($light, 10%);
+#add {
+  background: $white;
+  border: 1px solid $blue;
   padding: 10px;
   display: inline-block;
   outline: 0;
-  border: 0;
   width: 100%;
-  margin: -1px;
+  margin: 0px 0px 0px -7px;
   border-radius: 2px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: $white;
-  cursor: pointer;
+  color: $blue;
+  position: absolute;
+  bottom: 38px;
+  right: 10px;
+  text-align: center;
   &:hover {
-    background: $sky;
+    background: $blue;
+    color: $white;
     transition: all .4s ease-in-out;
+    cursor: pointer;
   }
 }
+
 
 .overview-categories {
   display: flex;
@@ -117,9 +126,7 @@ body {
   grid-gap: 4px;
   margin-left: 33px;
   margin-top: 5px;
-  &:hover {
-    cursor: pointer;
-  }
+
 }
 
 .filter {
@@ -134,35 +141,27 @@ body {
   text-align: left;
   vertical-align: middle;
   margin-left: -28px;
+
+  i {
+    padding-right: 5px;
+  }
 }
 
-#add {
-  background: darken($light, 10%);
-  padding: 10px;
-  display: inline-block;
-  outline: 0;
-  border: 0;
-  margin: 10px 0px 0px -7px;
-  border-radius: 2px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: $white;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  &:hover {
-    background: $sky;
-    transition: all .4s ease-in-out;
-  }
+//reviews
+
+.main-container {
+  display: flex;
+  width: 1040px;
+  justify-content: center;
 }
 
 .review-container {
   position: relative;
-  margin: auto;
-  margin-top: 70px;
+  // margin: auto;
+  margin-top: 23px;
+  margin-left: 226px;
   overflow: hidden;
-  width: 900px;
-  height: 335px;
+  width: 1000px;
   background: $white;
   box-shadow: 5px 5px 15px rgba($sky, .5);
   border-radius: 10px;
@@ -176,64 +175,98 @@ body {
   h1 {
   font-size: 24px;
   color: $dark;
-  margin-top: -5px;
+  margin-top: 27px;
   text-align: left;
+  margin-left: 50px;
 }
 
   h2 {
   color: $blue;
-  margin-top: -5px;
+  margin-top: 27px;
+  margin-left: 50px;
+  font-size: 22px;
+  }
+
+  .card-sock-user {
+    position: absolute;
+    left: 13px;
+    top: 20px;
   }
 }
 
-.reviews {
-  overflow: hidden;
-  // height: 200px;
-  width: 820px;
-  background: #FFFFFF;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border: 1px solid rgba(210,210,210,0.8);
-  display: flex;
-  // align-items: center;
-
-  margin-top: 10px;
-  margin-bottom: 10px;
-  position: relative;
-
-  h2 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    text-align: left;
-    color: #006DAA;
-    vertical-align: top;
-  }
-
+.overall-rating {
+  margin-top: 22px;
   p {
-    text-align: left;
-    padding-left: 20px;
-    color: #696969;
+    margin-left: 20px;
+    font-size: 16px;
+  }
+}
+
+.sock-reviews {
+    p {
+    margin-left: 20px;
     font-size: 14px;
   }
+
+  .headline {
+    font-size: 16px;
+    margin-top: 10px;
+  }
 }
+
 
 .sock-reviews
   h2 {
   text-align: left;
   padding-left: 20px;
   padding-top: 20px;
-
-  span {
-    padding-left: 20px;
-    padding-top: 0px;
-  }
-
 }
 
 .sock-review {
   width: 820px;
-  // padding-left: 20px;
+
+  p {
+    margin-bottom: 5px;
+  }
 }
+
+.fa-star {
+  color: $yellow;
+  &:hover {
+  transform: scale(0.7); /* Equal to scaleX(0.7) scaleY(0.7) */
+  }
+}
+
+.overall-rating .stars {
+  padding-left: 20px;
+}
+
+.overall-rating p {
+  margin-bottom: 0px;
+}
+
+#review-button {
+  position: absolute;
+  right: 22px;
+  top: 10px;
+  a {
+    font-size: 12px;
+    color: #006DAA;
+    opacity: 0.6;
+  }
+  i {
+    font-size: 12px;
+    color: #006DAA;
+    opacity: 0.6;
+  }
+}
+
+// .stars {
+//   margin-top: -10px;
+//   padding-left: 20px;
+// }
+
+
 // .sock-card {
 //   overflow: hidden;
 //   height: 340px;
@@ -358,21 +391,6 @@ body {
 //   }
 // }
 
-// #review-button {
-//   position: absolute;
-//   right: 22px;
-//   top: 10px;
-//   a {
-//     font-size: 12px;
-//     color: #006DAA;
-//     opacity: 0.6;
-//   }
-//   i {
-//     font-size: 12px;
-//     color: #006DAA;
-//     opacity: 0.6;
-//   }
-// }
 
 // .logged-in-user {
 //   position: absolute;
@@ -407,10 +425,6 @@ body {
 //   }
 // }
 
-// .stars {
-//   margin-top: -10px;
-//   padding-left: 20px;
-// }
 
 // .review-rating {
 //     margin-top: -10px;
@@ -418,9 +432,6 @@ body {
 //   font-size: 10px;
 // }
 
-// .fa-star:hover {
-//   transform: scale(0.7); /* Equal to scaleX(0.7) scaleY(0.7) */
-// }
 
 // .overall-rating {
 //   margin-bottom: 10px;
