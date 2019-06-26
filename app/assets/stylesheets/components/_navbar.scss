@@ -144,4 +144,9 @@ index #search {display:none}
 }
 
 
+@media (min-width: 100px) and (max-width: 992px) {
+   #search_navbar {
+     display: none;
+   }
+}
 
