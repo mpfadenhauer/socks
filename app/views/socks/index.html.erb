@@ -6,7 +6,7 @@
       </div>
       <div class="col-12 col-lg-6 ">
         <div class="d-flex flex-column justify-content-center">
-          <h1>Don't let the washer win </h1>
+          <h1 id="war">Don't let the washer win </h1>
           <h1 id="join">Join sockCiety! </h1>
           <br>
           <p class= "text-center">Find the match to your lost sock.</p>
@@ -18,7 +18,7 @@
 </div>
 
 
-  <h1 style="color: #006DAA; margin-bottom:1em">Our Socks</h1>
+  <h1 style="color: #006DAA; margin-bottom:1em" id="socks_index_title">Our Socks</h1>
 <div class="d-flex justify-content-center">
   <button id="filter-button", class= "btn btn-danger">Filter socks</button>
 </div>
@@ -63,12 +63,12 @@
     </div>
       <br>
       <br>
-      <%= submit_tag :Filter, class: 'btn btn-primary mb-2' %>
+      <%= submit_tag :Filter, class: 'btn btn-primary mb-2', href: "./socks#socks_index_title" %>
       <% end %>
   </div>
 
 
-    <div class="container">
+    <div class="container card-container">
   <div class="cards">
     <% @socks.each do |sock| %>
       <% if sock.bought == false %>
@@ -103,6 +103,35 @@
       </div>
 </div>
 
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class = "athletes a1">
+        <h1>
+          Check out Stance's latest releases <br>
+          <a href = "https://www.stance.com/sports-socks/">here</a>
+        </h1>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class = "athletes a2">
+        <h1>
+          Check out Stance's latest releases <br>
+          <a href = "https://www.stance.com/sports-socks/">here</a>
+        </h1>
+      </div>
+    </div>
+<!--     <div class="carousel-item">
+    <div class = "athletes3 a3">
+      <h1>
+        Check out Stance's latest releases <br>
+        <a href = "https://www.stance.com/sports-socks/">here</a>
+      </h1>
+    </div>
+    </div> -->
+  </div>
+</div>
 
 
   <!-- scope :color, -> (color) { where color: color }
