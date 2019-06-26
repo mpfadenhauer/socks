@@ -17,12 +17,10 @@ class SocksController < ApplicationController
     @ids = get_reviewer
     @user = @sock.user
     if @user.latitude != nil && @user.longitude != nil
-      @markers = @user.map do |user|
-        {
-          lat: user.latitude,
-          lng: user.longitude
-        }
-      end
+      @markers = [
+        lat: @user.latitude,
+        lng: @user.longitude
+      ]
     else
       @markers = []
     end
