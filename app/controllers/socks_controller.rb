@@ -15,6 +15,17 @@ class SocksController < ApplicationController
   def show
     @user = @sock.user
     @ids = get_reviewer
+    @user = @sock.user
+    if @user.latitude != nil && @user.longitude != nil
+      @markers = @user.map do |user|
+        {
+          lat: user.latitude,
+          lng: user.longitude
+        }
+      end
+    else
+      @markers = []
+    end
   end
 
   def new
