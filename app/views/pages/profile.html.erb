@@ -41,7 +41,8 @@
       <% end %>
   <div class="review-overview container">
   <div class="overall-rating">
-    <% if @user.rating != "no reviews yet" && !@user.rating == 0 %>
+
+    <% if @user.rating != "no reviews yet" && !@user.rating.nil? %>
       <p><strong>User Rating: </strong></p>
       <div class="stars">
         <% @user.rating.times do%>
