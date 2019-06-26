@@ -32,8 +32,54 @@
       <% end %>
     <% end %>
   </div>
-  <br>
-  <h2>User rating:
+  <div class="review-overview container">
+
+  <div class="overall-rating">
+    <% if @user.rating != "no reviews yet" && !@user.rating.nil? %>
+      <p><strong>User Rating: </strong></p>
+      <div class="stars">
+        <% @user.rating.times do%>
+          <%= raw '<i class="fa fa-star" aria-hidden="true"></i>' %>
+        <% end %>
+        </div>
+        </div>
+        <div class="sock-reviews">
+          <p class="headline"><strong>User Reviews</strong></p>
+          <% @user.reviews.each_with_index do |review,index| %>
+          <%reviewer = User.find(@ids[index]) %>
+          <div class="sock-review">
+         <div class="review-rating">
+         <p class ="d-flex"><strong><%= reviewer.username %></strong>
+            <%review.rating.times do %>
+            <%= raw '<i class="fa fa-star" aria-hidden="true"></i>' %>
+          <% end %>
+          </p>
+          </div>
+          <div class="review-content">
+            <p><%= review.description %></p>
+          </div>
+
+          <% end %>
+          </div>
+        </div>
+    <% else %>
+      <%= @user.rating %>
+      <p>No Reviews yet</p>
+    <% end %>
+
+  <div id="review-button">
+    <i class="fas fa-edit"></i>
+      <%= link_to "Add a review", new_review_path %>
+
+  </div>
+  </div>
+
+
+
+</div>
+
+
+<!--   <h2>User rating:
     <%if  @user.rating != 'no reviews yet' && !@user.rating.nil? %>
       <% @user.rating.times do%>
         <%= '⭐️' %>
@@ -55,13 +101,10 @@
         <p><%= review.description %></p>
             </div>
 
- <% end %>
-</div>
+ <% end %> -->
 
-
-
-<div class="d-flex justify-content-center">
+<!-- <div class="d-flex justify-content-center">
   <%= link_to new_review_path(@user), class: "btn btn-primary m-5 review-btn" do %>
     <span><i class="far fa-comment"></i>Review user</span>
   <% end %>
-</div>
+</div> -->
