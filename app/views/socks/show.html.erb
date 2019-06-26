@@ -102,36 +102,6 @@
           <% @user.reviews.each_with_index do |review,index| %>
           <%reviewer = User.find(@ids[index]) %>
           <div class="sock-review">
-<<<<<<< HEAD
-            <p><strong>User Reviews</strong></p>
-            <% @user.reviews.each_with_index do |review,index| %>
-            <%reviewer = User.find(@ids[index]) %>
-           <p class ="d-flex"><strong><%= reviewer.username %></strong>
-           <div class="review-rating">
-              <%review.rating.times do %>
-              <%# raw '<i class="fa fa-star" aria-hidden="true"></i>' %>
-              <%= '⭐️' %>
-            <% end %>
-            </p>
-            </div>
-            <div class="review-content">
-              <p><%= review.description %></p>
-            </div>
-
-            <% end %>
-          </div>
-
-      <% else %>
-        <%= @user.rating %>
-        <p>No Reviews yet</p>
-      <% end %>
-    </div>
-    <div id="review-button">
-      <i class="fas fa-edit"></i>
-        <%= link_to "Add a review", new_review_path %>
-    </div>
-=======
-
          <div class="review-rating">
          <p class ="d-flex"><strong><%= reviewer.username %></strong>
             <%review.rating.times do %>
@@ -154,6 +124,5 @@
   <div id="review-button">
     <i class="fas fa-edit"></i>
       <%= link_to "Add a review", new_review_path %>
->>>>>>> 540beccb0615789cb01960f691fae91733060558
   </div>
 </div>
