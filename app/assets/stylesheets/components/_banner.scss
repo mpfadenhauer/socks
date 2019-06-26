@@ -1,7 +1,7 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 100px 0;
   background-color: #68B6E1;
   height: 800px;
 }
@@ -32,17 +32,75 @@
   width: 100px;
 }
 
+#war {
+  font-size: 44px;
+}
+
+
 #join {
-  font-size: 55px;
+  font-size: 70px;
   color: #0262DB;
+}
+
+
+.athletes {
+  height: 800px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin-left: 10%;
+  margin-right: 10%;
+
+}
+
+.a1 {
+  background-image:linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+                   url('https://www.stance.com/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dwf3a57a30/2018/inline/socks/performance/basketball/general-performance-hoops/men-hoops-brand-campaign/fa18-men-hoops-brand-campaign-secondary_md.jpg');
+  background-size: cover;
+  background-position:right;
+}
+
+.a2 {
+  background-image:linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+                   url('https://www.stance.com/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dw9af0a77f/2017/assets/in-line/socks/performance/fusion-athletic/training-luke-davis/mn-training-secondary_md.jpg');
+  background-size: cover;
+  background-position:right;
+}
+
+// .a3 {
+//   background-image:linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+//                    url('https://www.stance.com/on/demandware.static/-/Library-Sites-StanceSharedLibrary/default/dwf3a57a30/2018/inline/socks/performance/basketball/general-performance-hoops/men-hoops-brand-campaign/fa18-men-hoops-brand-campaign-secondary_md.jpg');
+//   background-size: cover;
+//   background-position:right;
+// }
+
+.athletes h1 {
+    padding-top: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 100px;
+    text-align: left;
+    margin-left: 100px;
+  }
+.athletes a {
+  color: #eff25e;
+  transition: 0.2s ease;
+}
+.athletes a:hover {
+ color: #fbff2d;
+ font-size: 110px;
 }
 
 
 @media (min-width: 100px) and (max-width: 992px) {
   #washer {
+    margin-bottom: 0;
    margin-left: 0;
   }
   .banner {
-    padding: 50px;
+    padding: 25px;
+  }
+
+  .athletes h1 {
+    margin-left: 30px;
+    font-size: 80px;
   }
 }
