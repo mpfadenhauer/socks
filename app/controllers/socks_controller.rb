@@ -5,8 +5,9 @@ class SocksController < ApplicationController
   def index
     if params[:search].present?
       @socks = policy_scope(Sock).search_by_color_and_title(params[:search])
-    elsif params[:filter].present?
-      @socks = Sock.filter(params.slice(:color, :min_size, :max_size, :sock_type, :brand, :season, :age, :price))
+    elsif params[:filter_color].present? || params[:filter_sock_type].present? || params[:filter_sock_pattern].present? || params[:filter_season].present?
+      search_term = params[:filter_color] + ' ' + params[:filter_sock_type] + ' ' + params[:filter_sock_pattern] + ' ' + params[:filter_season]
+      @socks = policy_scope(Sock).search_by_filters(search_term)
     else
       @socks = policy_scope(Sock)
     end
@@ -67,11 +68,11 @@ class SocksController < ApplicationController
   end
 
   def sock_params
-    params.require(:sock).permit(:title, :description, :color, :pattern, :min_size, :max_size, :sock_type, :brand, :season, :age, :price, :photo)
+    params.require(:sock).permit(:title, :description, :color, :pattern, :size, :sock_type, :brand, :season, :age, :price, :photo)
   end
 
   def filtering_params(params)
-    params.slice(:color, :min_size, :max_size, :sock_type, :brand, :season, :age, :price)
+    params.slice(:color, :size, :sock_type, :brand, :season, :age, :price)
   end
 
   def get_reviewer
