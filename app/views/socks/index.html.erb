@@ -7,9 +7,10 @@
       <div class="col-12 col-lg-6 ">
         <div class="d-flex flex-column justify-content-center">
           <h1>Don't let the wahser win </h1>
-          <h1 class="join">Join sockCiety! </h1>
+          <h1 id="join">Join sockCiety! </h1>
+          <br>
           <p class= "text-center">Find the match to your lost sock.</p>
-          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary"  %>
+
         </div>
       </div>
     </div>
@@ -17,9 +18,7 @@
 </div>
 
 
-<div class="container">
   <h1 style="color: #006DAA; margin-bottom:1em">Our Socks</h1>
-  <div class="container">
     <div class="containerindex">
       <div class="dropdown">
         <div>
@@ -62,19 +61,18 @@
           <%= submit_tag :Filter, class: 'btn btn-primary mb-2' %>
           <% end %>
       </div>
-
-
+  <div class="container w-100">
       <div class="cards">
         <% @socks.each do |sock| %>
           <% if sock.bought == false %>
             <div class="card-sock">
               <% if sock.photo.file.nil? %>
               <%= link_to sock_path(sock) do  %>
-                <%= image_tag 'logo.jpg', crop: :fill, height: 220, width: 300; %>
+                <%= image_tag 'logo.jpg', crop: :fill, height: 220, width: 400; %>
                 <% end %>
               <% else %>
               <%= link_to sock_path(sock) do  %>
-                <%= cl_image_tag sock.photo, crop: :fill, height: 220, width: 300; %>
+                <%= cl_image_tag sock.photo, crop: :fill, height: 220, width: 500; %>
                 <% end %>
               <% end %>
               <div class="card-sock-infos">
@@ -96,7 +94,7 @@
         <% end %>
       </div>
     </div>
-  </div>
+
 </div>
 
   <!-- scope :color, -> (color) { where color: color }
