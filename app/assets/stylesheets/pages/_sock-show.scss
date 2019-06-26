@@ -12,12 +12,9 @@ $sky: #7ea5ba;
 $dark: #696969;
 $yellow: #F7B844;
 
-html {
+.wrapper-container {
   display: grid;
   min-height: 100%;
-}
-
-body {
   display: grid;
   background: $lighter;
   font-family: $font, sans-serif;
@@ -211,11 +208,18 @@ body {
   margin-top: 22px;
   p {
     margin-left: 20px;
+    margin-bottom: 0px;
     font-size: 16px;
   }
+  .stars {
+  padding-left: 20px;
+  border-bottom: 1px solid $tan;
+  padding-bottom: 9px;
+}
 }
 
 .sock-reviews {
+
     p {
     margin-left: 20px;
     font-size: 14px;
@@ -225,19 +229,15 @@ body {
     font-size: 16px;
     margin-top: 10px;
   }
-}
 
-
-.sock-reviews
   h2 {
   text-align: left;
   padding-left: 20px;
   padding-top: 20px;
+  }
 }
 
 .sock-review {
-  width: 820px;
-
   p {
     margin-bottom: 5px;
   }
@@ -250,27 +250,19 @@ body {
   }
 }
 
-.overall-rating .stars {
-  padding-left: 20px;
-}
-
-.overall-rating p {
-  margin-bottom: 0px;
-}
-
 #review-button {
   position: absolute;
   right: 22px;
   top: 10px;
   a {
-    font-size: 12px;
+    font-size: 14px;
     color: #006DAA;
-    opacity: 0.6;
+    opacity: 0.8;
   }
   i {
-    font-size: 12px;
+    font-size: 14px;
     color: #006DAA;
-    opacity: 0.6;
+    opacity: 0.8;
   }
 }
 
@@ -300,152 +292,3 @@ body {
     opacity: 0.6;
   }
 }
-// .stars {
-//   margin-top: -10px;
-//   padding-left: 20px;
-// }
-
-
-// .sock-card {
-//   overflow: hidden;
-//   height: 340px;
-//   width: 820px;
-//   background: white;
-//   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//   border: 1px solid rgba(210,210,210,0.8);
-//   display: flex;
-//   align-items: center;
-
-//   margin-top: 70px;
-//   h2 {
-//   font-size: 16px;
-//   font-weight: bold;
-//   margin-bottom: 8px;
-//   margin-top: 50px;
-//   text-align: center;
-//   color: #006DAA;
-//   }
-//   p {
-//     margin-top: 0px;
-//   }
-//   img {
-//   height: 100%;
-
-//   object-fit: cover;
-//   border-right: 1px solid rgba(210,210,210,0.8);
-//   }
-// }
-
-// .sock-info {
-//   margin-bottom: 22px;
-// }
-
-// .detailed-info {
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-// }
-
-// .detail {
-//   display: flex;
-//   align-items: center;
-//   i {
-//     font-size: 12px;
-//     color: #006DAA;
-//     opacity: 0.4;
-//   }
-//   p {
-//     font-size: 12px;
-//     color: #006DAA;
-//     opacity: 0.4;
-//     margin-top: 0px;
-//     margin-bottom: 0px;
-//     padding-left: 3px;
-//   }
-// }
-
-// .sock-description p {
-//   font-size: 12px;
-//   line-height: 1.4;
-//   color: #696969;
-//   opacity: 0.7;
-//   margin-bottom: 0px;
-//   margin-left: 10px;
-//   margin-top: 10px;
-// }
-
-// .card-product-infos {
-//   position: relative;
-// }
-
-// .card-product .card-product-infos {
-//   padding: 16px;
-// }
-
-// .actions {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   margin-top: 52px;
-// }
-
-// #buy-button {
-//   width: 100%;
-//   height: 50px;
-//   border-radius: 22px;
-//   background-color: white;
-//   border: 1px solid #006DAA;
-//   color: #006DAA;
-
-//   font-weight: lighter;
-//   font-size: 16px;
-//   margin-top: 6px;
-//   margin-left: 53px;
-//   padding: 5px 25px;
-//   text-decoration: none;
-
-//   &:hover {
-//     background-color: #006DAA;
-//   border: 1px solid #006DAA;
-//   color: white;
-//     transition: color 0.3s ease
-//   }
-// }
-
-
-
-// .sock-price p {
-//   margin-bottom: 0px;
-//   font-size: 20px;
-//   color: #696969;
-//   opacity: 0.7;
-// }
-
-// // reviews card
-
-
-// .review-rating {
-//   i {
-//     font-size: 12px;
-//   }
-// }
-
-
-// .logged-in-user {
-//   position: absolute;
-//   right: 30px;
-//   top: 0px;
-// }
-
-
-
-// .review-rating {
-//     margin-top: -10px;
-//   padding-left: 20px;
-//   font-size: 10px;
-// }
-
-
-// .overall-rating {
-//   margin-bottom: 10px;
-// }
