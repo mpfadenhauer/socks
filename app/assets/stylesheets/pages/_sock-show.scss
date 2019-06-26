@@ -29,11 +29,12 @@ body {
   justify-content: space-around;
 }
 
+
 .images {
   margin-top: 20px;
 }
 
-.container {
+.sock-container {
   position: relative;
   margin: auto;
   margin-top: 70px;
@@ -101,6 +102,11 @@ body {
   }
 }
 
+.overview-categories {
+  display: flex;
+  width: 60%;
+}
+
 .categories {
   // display: flex;
   align-items: center;
@@ -109,7 +115,7 @@ body {
   grid-template-columns: repeat(auto-fill, 68px);
   width: 60%;
   grid-gap: 4px;
-  margin-left: -20px;
+  margin-left: 33px;
   margin-top: 5px;
   &:hover {
     cursor: pointer;
@@ -125,7 +131,7 @@ body {
 .category {
   padding: 5px;
   font-size: 0.7em;
-  text-align: center;
+  text-align: left;
   vertical-align: middle;
   margin-left: -28px;
 }
