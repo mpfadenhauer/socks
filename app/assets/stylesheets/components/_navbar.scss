@@ -143,14 +143,75 @@ index #search {display:none}
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 
-.btn {
+.modal-header {
+  h5 {
+    color: $blue;
+  }
+
+}
+
+  .form-inputs {
+    color: $blue;
+  }
+
+.user {
   color: $blue;
   font-size: 14px;
+
   &:hover {
   color: #495057;
   text-decoration: none;
   }
 }
+
+.user-btn {
+  background: $white;
+  border: 1px solid $blue;
+  padding: 10px;
+  display: inline-block;
+  outline: 0;
+  width: 96%;
+  margin: 0px 0px 0px -7px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $blue;
+  position: absolute;
+  bottom: 38px;
+  right: 10px;
+  text-align: center;
+  &:hover {
+    background: $blue;
+    color: $white;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+  }
+}
+
+.signup-btn {
+  background: $white;
+  border: 1px solid $blue;
+  padding: 7px;
+  display: inline-block;
+  outline: 0;
+  width: 96%;
+  margin: 0px 0px 0px -7px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $blue;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  text-align: center;
+  &:hover {
+    background: $blue;
+    color: $white;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+  }
+}
+
 
 @media (min-width: 100px) and (max-width: 992px) {
    #search_navbar {
