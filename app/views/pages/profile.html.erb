@@ -16,7 +16,7 @@
                 <div class="card-sock">
                   <% if sock.photo.file.nil? %>
                   <%= link_to sock_path(sock) do  %>
-                    <%= image_tag 'logo.jpg', crop: :fill, height: 220, width: 400; %>
+                    <%= image_tag 'demo.png', crop: :fill, height: 220, width: 400; %>
                     <% end %>
                   <% else %>
                     <%= cl_image_tag sock.photo, crop: :fill, height: 220, width: 400; %>
