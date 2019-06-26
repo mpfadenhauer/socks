@@ -3,7 +3,7 @@
   <div class="cards">
     <% if @user.socks.length == 0 %>
       <h2>No sock yet</h2>
-      <h2><strong>for user only -> add socks now!</strong></h2>
+      <%= link_to "+ Add a a sock", new_sock_path, class: "btn btn-primary m-5" %>
     <% else %>
       <% @user.socks.each do |sock| %>
             <div class="card-sock">
@@ -58,6 +58,10 @@
  <% end %>
 </div>
 
-<%= link_to new_review_path(@user), class: "btn btn-primary m-5" do %>
-  <span><i class="far fa-comment"></i>Review user</span>
-<% end %>
+
+
+<div class="d-flex justify-content-center">
+  <%= link_to new_review_path(@user), class: "btn btn-primary m-5 review-btn" do %>
+    <span><i class="far fa-comment"></i>Review user</span>
+  <% end %>
+</div>
