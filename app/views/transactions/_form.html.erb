@@ -1,9 +1,33 @@
-<div class="container" style="color: #006DAA">
-  <div class="row justify-content-center" >
-    <div class="col-12 col-md-6 col-lg-4"><%= simple_form_for [@sock, @transaction] do |t| %>
-      <%= t.button :submit, value: "Buy Sock Now", class: "buy-sock"  %>
-      <% end %>
-    </div>
-  </div>
-</div>
+ <%= form_tag socks_path, method: :post do %>
+  <p>Name on card</p>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "John doe"
+  %>
+<br>
+  <p>Credit card number</p>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "****************"
+  %>
+  <br>
+    <p>experation date</p>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "mm/dd"
+  %>
+
+  <br>
+    <p>CVV <i class="fas fa-question-circle"></i></p>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "***"
+  %>
+<% end %>
+
+<br>
 
