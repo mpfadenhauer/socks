@@ -1,8 +1,8 @@
 <div class="container">
-  <h1 class = "text-center"><%= @user.username %></h1>
+  <h1 class = "text-center username"><%= @user.username %></h1>
   <div class="cards">
     <% if @user.socks.length == 0 %>
-      <h2>No sock yet</h2>
+      <h2>No socks yet 😢</h2>
       <%= link_to "+ Add a a sock", new_sock_path, class: "btn btn-primary m-5" %>
     <% else %>
       <% @user.socks.each do |sock| %>
