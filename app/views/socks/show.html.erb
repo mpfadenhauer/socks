@@ -69,7 +69,13 @@
 </div>
 
   <div class="sock-container">
-  <p>placeholder map</p>
+  <div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
   </div>
 </div>
 
@@ -83,16 +89,25 @@
           <% @user.rating.times do%>
             <% raw '<i class="fa fa-star" aria-hidden="true"></i>' %>
           <% end %>
-        </div>
-    </div>
-    <div class="review">
-      <p><strong>User Reviews</strong></p>
-        <% @user.reviews.each_with_index do |review,index| %>
-          <%reviewer = User.find(@ids[index]) %>
-          <p><strong><%= reviewer.username %></strong></p>
-          <div class="review-rating">
-            <%review.rating.times do %>
-              <% raw '<i class="fa fa-star" aria-hidden="true"></i>' %>
+
+          </div>
+          </div>
+          <div class="sock-review">
+            <p><strong>User Reviews</strong></p>
+            <% @user.reviews.each_with_index do |review,index| %>
+            <%reviewer = User.find(@ids[index]) %>
+           <p class ="d-flex"><strong><%= reviewer.username %></strong>
+           <div class="review-rating">
+              <%review.rating.times do %>
+              <%# raw '<i class="fa fa-star" aria-hidden="true"></i>' %>
+              <%= '⭐️' %>
+            <% end %>
+            </p>
+            </div>
+            <div class="review-content">
+              <p><%= review.description %></p>
+            </div>
+    
             <% end %>
           </div>
           <div class="review-content">
@@ -110,3 +125,7 @@
     </div>
   </div>
 </div>
+
+
+
+>>>>>
