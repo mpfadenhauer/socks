@@ -1,21 +1,50 @@
 <div class="container">
+  <%= simple_form_for @sock do |s| %>
+  <div class="row">
+    <div class="col-12 col-md-6"> <%= s.input :title, label: "Name your sock" %></div>
+    <div class="col-12 col-md-6"> <%= s.input :color, collection: Sock::COLOR %>  </div>
+  <div class="w-100"></div>
+    <div class="col-12 col-md-6"> <%= s.input :description, label: "Describe your sock" %> </div>
+    <div class="col-12 col-md-6"> <%= s.input :pattern,  collection: Sock::SOCK_PATTERN %> </div>
+  <div class="w-100"></div>
+    <div class="col-12 col-md-6"> <%= s.input :brand %> </div>
+    <div class="col-12 col-md-6"> <%= s.input :sock_type, collection: Sock::SOCK_TYPE %>
+      <button type="button" class="btn btn-outline-secondary popup" data-toggle="modal" data-target="#exampleModalCenter">More info</button>
+    </div>
+  <div class="w-100"></div>
+    <div class="col-12 col-md-6"> <%= s.input :price , label: "how much for it?"%> </div>
+    <div class="col-12 col-md-6"> <%= s.input :size, collection: Sock::SIZES %> </div>
+   <div class="w-100"></div>
+    <div class="col-12 col-md-6"> <%= s.input :photo %> </div>
+    <div class="col-12 col-md-6"> <%= s.input :season, collection: Sock::SEASON %> </div>
+  <div class="w-100"></div>
+    <div class="col-12 col-md-6"> <%= s.input :photo_cache, as: :hidden %> </div>
+  </div>
+<div class="container edit">
   <div class="row justify-content-center">
-    <div class="col-12 col-md-6 col-lg-4"><%= simple_form_for @sock do |s| %>
-        <%= s.input :title, label: "Name your sock" %>
-        <%= s.input :description, label: "Describe your sock" %>
-        <%= s.input :color %>
-
-        <%= s.input :pattern,  collection: Sock::SOCK_PATTERN %>
-        <%= s.input :size, collection: Sock::SIZES %>
-
-        <%= s.input :sock_type, collection: Sock::SOCK_TYPE %>
-        <%= s.input :brand %>
-        <%= s.input :season, collection: Sock::SEASON %>
-        <%= s.input :photo %>
-        <%= s.input :photo_cache, as: :hidden %>
-        <%= s.input :price , label: "how much for it?"%>
-        <%= s.submit "Post Sock", class: "create-sock"%>
+    <%= s.submit "Post Sock", class: "col-4 create-sock"%>
       <% end %>
+</div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Sock types</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= image_tag 'sock_types.jpg', height: 500, width: 450, id: "sock_types" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>
