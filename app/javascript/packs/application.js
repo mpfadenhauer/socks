@@ -9,3 +9,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 
+import { filter } from '../components/filter';
+
+filter();
