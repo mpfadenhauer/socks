@@ -67,6 +67,7 @@
       <% end %>
   </div>
 
+ <!-- cards -->
 
     <div class="container card-container">
   <div class="cards">
@@ -75,7 +76,7 @@
         <div class="card-sock">
           <% if sock.photo.file.nil? %>
           <%= link_to sock_path(sock) do  %>
-            <%= image_tag 'logo.jpg', crop: :fill, height: 220, width: 600; %>
+            <%= image_tag 'demo.png', crop: :fill, height: 220, width: 400; %>
             <% end %>
           <% else %>
           <%= link_to sock_path(sock) do  %>
@@ -103,22 +104,29 @@
       </div>
 </div>
 
+<!-- unite -->
+<div class = "article athletes">
+  <h1> Sockoholics Unite!</h1>
+  <h2> recieve <strong>exclusive socks</strong> with <a href="https://www.happysocks.com/gl/" target="_blank">THIS</a> monthly subscription</h2>
+</div>
+
+<!-- carousel -->
 
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class = "athletes a1">
         <h1>
-          Check out Stance's latest releases <br>
-          <a href = "https://www.stance.com/sports-socks/">here</a>
+          Check out Athletes's latest releases <br>
+          <a href = "https://www.stance.com/sports-socks/" target=_blank>here</a>
         </h1>
       </div>
     </div>
     <div class="carousel-item">
       <div class = "athletes a2">
         <h1>
-          Check out Stance's latest releases <br>
-          <a href = "https://www.stance.com/sports-socks/">here</a>
+          Check out Athletes's latest releases <br>
+          <a href = "https://www.stance.com/sports-socks/" target=_blank>here</a>
         </h1>
       </div>
     </div>
