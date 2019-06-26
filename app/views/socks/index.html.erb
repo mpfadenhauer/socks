@@ -22,49 +22,47 @@
   <div class="container">
     <div class="containerindex">
       <div class="dropdown">
-        <h2>Filter</h2>
+        <div>
+          <h2>Filter</h2>
+          <br>
+        </div>
+          <%= form_tag socks_path, method: :get do %>
+        <div>
+          <label>Color</label>
+        </div>
+        <div>
+            <%= select_tag :filter_color, options_for_select(Sock::COLOR, params[:filter_color]), prompt:"Please select"%>
+        </div>
         <br>
-        <form>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">sock size</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <% Sock::SIZES.each do |x| %>
-              <option><%= x %></option>
-              <% end %>q
-            </select>
-          </div>
-
-
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Sock type</label>
-            <select class="form-control" id="sock_type">
-              <% Sock::SOCK_TYPE.each do |x| %>
-              <option><%= x %></option>
-              <% end %>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Sock pattern</label>
-            <select class="form-control" id="sock_pattern">
-              <% Sock::SOCK_PATTERN.each do |x| %>
-              <option><%= x %></option>
-              <% end %>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Season</label>
-            <select class="form-control" id="season" value="">
-              <% Sock::SEASON.each do |x| %>
-              <option><%= x %></option>
-              <% end %>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary mb-2">Filter</button>
-        </form>
-
+        <br>
+        <div>
+          <label>Sock type</label>
+        </div>
+        <div>
+          <%= select_tag :filter_sock_type, options_for_select(Sock::SOCK_TYPE, params[:filter_sock_type]), prompt:"Please select"%>
+        </div>
+          <br>
+          <br>
+        <div>
+          <label>Sock pattern</label>
+        </div>
+        <div>
+          <%= select_tag :filter_sock_pattern, options_for_select(Sock::SOCK_PATTERN, params[:filter_sock_pattern]), prompt:"Please select"%>
+        </div>
+          <br>
+          <br>
+        <div>
+          <label>Season</label>
+        </div>
+        <div>
+          <%= select_tag :filter_season, options_for_select(Sock::SEASON, params[:filter_season]), prompt:"Please select"%>
+        </div>
+          <br>
+          <br>
+          <%= submit_tag :Filter, class: 'btn btn-primary mb-2' %>
+          <% end %>
       </div>
+
 
       <div class="cards">
         <% @socks.each do |sock| %>

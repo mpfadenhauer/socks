@@ -2,9 +2,9 @@ puts "destroying database"
 Transaction.destroy_all
 Sock.destroy_all
 
-
+url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
 puts "Database empty, creating 3 seeds"
-user = User.create!(email:"12345@email.com", password:'123456', username:"mario", location:"tel-aviv")
+user = User.create!(email:"josephkanner@gmail.com", password:'password', username:"mario", location:"url")
 
 
 puts "first"
@@ -35,6 +35,7 @@ Sock.create!(
           age: 2,
           price: "10",
           user: user,
+          remote_photo_url: "url"
         )
 
 puts "second"
@@ -51,7 +52,8 @@ Sock.create!(
           season: "summer",
           age: 1,
           price: "0.5",
-          user: user
+          user: user,
+          remote_photo_url: "url"
         )
 
 puts "third"
@@ -68,7 +70,8 @@ Sock.create!(
           season: "winter",
           age: 8,
           price: "10",
-          user: user
+          user: user,
+          remote_photo_url: "profile.png"
         )
 
 puts "all done!"
