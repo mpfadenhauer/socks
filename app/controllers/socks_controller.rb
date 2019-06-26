@@ -2,6 +2,7 @@ class SocksController < ApplicationController
   before_action :set_sock, only: [:show, :edit, :update, :destroy]
   # skip_after_action :verify_policy_scoped
   skip_before_action :authenticate_user!, only: [:show]
+  before_action :instance_user, only: [:index]
   def index
     if params[:search].present?
       @socks = policy_scope(Sock).search_by_color_and_title(params[:search])
@@ -17,7 +18,7 @@ class SocksController < ApplicationController
     @user = @sock.user
     @ids = get_reviewer
     @user = @sock.user
-    if @user.latitude != nil && @user.longitude != nil
+     if @user.latitude != nil && @user.longitude != nil
       @markers = [
         lat: @user.latitude,
         lng: @user.longitude,
@@ -59,13 +60,16 @@ class SocksController < ApplicationController
 
   private
 
+  def instance_user
+    @instance_user = User.new
+  end
+
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
 
   def set_sock
     @sock = Sock.find(params[:id])
-    authorize @sock
   end
 
   def sock_params

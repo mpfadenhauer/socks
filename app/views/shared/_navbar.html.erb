@@ -37,9 +37,92 @@
         </div>
       </div>
     <% else %>
-      <%= link_to "Log in", new_user_session_path, class:"navbar-sock-item navbar-sock-link" %>
-      <%= link_to 'Sign up', new_user_registration_path, class:"navbar-sock-item navbar-sock-link" %>
+      <button type="button" class="login btn btn-btn-outline-primary" data-toggle="modal" data-target="#login">Log In</button>
+      <button type="button" class="signup btn btn-btn-outline-primary" data-toggle="modal" data-target="#signup">Sign Up</button>
     <% end %>
   </div>
 </div>
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% @instance_user = User.new %>
+      <%= simple_form_for(@instance_user, url: session_path(@instance_user)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+          <%= f.input :password,
+                      required: false,
+                      input_html: { autocomplete: "current-password" } %>
+          <%= f.input :remember_me, as: :boolean %>
+        </div>
 
+
+      </div>
+      <div class="modal-footer">
+        <div class="form-actions">
+          <%= f.button :submit, "Log in", class:"sign-upbtn" %>
+        </div>
+      <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% @instance_user = User.new %>
+        <%= simple_form_for(@instance_user, url: session_path(@instance_user)) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" }%>
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password" } %>
+
+            <%= f.input :username, label: "choose a username" %>
+            <%= f.input :photo, label: "upload a picture with your favorite sock!"%>
+            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.input :location, label: "share your location" %>
+          </div>
+        <div class="modal-footer">
+        <div class="form-actions">
+          <%= f.button :submit, "Sign up", class:"sign-upbtn" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+ <!--      <%# link_to "Log in", new_user_session_path, class:"navbar-sock-item navbar-sock-link", data-toggle:"modal", data-target:"exampleModal" %> -->
+      <%# link_to 'Sign up', new_user_registration_path, class:"navbar-sock-item navbar-sock-link" %>
