@@ -19,6 +19,19 @@ select {
   color: white;
 }
 
+
+.popup {
+  font-size: 8px;
+  padding: 0.250rem 0.60rem;
+    position: absolute;
+    top: 2px;
+    right: 70px;
+}
+
+.edit {
+  margin-right: 10px;
+}
+
 .filter-submit {
   min-width:90%;
   max-width:90%;
@@ -66,6 +79,10 @@ select {
   font-size: 16px;
   width: 22em;
   padding-bottom: 2em;
+}
 
-
+.back-btn {
+  position: absolute;
+  top: 40px;
+  left: 30px;
 }
