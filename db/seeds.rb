@@ -11,20 +11,21 @@ url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_
 user1 = User.create!(email: Faker::Internet.unique.email,
                     password:'123456',
                     username: "SockPrincess",
-                    photo: 'https://kitt.lewagon.com/placeholder/users/random',
-                    location:Faker::Address.unique.city)
+                    remote_photo_url: 'https://res.cloudinary.com/dctkoo85s/image/upload/c_scale,h_50/v1561637746/sprzksdnk3rrr26oqulz.jpg',
+                    location: "Berlin"
+                    )
 user2 = User.create!(email: Faker::Internet.unique.email,
                     password:'123456',
                     username: "BenCiety",
-                    photo: 'https://kitt.lewagon.com/placeholder/users/random',
-                    location:Faker::Address.unique.city)
-
+                    remote_photo_url: 'https://res.cloudinary.com/dctkoo85s/image/upload/c_fill,h_50,w_50/v1561637748/wvsr9gskjnexqnwouvq1.jpg',
+                    location: "New york"
+                    )
 user3 = User.create!(email: Faker::Internet.unique.email,
                     password:'123456',
                     username: "socklover123",
-                    photo: 'https://kitt.lewagon.com/placeholder/users/random',
-                    location:Faker::Address.unique.city)
-
+                    remote_photo_url: 'https://res.cloudinary.com/dctkoo85s/image/upload/c_scale,h_50/v1561637749/t3ihzvrtqhgnzzrnksf0.jpg',
+                    location: "London"
+                    )
 
 puts "creating socks"
 
@@ -250,7 +251,7 @@ Sock.create!(
           age: 1,
           price: "25",
           user: user3,
-          remote_photo_url: "https://res.cloudinary.com/dctkoo85s/image/upload/c_fill,h_180,w_280/v1561465328/hudee6vyu1tjshstvnfx.jpg"
+          remote_photo_url: "https://res.cloudinary.com/dctkoo85s/image/upload/c_fill,h_220,w_600/v1561465699/h0cianqwfuu6xrdutu7l.jpg"
         )
 Sock.create!(
           title: "Stripes",
@@ -306,7 +307,7 @@ Review.create!(
 
 Review.create!(
          rating: 2,
-         description:"not proffesional",
+         description:"not professional",
          user_reviewed_id: 3,
          review_giver_id: 2
          )

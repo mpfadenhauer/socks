@@ -4,22 +4,22 @@
     <% if sock.bought == false %>
       <div class="card-sock">
         <% if sock.photo.file.nil? %>
-        <%= link_to sock_path(sock) do  %>
-          <%= image_tag 'demo.png', crop: :fill, height: 220, width: 400; %>
+        <%= link_to sock_path(sock), class: "card-trip" do  %>
+          <%= image_tag 'avatar_ifnil.png', crop: :fill, height: 220; %>
           <% end %>
         <% else %>
-        <%= link_to sock_path(sock) do  %>
-          <%= cl_image_tag sock.photo, crop: :fill, height: 220, width: 550; %>
+        <%= link_to sock_path(sock), class: "card-trip" do  %>
+          <%= cl_image_tag sock.photo, crop: :fill, height: 220; %>
           <% end %>
         <% end %>
         <div class="card-sock-infos">
           <div>
-            <h2><%= link_to sock.title, sock_path(sock)  %></h2>
+            <h2><%= link_to sock.title, sock_path(sock) %></h2>
             <p> <%= sock.description %></p>
           </div>
           <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
           <%= link_to profile_path(sock.user) do  %>
-            <% if sock.user.photo.file.nil? %>
+            <% if sock.user.photo.url.nil? %>
               <%= image_tag 'avatar_ifnil.png', height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered' %>
             <% else %>
               <%= cl_image_tag sock.user.photo, height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered'  %>
