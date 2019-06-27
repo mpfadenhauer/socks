@@ -20,7 +20,7 @@
           <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
           <%= link_to profile_path(sock.user) do  %>
             <% if sock.user.photo.file.nil? %>
-              <%= image_tag 'sock.png', height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered' %>
+              <%= image_tag 'avatar_ifnil.png', height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered' %>
             <% else %>
               <%= cl_image_tag sock.user.photo, height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered'  %>
             <% end %>
