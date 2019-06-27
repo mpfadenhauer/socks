@@ -68,6 +68,12 @@ $sky: #7ea5ba;
    min-height: 600px;
 }
 
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
