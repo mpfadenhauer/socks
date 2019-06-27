@@ -15,11 +15,15 @@
   position: sticky;
 }
 
+label {
+  color: #68B6E1;
+}
+
 select {
   min-width:90%;
   max-width:90%;
-  background: #68B6E1;
-  color: white;
+  background: white;
+  color: #696969;
 }
 
 
@@ -38,12 +42,18 @@ select {
 .filter-submit {
   min-width:90%;
   max-width:90%;
-  background: #68B6E1;
-  font-size:16px;
-  color: white;
+  background: white;
+  border: 1px solid #68B6E1;
+  font-size: 16px;
+  color: #68B6E1;
   margin-left: 0px;
+  border-radius: 5px;
+  &:hover {
+  background: #68B6E1;
+  border: 1px solid #68B6E1;
+  font-size:16px;
+  }
 }
-
 
 .sign-upbtn{
   background-color: #006DAA;

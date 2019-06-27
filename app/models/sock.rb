@@ -1,10 +1,11 @@
 class Sock < ApplicationRecord
 
-  SOCK_TYPE = ["Over the knee", "Knee high", "Over the calf/Executive", "Mid-calf/Crew", "Quarter/Anklets", "Ped/Low cut", "Liner, Extra low cut", "Invisible/No-show", "Toe cover/Mute"].freeze
+  SOCK_TYPE = ["Over knee", "Knee high", "Over calf", "Mid-calf", "Quarter", "Low cut", "Extra low cut", "Invisible", "Toe cover"].freeze
   SOCK_PATTERN = ["Solid", "Striped", "Polka dots", "Other"].freeze
-  SEASON = ["spring", "winter", "summer", "autumn"].freeze
+  SEASON = ["Spring", "Summer", "Autumn", "Winter"].freeze
   SIZES = ["36-41", "42-46", "47-51"].freeze
-  COLOR = ["Maroon", "Brown", "Olive", "Teal", "Navy", "Black", "Red", " Orange", "Yellow", "lime", "Green", "Cyan", "Blue", "Purple", "Magenta", "Grey", "Pink", "Apricot", "Beige", "Mint", "Lavender", "White"].freeze
+  COLOR = ["Apricot", "Beige", "Black", "Blue", "Brown", "Cyan", "Green", "Grey", "Lavender", "Lime", "Magenta", "Maroon", "Mint", "Navy", "Olive", "Orange", "Pink", "Purple", "Red", "Teal", "White", "Yellow"].freeze
+
 
   # for cloudinary
   mount_uploader :photo, PhotoUploader
@@ -27,7 +28,7 @@ class Sock < ApplicationRecord
   validates :brand, presence: true
   validates :sock_type, presence: true
   validates :title, presence: true
-  validates :color, inclusion: { in: ["Maroon", "Brown", "Olive", "Teal", "Navy", "Black", "Red", " Orange", "Yellow", "lime", "Green", "Cyan", "Blue", "Purple", "Magenta", "Grey", "Pink", "Apricot", "Beige", "Mint", "Lavender", "White"] }, presence: true
+  validates :color, inclusion: { in: ["Apricot", "Beige", "Black", "Blue", "Brown", "Cyan", "Green", "Grey", "Lavender", "Lime", "Magenta", "Maroon", "Mint", "Navy", "Olive", "Orange", "Pink", "Purple", "Red", "Teal", "White", "Yellow"] }, presence: true
   validates :price, presence: true, numericality: true
   validates :pattern, inclusion: { in: ["Solid", "Striped", "Polka dots", "Other", "None"] }, presence: true
   validates :size, inclusion: { in: ["36-41", "42-46", "47-51"] }, presence: true
