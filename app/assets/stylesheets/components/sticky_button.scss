@@ -1,0 +1,25 @@
+#top {
+  border: 1px solid black;
+  height: 900px;
+  width: 80%;
+  position: absolute;
+}
+
+.button {
+  right: 40px;
+  border: none;
+  bottom: 0px;
+  font-size: 16px;
+  margin-left: 0px;
+  cursor: pointer;
+  padding: 10px 24px;
+  position: fixed;
+}
+
+#bottom {
+  border: 1px solid black;
+  height: 900px;
+  width: 80%;
+  top: 910px;
+  position: relative;
+}
