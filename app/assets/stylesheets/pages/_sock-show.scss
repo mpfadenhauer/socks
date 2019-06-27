@@ -101,7 +101,8 @@ $orange: #F2A849;
 }
 
 #add{
-  width: 164px;
+  min-width:90%;
+  max-width:90%;
   background: white;
   border: 1px solid $orange;
   font-size: 16px;
