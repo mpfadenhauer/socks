@@ -73,12 +73,12 @@
       <p style="padding-bottom: 1em;">No Reviews yet</p>
     <% end %>
 
-  <div id="review-button">
+  </div>
+</div>
+
+  <div id="review-button btn btn-warning">
     <% if current_user != @user %>
     <i class="fas fa-edit"></i>
       <%= link_to "Add a review", new_review_path %>
       <% end %>
   </div>
-  </div>
-</div>
-

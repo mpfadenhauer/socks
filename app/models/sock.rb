@@ -1,10 +1,11 @@
 class Sock < ApplicationRecord
 
   SOCK_TYPE = ["Over knee", "Knee high", "Over calf", "Mid-calf", "Quarter", "Low cut", "Extra low cut", "Invisible", "Toe cover"].freeze
-  SOCK_PATTERN = ["Solid", "Striped", "Polka dots", "Other"].freeze
+  SOCK_PATTERN = ["Solid", "Striped", "Shape", "Polka dots", "Other"].freeze
   SEASON = ["Spring", "Summer", "Autumn", "Winter"].freeze
   SIZES = ["36-41", "42-46", "47-51"].freeze
   COLOR = ["Apricot", "Beige", "Black", "Blue", "Brown", "Cyan", "Green", "Grey", "Lavender", "Lime", "Magenta", "Maroon", "Mint", "Navy", "Olive", "Orange", "Pink", "Purple", "Red", "Teal", "White", "Yellow"].freeze
+
 
 
   # for cloudinary
@@ -28,12 +29,12 @@ class Sock < ApplicationRecord
   validates :brand, presence: true
   validates :sock_type, presence: true
   validates :title, presence: true
-  validates :color, inclusion: { in: ["Apricot", "Beige", "Black", "Blue", "Brown", "Cyan", "Green", "Grey", "Lavender", "Lime", "Magenta", "Maroon", "Mint", "Navy", "Olive", "Orange", "Pink", "Purple", "Red", "Teal", "White", "Yellow"] }, presence: true
+  validates :color, inclusion: { in: COLOR }, presence: true
   validates :price, presence: true, numericality: true
-  validates :pattern, inclusion: { in: ["Solid", "Striped", "Polka dots", "Other", "None"] }, presence: true
-  validates :size, inclusion: { in: ["36-41", "42-46", "47-51"] }, presence: true
-  validates :description, presence: true, presence: true
+  validates :pattern, inclusion: { in: SOCK_PATTERN }, presence: true
+  validates :size, inclusion: { in: SIZES }, presence: true
+  validates :description, presence: true
   # validates :sock_type, inclusion: { in: ["Over the knee", "Knee high", "Over the calf/Executive", "Mid-calf/Crew", "Quarter/Anklets", "Ped/Low cut", "Liner/Extra low cut", "Invisible/No-show", "Toe cover/Mute"] }, allow_blank: true
-  validates :season, inclusion: { in: ["spring", "winter", "summer", "autumn"] }, presence: true
+  validates :season, inclusion: { in: SEASON }, presence: true
 
 end
