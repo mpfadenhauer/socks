@@ -2,7 +2,6 @@ require 'faker'
 
 puts "destroying previous database"
 Transaction.destroy_all
-Review.destroy_all
 Sock.destroy_all
 
 
@@ -47,7 +46,7 @@ Sock.create!(
 Sock.create!(
           title: "White Nike sock",
           description: "Simple white sock with the Nike logo cause we all lose those ",
-          color: "white",
+          color: "White",
           pattern: "Solid",
           size: "42-46",
           sock_type: "Quarter/Anklets",
@@ -67,7 +66,7 @@ Sock.create!(
           size: "42-46",
           sock_type: "Mid-calf/Crew",
           brand: "adidas",
-          season: "winter",
+          season: "Winter",
           age: 8,
           price: "10",
           user: user3,
@@ -165,23 +164,8 @@ Sock.create!(
         )
 
 Sock.create!(
-          title: "Pink Dinosaur sock",
-          description: "they're pink and have dinosaurs on them, that's all you need to know ",
-          color: "Pink",
-          pattern: "Shape",
-          size: "42-46",
-          sock_type: "Mid-calf/Crew",
-          brand: "Teeturtle",
-          season: "Summer",
-          age: 2,
-          price: "10",
-          user: user1,
-          remote_photo_url: "pair.jpg"
-        )
-
-Sock.create!(
-          title: "Space sock",
-          description: "I am giving away the right one (i lose the left)",
+          title: "Shark sock",
+          description: "Baby shark todo todo todo to do, stay on barnd, get it now",
           color: "Blue",
           pattern: "Shape",
           size: "42-46",
@@ -189,9 +173,24 @@ Sock.create!(
           brand: "Teeturtle",
           season: "Summer",
           age: 2,
+          price: "20",
+          user: user3,
+          remote_photo_url: "https://cdn.shopify.com/s/files/1/1194/9756/products/Mens_Shark_Model_1400x.jpg?v=1461898467"
+        )
+
+Sock.create!(
+          title: "Space sock",
+          description: "I am giving away the right one (i lost the left)",
+          color: "Blue",
+          pattern: "Shape",
+          size: "42-46",
+          sock_type: "Mid-calf/Crew",
+          brand: "Good luck sock",
+          season: "Summer",
+          age: 2,
           price: "8",
           user: user3,
-          remote_photo_url: "space.jpg"
+          remote_photo_url: "https://cdn.shopify.com/s/files/1/1415/1894/products/1204-Good_Luck_Sock-Space_Crew_Socks-v2.jpg?v=1533497951"
         )
 
 Sock.create!(
@@ -268,7 +267,7 @@ Sock.create!(
           remote_photo_url: "https://res.cloudinary.com/dctkoo85s/image/upload/c_fill,h_220,w_600/v1561465797/qk7rvycfldk9jdtiu2kd.jpg"
         )
 
-puts (creating reviews)
+puts ('creating reviews')
 
 Review.create!(
          rating: 5,
