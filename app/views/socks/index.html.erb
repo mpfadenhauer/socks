@@ -20,7 +20,7 @@
 
   <h1 style="color: #006DAA; margin-bottom:1em" id="socks_index_title">Our Socks</h1>
 <div class="d-flex justify-content-center">
-  <button id="filter-button", class= "btn btn-danger">Filter socks</button>
+  <button id="filter-button", class= "btn btn-danger mb-5">Filter socks</button>
 </div>
   <br>
 
@@ -67,6 +67,7 @@
       <% end %>
   </div>
 
+ <!-- cards -->
 
     <div class="container card-container">
   <div class="cards">
@@ -75,7 +76,7 @@
         <div class="card-sock">
           <% if sock.photo.file.nil? %>
           <%= link_to sock_path(sock) do  %>
-            <%= image_tag 'logo.jpg', crop: :fill, height: 220, width: 600; %>
+            <%= image_tag 'demo.png', crop: :fill, height: 220, width: 400; %>
             <% end %>
           <% else %>
           <%= link_to sock_path(sock) do  %>
@@ -103,22 +104,44 @@
       </div>
 </div>
 
+<!-- about -->
+
+<div class = "about py-5">
+  <h2 >The <strong>ultimate</strong> sock finder app</h2>
+  <br>
+  <div class="d-flex justify-content-between align-items-top">
+    <div class="text-justify">
+      <p>In <strong>SockCiety™️</strong>, we pride ourselves for giving the ultimate user experience, for the people who truly deserve it. Our community includes people from all around the world. <br> We believe that each sock doesn’t have only one sockMate and could eventually, given the time,  find a new match. That’s why we built the <strong>SockCiety™️</strong>, to let sock lovers meet and find their match, so that can enjoy their favorite socks once more.
+      </p>
+    </div>
+     <%= image_tag 'logo.jpg', crop: :fill, height: 180, width: 250, id:"image-blurred-edge" %>
+</div>
+</div>
+
+<!-- unite -->
+<div class = "article athletes">
+  <h1> Sockoholics Unite!</h1>
+  <h2> recieve <strong>exclusive socks</strong> with <a href="https://www.happysocks.com/gl/" target="_blank">THIS</a> monthly subscription</h2>
+</div>
+
+
+<!-- carousel -->
 
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class = "athletes a1">
         <h1>
-          Check out Stance's latest releases <br>
-          <a href = "https://www.stance.com/sports-socks/">here</a>
+          Check out Athletes' latest releases <br>
+          <a href = "https://www.stance.com/sports-socks/" target=_blank>here</a>
         </h1>
       </div>
     </div>
     <div class="carousel-item">
       <div class = "athletes a2">
         <h1>
-          Check out Stance's latest releases <br>
-          <a href = "https://www.stance.com/sports-socks/">here</a>
+          Check out Athletes' latest releases <br>
+          <a href = "https://www.stance.com/sports-socks/" target=_blank>here</a>
         </h1>
       </div>
     </div>
