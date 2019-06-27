@@ -3,6 +3,7 @@ class SocksController < ApplicationController
   # skip_after_action :verify_policy_scoped
   skip_before_action :authenticate_user!, only: [:show]
   before_action :instance_user, only: [:index]
+
   def index
     if params[:search].present?
       @socks = policy_scope(Sock).search_by_color_and_title(params[:search])
@@ -12,7 +13,7 @@ class SocksController < ApplicationController
     else
       @socks = policy_scope(Sock)
     end
-   respond_to do |format|
+    respond_to do |format|
       format.html { render 'socks/index' }
       format.js
     end

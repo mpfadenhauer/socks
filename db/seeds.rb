@@ -11,20 +11,21 @@ url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_
 user1 = User.create!(email: Faker::Internet.unique.email,
                     password:'123456',
                     username: "SockPrincess",
-                    photo: 'https://kitt.lewagon.com/placeholder/users/random',
-                    location:Faker::Address.unique.city)
+                    photo: 'https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg',
+                    location: "Berlin"
+                    )
 user2 = User.create!(email: Faker::Internet.unique.email,
                     password:'123456',
                     username: "BenCiety",
-                    photo: 'https://kitt.lewagon.com/placeholder/users/random',
-                    location:Faker::Address.unique.city)
-
+                    photo: 'https://images.askmen.com/1080x540/2016/01/25-021526-facebook_profile_picture_affects_chances_of_getting_hired.jpg',
+                    location: "New york"
+                    )
 user3 = User.create!(email: Faker::Internet.unique.email,
                     password:'123456',
                     username: "socklover123",
-                    photo: 'https://kitt.lewagon.com/placeholder/users/random',
-                    location:Faker::Address.unique.city)
-
+                    photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtwedjM-Hggz0UKvhwOGG5VitK-MIxicRNMfQ8rG36UDUUvC9DJg',
+                    location: "London"
+                    )
 
 puts "creating socks"
 
@@ -250,7 +251,7 @@ Sock.create!(
           age: 1,
           price: "25",
           user: user3,
-          remote_photo_url: "https://res.cloudinary.com/dctkoo85s/image/upload/c_fill,h_180,w_280/v1561465328/hudee6vyu1tjshstvnfx.jpg"
+          remote_photo_url: "https://res.cloudinary.com/dctkoo85s/image/upload/c_fill,h_220,w_600/v1561465699/h0cianqwfuu6xrdutu7l.jpg"
         )
 Sock.create!(
           title: "Stripes",
