@@ -11,19 +11,19 @@ url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_
 user1 = User.create!(email: Faker::Internet.unique.email,
                     password:'123456',
                     username: "SockPrincess",
-                    remote_photo_url: 'https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg',
+                    remote_photo_url: 'https://res.cloudinary.com/dctkoo85s/image/upload/c_scale,h_50/v1561637746/sprzksdnk3rrr26oqulz.jpg',
                     location: "Berlin"
                     )
 user2 = User.create!(email: Faker::Internet.unique.email,
                     password:'123456',
                     username: "BenCiety",
-                    remote_photo_url: 'https://images.askmen.com/1080x540/2016/01/25-021526-facebook_profile_picture_affects_chances_of_getting_hired.jpg',
+                    remote_photo_url: 'https://res.cloudinary.com/dctkoo85s/image/upload/c_fill,h_50,w_50/v1561637748/wvsr9gskjnexqnwouvq1.jpg',
                     location: "New york"
                     )
 user3 = User.create!(email: Faker::Internet.unique.email,
                     password:'123456',
                     username: "socklover123",
-                    remote_photo_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtwedjM-Hggz0UKvhwOGG5VitK-MIxicRNMfQ8rG36UDUUvC9DJg',
+                    remote_photo_url: 'https://res.cloudinary.com/dctkoo85s/image/upload/c_scale,h_50/v1561637749/t3ihzvrtqhgnzzrnksf0.jpg',
                     location: "London"
                     )
 
@@ -307,7 +307,7 @@ Review.create!(
 
 Review.create!(
          rating: 2,
-         description:"not proffesional",
+         description:"not professional",
          user_reviewed_id: 3,
          review_giver_id: 2
          )
