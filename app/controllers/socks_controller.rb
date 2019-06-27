@@ -12,6 +12,14 @@ class SocksController < ApplicationController
     else
       @socks = policy_scope(Sock)
     end
+    respond_to do |format|
+<<<<<<< HEAD
+      format.html { redirect_to socks_path }
+=======
+      format.html { render 'socks/index' }
+>>>>>>> master
+      format.js
+    end
   end
 
   def show
