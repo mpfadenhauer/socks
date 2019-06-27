@@ -70,6 +70,7 @@ $orange: #F2A849;
   font-size: 14px;
   color: $blue;
   text-transform: uppercase;
+  font-weight: bold;
 
   }
 }
@@ -266,7 +267,7 @@ $orange: #F2A849;
   }
 }
 
-.fa-star {
+.fa-stocking {
   color: $yellow;
   &:hover {
   transform: scale(0.7); /* Equal to scaleX(0.7) scaleY(0.7) */
