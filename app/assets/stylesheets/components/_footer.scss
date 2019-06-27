@@ -8,6 +8,12 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300');
 @import url('http://weloveiconfonts.com/api/?family=entypo');
 
+$blue: #006DAA;
+$bluer: #68B6E1;
+$white: #FFFFF9;
+$dark: #696969;
+$sky: #7ea5ba;
+
 * {
   margin: 0;
   padding: 0;
@@ -45,7 +51,7 @@
   font-family: Entypo;
   font-size: 20px;
   text-align: center;
-  color: #bbbbbb;
+  color: #BBBBBB;
 
   border-radius: 50%;
   background: white;
@@ -59,7 +65,7 @@
 }
 
 .social:hover {
-  color: #006DAA;
+  color: $blue;
   opacity: 0.6;
   cursor: pointer;
 }

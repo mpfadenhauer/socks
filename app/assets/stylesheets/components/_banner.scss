@@ -1,15 +1,20 @@
+$blue: #006DAA;
+$bluer: #68B6E1;
+$white: #FFFFF9;
+
+
 .banner {
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  background-color: #68B6E1;
+  background-color: $bluer;
   height: 800px;
 }
 
 
 .banner h1 {
   margin: 0;
-  color: white;
+  color: $white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
@@ -17,7 +22,7 @@
 
 .banner p {
   font-size: 20px;
-  color: white;
+  color: $white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
@@ -39,7 +44,7 @@
 
 #join {
   font-size: 70px;
-  color: #0262DB;
+  color: #006DAA;
 }
 
 
@@ -74,7 +79,7 @@
 
 .athletes h1 {
     padding-top: 100px;
-    color: white;
+    color: $white;
     font-weight: bold;
     font-size: 80px;
     text-align: left;
@@ -130,7 +135,7 @@
   margin-left: 0;
 }
 .article h2 {
-  color: white;
+  color: $white;
   text-align: center;
   margin-top: 20px;
 

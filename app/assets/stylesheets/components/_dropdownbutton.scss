@@ -1,3 +1,9 @@
+$blue: #006DAA;
+$bluer: #68B6E1;
+$white: #FFFFF9;
+$dark: #696969;
+$orange: #F2A849;
+
 .dropdown {
   overflow: none;
   background: white;
@@ -13,17 +19,21 @@
   width: 25%;
   max-height: 594px;
   position: sticky;
+
+  h2 {
+    color: $blue;
+  }
 }
 
-label {
-  color: #68B6E1;
+.filter-label {
+  color: $orange;
 }
 
 select {
   min-width:90%;
   max-width:90%;
   background: white;
-  color: #696969;
+  color: $blue;
 }
 
 
@@ -43,15 +53,18 @@ select {
   min-width:90%;
   max-width:90%;
   background: white;
-  border: 1px solid #68B6E1;
+  border: 1px solid $orange;
   font-size: 16px;
-  color: #68B6E1;
+  color: $orange;
   margin-left: 0px;
-  border-radius: 5px;
+  border-radius: 25px;
+  letter-spacing: 2px;
   &:hover {
-  background: #68B6E1;
-  border: 1px solid #68B6E1;
+  background: $orange;
+  border: 1px solid $orange;
   font-size:16px;
+  color: $white;
+  cursor: pointer;
   }
 }
 
