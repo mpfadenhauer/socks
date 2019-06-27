@@ -30,7 +30,7 @@
       <h2>Filter</h2>
       <br>
     </div>
-      <%= form_tag socks_path, method: :get do %>
+      <%= form_tag socks_path, method: :get, remote: true do %>
     <div>
       <label>Color</label>
     </div>
@@ -63,47 +63,14 @@
     </div>
       <br>
       <br>
-      <%= submit_tag :Filter, class: 'btn btn-primary mb-2', href: "./socks#socks_index_title" %>
+      <%= submit_tag :Filter, class: 'btn btn-primary mb-2' %>
       <% end %>
   </div>
 
  <!-- cards -->
-
-    <div class="container card-container">
-  <div class="cards">
-    <% @socks.each do |sock| %>
-      <% if sock.bought == false %>
-        <div class="card-sock">
-          <% if sock.photo.file.nil? %>
-          <%= link_to sock_path(sock) do  %>
-            <%= image_tag 'demo.png', crop: :fill, height: 220, width: 400; %>
-            <% end %>
-          <% else %>
-          <%= link_to sock_path(sock) do  %>
-            <%= cl_image_tag sock.photo, crop: :fill, height: 220, width: 600; %>
-            <% end %>
-          <% end %>
-          <div class="card-sock-infos">
-            <div>
-              <h2><%= link_to sock.title, sock_path(sock)  %></h2>
-              <p> <%= sock.description %></p>
-            </div>
-            <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
-            <%= link_to profile_path(sock.user) do  %>
-              <% if sock.user.photo.file.nil? %>
-                <%= image_tag 'sock.png', height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered' %>
-              <% else %>
-                <%= cl_image_tag sock.user.photo, height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered'  %>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-      </div>
+<div class="container card-container">
+<%= render 'cards_container', socks: @socks %>
 </div>
-
 <!-- about -->
 
 <div class = "about py-5">
