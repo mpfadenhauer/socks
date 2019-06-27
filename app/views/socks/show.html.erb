@@ -43,9 +43,9 @@
   </div>
 </div>
   <div class="sock">
-    <p><%= @user.username %></p>
+    <p id="user"><%= @user.username %></p>
     <h1><%= @sock.title %></h1>
-    <h2>$ <%= @sock.price %></h2>
+    <h2><strong>$ <%= @sock.price %></strong></h2>
     <p class="desc"> <%= @sock.description %></p>
     <div class="buttons">
       <% if @sock.user == current_user %>
@@ -93,7 +93,7 @@
   <h2>About <%= @user.username %></h2>
   <div class="overall-rating">
     <% if @user.rating != "no reviews yet" && !@user.rating.nil? %>
-      <p><strong>User Rating: </strong></p>
+      <p class="headline"><strong>User Rating: </strong></p>
       <div class="stars">
         <% @user.rating.times do%>
           <%= raw '<i class="fa fa-star" aria-hidden="true"></i>' %>

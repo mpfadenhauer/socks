@@ -2,6 +2,7 @@ require 'faker'
 
 puts "destroying previous database"
 Transaction.destroy_all
+Review.destroy_all
 Sock.destroy_all
 
 

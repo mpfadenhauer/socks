@@ -1,3 +1,9 @@
+$blue: #006DAA;
+$bluer: #68B6E1;
+$white: #FFFFF9;
+$dark: #696969;
+$orange: #F2A849;
+
 .dropdown {
   overflow: none;
   background: white;
@@ -13,13 +19,21 @@
   width: 25%;
   max-height: 594px;
   position: sticky;
+
+  h2 {
+    color: $blue;
+  }
+}
+
+.filter-label {
+  color: $orange;
 }
 
 select {
   min-width:90%;
   max-width:90%;
-  background: #68B6E1;
-  color: white;
+  background: white;
+  color: $blue;
 }
 
 
@@ -38,12 +52,21 @@ select {
 .filter-submit {
   min-width:90%;
   max-width:90%;
-  background: #68B6E1;
-  font-size:16px;
-  color: white;
+  background: white;
+  border: 1px solid $orange;
+  font-size: 16px;
+  color: $orange;
   margin-left: 0px;
+  border-radius: 25px;
+  letter-spacing: 2px;
+  &:hover {
+  background: $orange;
+  border: 1px solid $orange;
+  font-size:16px;
+  color: $white;
+  cursor: pointer;
+  }
 }
-
 
 .sign-upbtn{
   background-color: #006DAA;

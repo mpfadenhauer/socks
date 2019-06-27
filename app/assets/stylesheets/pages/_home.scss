@@ -1,5 +1,10 @@
 // Specific CSS for your home-page
 $lighter: rgba(0, 109, 170, 0.1);
+$blue: #006DAA;
+$bluer: #68B6E1;
+$white: #FFFFF9;
+$dark: #696969;
+$orange: #EE6E37;
 
 body {
   background: $lighter;
@@ -13,8 +18,6 @@ h1 {
 a:hover {
   text-decoration: none
 }
-
-
 
 
 #user_photo {

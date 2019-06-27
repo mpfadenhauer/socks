@@ -20,7 +20,14 @@
 
   <h1 style="color: #006DAA; margin-bottom:1em" id="socks_index_title">Our Socks</h1>
 <div class="d-flex justify-content-center">
-  <button id="filter-button", class= "btn btn-danger mb-5">Filter socks</button>
+  <div class="onoffswitch">
+    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="filter-button" checked>
+    <label class="onoffswitch-label" for="filter-button">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+</div>
+  <!-- <button id="filter-button", class= "btn btn-danger mb-5">Filter socks</button> -->
 </div>
   <br>
 
@@ -32,7 +39,7 @@
     </div>
       <%= form_tag socks_path, method: :get, remote: true do %>
     <div>
-      <label>Color</label>
+      <label class="filter-label">Color</label>
     </div>
     <div>
         <%= select_tag :filter_color, options_for_select(Sock::COLOR, params[:filter_color]), prompt:"Please select"%>
@@ -40,7 +47,7 @@
     <br>
     <br>
     <div>
-      <label>Sock type</label>
+      <label class="filter-label">Sock type</label>
     </div>
     <div>
       <%= select_tag :filter_sock_type, options_for_select(Sock::SOCK_TYPE, params[:filter_sock_type]), prompt:"Please select"%>
@@ -48,7 +55,7 @@
       <br>
       <br>
     <div>
-      <label>Sock pattern</label>
+      <label class="filter-label">Sock pattern</label>
     </div>
     <div>
       <%= select_tag :filter_sock_pattern, options_for_select(Sock::SOCK_PATTERN, params[:filter_sock_pattern]), prompt:"Please select"%>
@@ -56,18 +63,23 @@
       <br>
       <br>
     <div>
-      <label>Season</label>
+      <label class="filter-label">Season</label>
     </div>
     <div>
       <%= select_tag :filter_season, options_for_select(Sock::SEASON, params[:filter_season]), prompt:"Please select"%>
     </div>
       <br>
       <br>
+<<<<<<< HEAD
+=======
+
+>>>>>>> bc230e2c458a40a614d80f021f6b3b309942f426
       <%= submit_tag :Filter, class: 'btn btn-primary mb-2', remote: true%>
       <% end %>
   </div>
 
  <!-- cards -->
+
 <div class="container card-container">
 <%= render 'cards_container', socks: @socks %>
 </div>
