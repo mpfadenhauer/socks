@@ -12,7 +12,12 @@ class SocksController < ApplicationController
     else
       @socks = policy_scope(Sock)
     end
+<<<<<<< HEAD
+    respond_to do |format|
+
+=======
    respond_to do |format|
+>>>>>>> bc230e2c458a40a614d80f021f6b3b309942f426
       format.html { render 'socks/index' }
       format.js
     end
