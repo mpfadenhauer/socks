@@ -20,7 +20,7 @@
       <p class="headline"><strong>User Rating: </strong></p>
       <div class="stars">
         <% @user.rating.times do%>
-          <%= raw '<i class="fa fa-star" aria-hidden="true"></i>' %>
+          <%= image_tag 'rating-sock.png' %>
         <% end %>
         </div>
         </div>
@@ -32,7 +32,7 @@
          <div class="review-rating">
          <p class ="d-flex"><strong><%= reviewer.username %></strong>
             <%review.rating.times do %>
-            <%= raw '<i class="fa fa-star" aria-hidden="true"></i>' %>
+            <%= image_tag 'rating-sock.png' %>
           <% end %>
           </p>
           </div>
