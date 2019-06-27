@@ -1,10 +1,10 @@
 class Sock < ApplicationRecord
 
   SOCK_TYPE = ["Over the knee", "Knee high", "Over the calf/Executive", "Mid-calf/Crew", "Quarter/Anklets", "Ped/Low cut", "Liner, Extra low cut", "Invisible/No-show", "Toe cover/Mute"].freeze
-  SOCK_PATTERN = ["Solid", "Striped", "Polka dots", "Other"].freeze
-  SEASON = ["spring", "winter", "summer", "autumn"].freeze
+  SOCK_PATTERN = ["Solid", "Striped", "Polka dots", "Shape", "Other"].freeze
+  SEASON = ["Spring", "Winter", "Summer", "Autumn"].freeze
   SIZES = ["36-41", "42-46", "47-51"].freeze
-  COLOR = ["Maroon", "Brown", "Olive", "Teal", "Navy", "Black", "Red", " Orange", "Yellow", "lime", "Green", "Cyan", "Blue", "Purple", "Magenta", "Grey", "Pink", "Apricot", "Beige", "Mint", "Lavender", "White"].freeze
+  COLOR = ["Maroon", "Brown", "Olive", "Teal", "Navy", "Black", "Red", " Orange", "Yellow", "lime", "Green", "Cyan", "Blue", "Purple", "Magenta", "Grey", "Pink", "Apricot", "Beige", "Mint", "Lavender", "White"].sort.freeze
 
   # for cloudinary
   mount_uploader :photo, PhotoUploader
