@@ -14,6 +14,7 @@ class SocksController < ApplicationController
       @socks = policy_scope(Sock)
     end
     respond_to do |format|
+
       format.html { render 'socks/index' }
       format.js
     end
