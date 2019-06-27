@@ -11,33 +11,7 @@
         </div>
       </div>
     <% else %>
-      <div class="cards">
-          <% @user.socks.each do |sock| %>
-                <div class="card-sock">
-                  <% if sock.photo.file.nil? %>
-                  <%= link_to sock_path(sock) do  %>
-                    <%= image_tag 'demo.png', crop: :fill, height: 220, width: 400; %>
-                    <% end %>
-                  <% else %>
-                    <%= cl_image_tag sock.photo, crop: :fill, height: 220, width: 400; %>
-                  <% end %>
-                  <div class="card-sock-infos">
-                    <div>
-                      <h2><%= link_to sock.title, sock_path(sock)  %></h2>
-                      <p> <%= sock.description %></p>
-                    </div>
-                    <h2 class="card-sock-pricing"> $<%= sock.price %></h2>
-                    <%= link_to profile_path(sock.user) do  %>
-                      <% if sock.user.photo.file.nil? %>
-                        <%= image_tag 'sock.png', height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered' %>
-                      <% else %>
-                        <%= cl_image_tag sock.user.photo, height: 40, width: 25, crop: :fill, class:'card-sock-user avatar-bordered'  %>
-                      <% end %>
-                    <% end %>
-                  </div>
-                </div>
-          <% end %>
-        </div>
+   <%= render 'socks/cards_container', socks: @user.socks %>
       <% end %>
   <div class="review-overview container">
   <div class="overall-rating">
