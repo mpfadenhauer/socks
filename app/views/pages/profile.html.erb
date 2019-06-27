@@ -43,7 +43,7 @@
   <div class="overall-rating">
 
     <% if @user.rating != "no reviews yet" && !@user.rating.nil? %>
-      <p><strong>User Rating: </strong></p>
+      <p class="headline"><strong>User Rating: </strong></p>
       <div class="stars">
         <% @user.rating.times do%>
           <%= raw '<i class="fa fa-star" aria-hidden="true"></i>' %>
