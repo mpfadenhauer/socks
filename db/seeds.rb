@@ -1,9 +1,10 @@
 require 'faker'
 
 puts "destroying previous database"
+Review.destroy_all
 Transaction.destroy_all
 Sock.destroy_all
-
+User.destroy_all
 
 puts "creating users"
 url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
