@@ -1,3 +1,7 @@
-const filter = document.getElementById('filter_form');
+// find the sock container
+const cards = document.querySelector('.card-container');
+// rerender it with a new @socks
+cards.innerHTML = '<%= j render "cards_container", socks: @socks %>';
 
-filter
+
+
