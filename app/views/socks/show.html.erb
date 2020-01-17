@@ -65,7 +65,7 @@
       </div>
       <% end %>
       <% else %>
-      <%= link_to "Buy this sock", new_sock_transaction_path(@sock), id: "add" %>
+      <%= link_to "Buy this sock", new_sock_transaction_path(@sock), id: "add", class: "text-center" %>
       <% end %>
     </div>
   </div>
@@ -126,7 +126,7 @@
 
   <div id="review-button">
     <i class="fas fa-edit"></i>
-      <%= link_to "Add a review", new_review_path %>
+      <%= link_to "Add a review", new_review_path(@user.id) %>
   </div>
 </div>
 </div>

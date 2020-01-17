@@ -1,9 +1,10 @@
 require 'faker'
 
 puts "destroying previous database"
+Review.destroy_all
 Transaction.destroy_all
 Sock.destroy_all
-
+User.destroy_all
 
 puts "creating users"
 url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
@@ -273,43 +274,43 @@ puts ('creating reviews')
 Review.create!(
          rating: 5,
          description:"this guy knows what he's doing.",
-         user_reviewed_id: 2,
-         review_giver_id: 1
+         user_reviewed_id: user2.id,
+         review_giver_id: user1.id
          )
 
 Review.create!(
          rating: 4,
          description:"amazing sock range, could be a bit pricy sometimes",
-         user_reviewed_id: 1,
-         review_giver_id: 2
+         user_reviewed_id: user1.id,
+         review_giver_id: user2.id
          )
 
 Review.create!(
          rating: 1,
          description:"sock didn't match description At all",
-         user_reviewed_id: 1,
-         review_giver_id: 3
+         user_reviewed_id: user1.id,
+         review_giver_id: user3.id
          )
 
 Review.create!(
          rating: 5,
          description:"takes great care of her socks, 10/10",
-         user_reviewed_id: 2,
-         review_giver_id: 3
+         user_reviewed_id: user2.id,
+         review_giver_id: user3.id
          )
 
 Review.create!(
          rating: 5,
          description:"i can really see your enthusiasm and love for what you do, keep on doing that!",
-         user_reviewed_id: 3,
-         review_giver_id: 1
+         user_reviewed_id: user3.id,
+         review_giver_id: user1.id
          )
 
 Review.create!(
          rating: 2,
          description:"not professional",
-         user_reviewed_id: 3,
-         review_giver_id: 2
+         user_reviewed_id: user3.id,
+         review_giver_id: user2.id
          )
 
 
