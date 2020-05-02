@@ -14,13 +14,17 @@ $dark: #696969;
 $yellow: #F7B844;
 $orange: #F2A849;
 
-.wrapper-container {
-  display: grid;
+.container {
+  padding: 0px;
+}
+
+.wrapper   {
   min-height: 100%;
-  display: grid;
-  background: $lighter;
+  display: flex;
+  justify-content: space-between;
   font-family: $font, sans-serif;
   text-transform: uppercase;
+  margin: 0px auto;
 }
 
 .main-container {
@@ -36,7 +40,6 @@ $orange: #F2A849;
 
 .sock-container {
   position: relative;
-  margin-left: 10px;
   margin-top: 70px;
   overflow: hidden;
   width: 550px;
@@ -100,8 +103,11 @@ $orange: #F2A849;
   text-align: justify;
 }
 
+.buttons {
+  margin-top: 20px;
+}
+
 #add{
-  width: 164px;
   background: white;
   border: 1px solid $orange;
   font-size: 16px;
@@ -112,14 +118,12 @@ $orange: #F2A849;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-align: center;
-  display: flex;
-  align-items: center;
   &:hover {
-  background: $orange;
-  border: 1px solid $orange;
-  font-size:16px;
-  color: $white;
-  cursor: pointer;
+    background: $orange;
+    border: 1px solid $orange;
+    font-size:16px;
+    color: $white;
+    cursor: pointer;
   }
 }
 
@@ -129,9 +133,6 @@ $orange: #F2A849;
 }
 
 .categories-first {
-  // display: flex;
-  align-items: center;
-  justify-content: space-evenly;
   color: $sky;
   grid-template-columns: repeat(auto-fill, 68px);
   width: 60%;
@@ -142,9 +143,6 @@ $orange: #F2A849;
 }
 
 .categories-second {
-  // display: flex;
-  align-items: center;
-  justify-content: space-evenly;
   color: $sky;
   grid-template-columns: repeat(auto-fill, 68px);
   width: 60%;
@@ -173,7 +171,6 @@ $orange: #F2A849;
 }
 
 //reviews
-
 .main-container {
   display: flex;
   width: 1040px;
@@ -182,14 +179,12 @@ $orange: #F2A849;
 
 .review-container {
   position: relative;
-  // margin: auto;
   margin-top: 23px;
-
   overflow: hidden;
-  width: 1000px;
   background: $white;
   box-shadow: 5px 5px 15px rgba($sky, .5);
   border-radius: 10px;
+  min-height: 170px;
 
   p {
   font-size: 12px;
@@ -208,7 +203,7 @@ $orange: #F2A849;
   h2 {
   color: $blue;
   margin-top: 27px;
-  margin-left: 50px;
+  margin-left: 75px;
   font-size: 22px;
   }
 
