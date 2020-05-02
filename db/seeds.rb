@@ -12,19 +12,19 @@ url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_
 user1 = User.create!(email: Faker::Internet.unique.email,
                     password:'123456',
                     username: "SockPrincess",
-                    remote_photo_url: 'https://pickaface.net/gallery/avatar/unr_example_161122_0416_qss004g.png',
+                    remote_photo_url: 'https://res.cloudinary.com/dugbeilxh/image/upload/v1588444800/ymsmmxvx1nfdncqdlogx.png',
                     location: "Berlin"
                     )
 user2 = User.create!(email: Faker::Internet.unique.email,
                     password:'123456',
                     username: "BenCiety",
-                    remote_photo_url: 'http://vietplace.com/Portals/0/Upload/avatar6_86142c6e-63e2-4700-89bf-e3804a75526a.png',
+                    remote_photo_url: 'https://res.cloudinary.com/dugbeilxh/image/upload/v1588444802/eychira7zohcls7aaewt.png',
                     location: "New york"
                     )
 user3 = User.create!(email: Faker::Internet.unique.email,
                     password:'123456',
                     username: "socklover123",
-                    remote_photo_url: 'http://demo.powowbox.com/powowbox/avatar_demo/Jane_0001.png',
+                    remote_photo_url: 'https://res.cloudinary.com/dugbeilxh/image/upload/v1588444805/alraoanvgvbyfqnleduq.png',
                     location: "London"
                     )
 
@@ -42,7 +42,7 @@ Sock.create!(
           age: 2,
           price: "10",
           user: user1,
-          remote_photo_url: "https://www.schoenwetterfront.de/wp-content/uploads/2019/10/socken-bembel-1024x1024.jpg"
+          remote_photo_url: "https://res.cloudinary.com/dugbeilxh/image/upload/c_fill,h_220,w_600/v1588444807/oxck7tsuly3dl1uthgof.jpg"
         )
 
 Sock.create!(
@@ -57,7 +57,7 @@ Sock.create!(
           age: 4,
           price: "0.5",
           user: user3,
-          remote_photo_url: "https://www.schoenwetterfront.de/wp-content/uploads/2019/10/socken-griesoss-1024x1024.jpg"
+          remote_photo_url: "https://res.cloudinary.com/dugbeilxh/image/upload/c_fill,h_220,w_600/v1588444809/gcjoaj4r7ccjbvsh6b8i.jpg"
         )
 
 Sock.create!(
@@ -72,7 +72,7 @@ Sock.create!(
           age: 8,
           price: "10",
           user: user3,
-          remote_photo_url: "https://www.abc-kinder.de/wp-content/uploads/2019/02/bigstock-Maks08-44480329-700x469-653x393.jpg"
+          remote_photo_url: "https://res.cloudinary.com/dugbeilxh/image/upload/c_fill,h_220,w_600/v1588444811/kgaanypfhfpbequx6xi4.jpg"
         )
 
 Sock.create!(
@@ -87,7 +87,7 @@ Sock.create!(
           age: 8,
           price: "5",
           user: user2,
-          remote_photo_url: "https://www.schoenwetterfront.de/wp-content/uploads/2019/10/socken-hopfen-1024x1024.jpg"
+          remote_photo_url: "https://res.cloudinary.com/dugbeilxh/image/upload/c_fill,h_220,w_600/v1588444812/k6gk160r2d1sfalivpnj.jpg"
         )
 
 Sock.create!(
@@ -102,7 +102,7 @@ Sock.create!(
           age: 8,
           price: "7",
           user: user1,
-          remote_photo_url: "https://cdn2.familie.de/46/d6/46/bf7435bcfd7d957cb3bbbdb7fd_cmUgOTUwIDQ3NQM0NmI0YmQ5Y2JkZg==_gestreifte-socken-pastell-410-250770.jpg"
+          remote_photo_url: "https://res.cloudinary.com/dugbeilxh/image/upload/c_fill,h_220,w_600/v1588444815/nydrlajx7kdgku77mkto.jpg"
         )
 
 Sock.create!(
@@ -117,7 +117,7 @@ Sock.create!(
           age: 8,
           price: "7",
           user: user1,
-          remote_photo_url: "https://cdn.shopify.com/s/files/1/0332/8943/7317/products/image_f59be39c-38d5-41fd-aa5e-f7e667a96545_500x.png?v=1585681891"
+          remote_photo_url: "https://res.cloudinary.com/dugbeilxh/image/upload/c_fill,h_220,w_600/v1588444816/j4jjgr4huz7sdjdwo0ja.png"
         )
 
 Sock.create!(
@@ -132,7 +132,7 @@ Sock.create!(
           age: 4,
           price: "2",
           user: user1,
-          remote_photo_url: "https://www.hollywoodsuits.com/media/catalog/product/cache/e782613fbf37faddbcd4c46c206dd1bf/5/g/5g16-1032-02-navy-a_1_1.jpg"
+          remote_photo_url: "https://res.cloudinary.com/dugbeilxh/image/upload/c_fill,h_220,w_600/v1588444817/qiu4adyxy5qohqqhgsuv.jpg"
         )
 
 Sock.create!(
@@ -147,7 +147,7 @@ Sock.create!(
           age: 6,
           price: "10",
           user: user2,
-          remote_photo_url: "https://static.vangraaf.com/img/unabux-feinstrick-socken_pdstandard_461900-0001_stillfront_1.jpg"
+          remote_photo_url: "https://res.cloudinary.com/dugbeilxh/image/upload/c_fill,h_220,w_600/v1588444819/b7duotgurapioapflp2q.jpg"
         )
 
 Sock.create!(
@@ -162,7 +162,7 @@ Sock.create!(
           age: 1,
           price: "15",
           user: user1,
-          remote_photo_url: "https://fabletics-us-cdn.justfab.com/media/images/products/AC1828841-2480/AC1828841-2480-1_998x1498.jpg"
+          remote_photo_url: "https://res.cloudinary.com/dugbeilxh/image/uploadc_fill,h_220,w_600//v1588444821/fcxspqhlxqtadrtsdljy.jpg"
         )
 
 Sock.create!(
@@ -177,7 +177,7 @@ Sock.create!(
           age: 2,
           price: "20",
           user: user3,
-          remote_photo_url: "https://cdn.shopify.com/s/files/1/1194/9756/products/Mens_Shark_Model_1400x.jpg?v=1461898467"
+          remote_photo_url: "https://res.cloudinary.com/dugbeilxh/image/upload/c_fill,h_220,w_600/v1588444823/dg5uchehx11flto4zwxe.jpg"
         )
 
 Sock.create!(
@@ -192,7 +192,7 @@ Sock.create!(
           age: 2,
           price: "8",
           user: user3,
-          remote_photo_url: "https://cdn.shopify.com/s/files/1/1415/1894/products/1204-Good_Luck_Sock-Space_Crew_Socks-v2.jpg?v=1533497951"
+          remote_photo_url: "https://res.cloudinary.com/dugbeilxh/image/upload/c_fill,h_220,w_600/v1588444824/whrz6sp0i92cdbyhmkrs.jpg"
         )
 
 # Sock.create!(
