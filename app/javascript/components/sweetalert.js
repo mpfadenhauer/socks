@@ -7,11 +7,13 @@ const sockcess = () => {
      Swal.fire({
             title: 'SockCess!',
             html:'Sock transaction complete 🧦, <br>' +
-            'One small sock for man, one giant sock for mankind,<br> <br> ' +
-            'View order details <a href= "#"> here</a>',
+            'One small sock for man, one giant sock for mankind,<br> <br> ',
             type: 'success',
             showCloseButton: true
           });
+     .then(function() {
+        window.location = "https://sockciety.herokuapp.com/";
+      });
     });
   }
 }
