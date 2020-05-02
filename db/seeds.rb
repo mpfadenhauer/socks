@@ -12,7 +12,7 @@ url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_
 user1 = User.create!(email: Faker::Internet.unique.email,
                     password:'123456',
                     username: "SockPrincess",
-                    remote_photo_url: 'https://res.cloudinary.com/dugbeilxh/image/upload/v1588444800/ymsmmxvx1nfdncqdlogx.png',
+                    remote_photo_url: 'https://res.cloudinary.com/dugbeilxh/image/upload/c_fill,h_220,w_600/v1588444807/oxck7tsuly3dl1uthgof.jpg',
                     location: "Berlin"
                     )
 user2 = User.create!(email: Faker::Internet.unique.email,
