@@ -235,7 +235,7 @@ $orange: #F2A849;
 
 .sock-reviews {
 
-    p {
+  p {
     margin-left: 20px;
     font-size: 14px;
   }
@@ -258,6 +258,9 @@ $orange: #F2A849;
 .sock-review {
   p {
     margin-bottom: 5px;
+  }
+  .review-content {
+    margin-bottom: 10px;
   }
 }
 
