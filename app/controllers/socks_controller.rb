@@ -52,9 +52,11 @@ class SocksController < ApplicationController
   end
 
   def edit
+    authorize @sock
   end
 
   def update
+    authorize @sock
     @sock.update(sock_params)
     redirect_to sock_path(@sock)
   end
