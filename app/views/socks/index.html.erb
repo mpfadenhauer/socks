@@ -18,19 +18,19 @@
 </div>
 
 
-  <h1 style="color: #006DAA; margin-bottom:1em" id="socks_index_title">Our Socks</h1>
+<h1 style="color: #006DAA; margin-bottom:1em" id="socks_index_title">Our Socks</h1>
 <div class="switch d-flex justify-content-center">
-    <h3>Filter Socks</h3>
+  <h3>Filter Socks</h3>
   <div class="onoffswitch">
     <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="filter-button" checked>
     <label class="onoffswitch-label" for="filter-button">
-        <span class="onoffswitch-inner"></span>
-        <span class="onoffswitch-switch"></span>
+      <span class="onoffswitch-inner"></span>
+      <span class="onoffswitch-switch"></span>
     </label>
-</div>
+  </div>
   <!-- <button id="filter-button", class= "btn btn-danger mb-5">Filter socks</button> -->
 </div>
-  <br>
+<br>
 
 <div class="d-flex">
   <div class="dropdown d-none">
@@ -38,82 +38,57 @@
       <h2>Filter</h2>
       <br>
     </div>
-      <%= form_tag socks_path, method: :get, remote: true do %>
-    <div>
-      <label class="filter-label">Color</label>
-    </div>
-    <div>
-        <%= select_tag :filter_color, options_for_select(Sock::COLOR, params[:filter_color]), prompt:"Please select"%>
-    </div>
-    <br>
-    <br>
-    <div>
-      <label class="filter-label">Sock type</label>
-    </div>
-    <div>
-      <%= select_tag :filter_sock_type, options_for_select(Sock::SOCK_TYPE, params[:filter_sock_type]), prompt:"Please select"%>
-    </div>
+    <%= form_tag socks_path, method: :get, remote: true do %>
+      <div>
+        <label class="filter-label">Color</label>
+      </div>
+      <div>
+          <%= select_tag :filter_color, options_for_select(Sock::COLOR, params[:filter_color]), prompt:"Please select"%>
+      </div>
       <br>
       <br>
-    <div>
-      <label class="filter-label">Sock pattern</label>
-    </div>
-    <div>
-      <%= select_tag :filter_sock_pattern, options_for_select(Sock::SOCK_PATTERN, params[:filter_sock_pattern]), prompt:"Please select"%>
-    </div>
+      <div>
+        <label class="filter-label">Sock type</label>
+      </div>
+      <div>
+        <%= select_tag :filter_sock_type, options_for_select(Sock::SOCK_TYPE, params[:filter_sock_type]), prompt:"Please select"%>
+      </div>
+        <br>
+        <br>
+      <div>
+        <label class="filter-label">Sock pattern</label>
+      </div>
+      <div>
+        <%= select_tag :filter_sock_pattern, options_for_select(Sock::SOCK_PATTERN, params[:filter_sock_pattern]), prompt:"Please select"%>
+      </div>
       <br>
       <br>
-    <div>
-      <label class="filter-label">Season</label>
-    </div>
-    <div>
-      <%= select_tag :filter_season, options_for_select(Sock::SEASON, params[:filter_season]), prompt:"Please select"%>
-    </div>
+      <div>
+        <label class="filter-label">Season</label>
+      </div>
+      <div>
+        <%= select_tag :filter_season, options_for_select(Sock::SEASON, params[:filter_season]), prompt:"Please select"%>
+      </div>
       <br>
       <br>
-
-
       <%= submit_tag :Filter, class: 'filter-submit btn btn-primary mb-2', remote: true%>
-
-      <% end %>
+    <% end %>
   </div>
 
- <!-- cards -->
+  <div class="container card-container">
+    <%= render 'cards_container', socks: @socks %>
+  </div>
 
-<div class="container card-container">
-<%= render 'cards_container', socks: @socks %>
-</div>
-<!-- about -->
-
-<div class = "about py-5">
-  <h2 >The <strong>ultimate</strong> sock finder app</h2>
-  <br id="top">
-  <div class="d-flex justify-content-between align-items-top" >
-    <div class="text-justify">
-      <p>In <strong>SockCiety™️</strong>, we pride ourselves for giving the ultimate user experience, for the people who truly deserve it. Our community includes people from all around the world. <br> We believe that socks don't have only one sockMate, and could eventually, given the time, find a new match. That’s why we built the <strong>SockCiety™️</strong>, for sock lovers to meet, find their match and enjoy their favorite socks once more.
-      </p>
+  <div class = "about py-5">
+    <h2 class="about-header">The <strong>ultimate</strong> sock finder app</h2>
+    <br id="top">
+    <div class="d-flex justify-content-between align-items-top" >
+      <div class="text-justify">
+        <p>In <strong>SockCiety™️</strong>, we pride ourselves for giving the ultimate user experience, for the people who truly deserve it. Our community includes people from all around the world. <br> We believe that socks don't have only one sockMate, and could eventually, given the time, find a new match. That’s why we built the <strong>SockCiety™️</strong>, for sock lovers to meet, find their match and enjoy their favorite socks once more.
+        </p>
+      </div>
     </div>
-     <%= image_tag 'logo.jpg', crop: :fill, height: 180, width: 250, id:"image-blurred-edge" %>
+  </div>
 </div>
-</div>
 
-
-<!-- arrow up -->
-<!-- <div class="arrow-up">
-  <%# link_to image_tag 'arrow-up.png', :anchor => "socks_index_title" %>
-</div> -->
-
-
-
- <%= link_to image_tag 'arrow-up.png', :anchor => "socks_index_title", class:"button", id:"btn-fixed" %>
-
-
-
-  <!-- scope :color, -> (color) { where color: color }
-  scope :min_size, -> (min_size) { where min_size: min_size }
-  scope :max_size, -> (max_size) { where max_size: max_size }
-  scope :sock_type, -> (sock_type) { where sock_type: sock_type }
-  scope :brand, -> (brand) { where brand: brand }
-  scope :season, -> (season) { where season: season }
-  scope :age, -> (age) { where age: age }
-  scope :price, -> (price) { where price: price } -->
+<%= link_to image_tag 'arrow-up.png', :anchor => "socks_index_title", class:"button", id:"btn-fixed" %>
